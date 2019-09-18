@@ -103,11 +103,17 @@ div
   background: #FFFFFF
   border-radius: 100px
   border: none
-  box-shadow: 0 6px 15px hsla(6,59%,62%,.8)
+  box-shadow: 0 6px 15px hsla(6, 59%, 62%, .8)
   color: #FF6351
   width: 150px
   height: 40px
   cursor: pointer
+
+  &.btn_transp
+    background: transparent
+    border: 1px solid #FFFFFF
+    color: #FFFFFF
+    box-shadow: none
 
 header
   .header__navbar
@@ -116,15 +122,21 @@ header
     width: 100%
     padding: 30px 0
     font-size: 16px
+    z-index: 10
+
     a
       color: #FFFFFF
+
     .row
       align-items: center
+
   .header__navbar__menu
     display: flex
     justify-content: space-between
+
     a
       padding-right: 50px
+
       &:last-child
         padding-right: 0
 
@@ -133,23 +145,36 @@ header
   background: linear-gradient(107.45deg, #DF6598 1.5%, #857BE4 73.76%)
   font-size: 16px
   color: #FFFFFF
-  padding-top: 200px
+  padding: 200px 0
+
   .banner__img
     position: absolute
     right: 0
     top: 0
     width: 43%
 
+.btn__banner
+  .btn
+    margin-right: 20px
+
+    &:last-child
+      margin-right: 0
+
+.section
+  margin-bottom: 170px
+
 .title
   display: flex
   flex-direction: column
-  padding: 90px 0
+  margin: 46px 0
+
   span
     &.h1__title
       font-size: 28px
       line-height: 50px
       color: #000000
       position: relative
+
       &::after
         content: ''
         position: absolute
@@ -157,17 +182,21 @@ header
         width: 125px
         height: 5px
         background: linear-gradient(270deg, #DE6598 0%, rgba(222, 101, 152, 0) 100%)
+
     &.sub__title
       font-size: 16px
       line-height: 24px
       color: #DE6598
       letter-spacing: 0.05em
+
 .is-about__item
   padding: 0 40px
+
   .icon
     padding: 20px 0
     position: relative
     display: inline-block
+
     &::after
       content: ''
       position: absolute
@@ -177,26 +206,267 @@ header
       height: 84px
       border-radius: 50%
       z-index: -10
+
     &.benefit
       &::after
         background: #E9E5FF
+
     &.transparency
       &::after
         background: #EAF4FD
+
     &.efficiency
       &::after
         background: #FDF3EA
+
   .title__item
     font-size: 18px
     line-height: 50px
     color: #313639
+
   .desc
     font-size: 14px
     line-height: 22px
 
+.is-partners__desc
+  align-self: center
+
+.is-partners__wrapper
+  position: relative
+  height: 430px
+
 .is-partners__item
+  position: absolute
   background: linear-gradient(99.68deg, #DD6599 1.5%, #897BE2 73.76%)
-  box-shadow: 0px 20px 30px #8a7ae080
+  box-shadow: 0px 20px 30px #8a7ae0 80
   border-radius: 50%
   width: 150px
   height: 150px
+  display: flex
+  justify-content: center
+  align-items: center
+
+  &.item_1
+    left: 0
+    top: 0
+    width: 150px
+    height: 150px
+
+  &.item_2
+    left: 0
+    right: 0
+    top: 40px
+    margin: 0 auto
+
+  &.item_3
+    right: 0
+    top: 60px
+    width: 200px
+    height: 200px
+
+  &.item_4
+    left: 90px
+    width: 200px
+    height: 200px
+    bottom: 0
+
+  &.item_5
+    right: 160px
+    bottom: 10px
+
+.form__wrapper
+  background: #F8F8F8
+  border-radius: 15px
+  padding: 20px
+  margin-top: 200px
+
+  .form__title
+    font-size: 28px
+    line-height: 50px
+    color: #000000
+    padding: 23px 0
+
+.calculator
+  .h2__title
+    font-size: 12px
+    color: #828589
+    padding-bottom: 11px
+
+  .form__box
+    margin-bottom: 37px
+
+  .tags
+    display: flex
+    flex-wrap: wrap
+
+    label
+      font-size: 14px
+      color: #313639
+      margin-right: 58px
+      cursor: pointer
+
+    &.tags__input
+      .tag-input
+        width: 0
+
+        & + [for]
+          position: relative
+
+          &::before
+            content: ''
+            position: absolute
+            top: 0px
+            left: 0
+            width: 16px
+            height: 16px
+            border: 1px solid rgba(1, 1, 1, 0.54)
+            border-radius: 2px
+
+        &:checked + [for]
+          &::before
+            border: 1px solid #DF6598
+            background: #DF6598
+
+          &::after
+            content: '✔'
+            position: absolute
+            top: 0px
+            left: 4px
+            color: #f8f8f8
+
+      label
+        padding-left: 23px
+
+    &.tags__radio
+      label
+        margin-right: 0
+
+      .tag-input
+        width: 0
+
+        & + [for]
+          padding: 10px 18px
+
+        &:checked + [for]
+          background: #E9E5FF
+          border-radius: 7px
+          color: #493F7B
+
+.calculator__table__header
+  align-items: flex-end
+  border-bottom: 1px solid #CBCBCB
+
+  .th
+    font-size: 12px
+    line-height: 22px
+    color: #828589
+
+.jc-cpt-inner
+  font-size: 14px
+  line-height: 50px
+  color: #313639
+
+  .row
+    padding: 8px 0
+    border-bottom: 1px solid rgba(203, 203, 203, 0.25)
+
+    &:last-child
+      border-bottom: none
+
+  a
+    &.btn
+      font-size: 16px
+      line-height: 24px
+      color: #493F7B
+      border: 1px solid #493F7B
+      border-radius: 100px
+      background: transparent
+      box-shadow: none
+      padding: 8px 31px
+
+.faq__items
+  margin-right: 70px
+  .faq__item
+    background: #f8f8f8
+    box-shadow: 0 4px 7px rgba(0, 0, 0, .04)
+    border-radius: 7px
+    border: none
+    width: 100%
+    text-align: left
+    color: #313639
+    font-size: 14px
+    line-height: 26px
+    padding: 15px 85px 15px 26px
+    margin-bottom: 11px
+    position: relative
+
+    &:last-child
+      margin-bottom: 0
+
+    span
+      position: absolute
+      width: 30px
+      height: 30px
+      top: 0
+      bottom: 0
+      right: 10px
+      margin: auto
+      cursor: pointer
+
+      &::before
+        content: ''
+        position: absolute
+        width: 50%
+        height: 1px
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+        margin: auto
+        background: #DE6598
+
+      &::after
+        content: ''
+        position: absolute
+        width: 50%
+        height: 1px
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+        margin: auto
+        background: #DE6598
+        transform: rotate(90deg)
+
+  .faq__item__desc
+    display: none
+
+.feedback.form
+  color: #FFFFFF
+  background: linear-gradient(99.54deg, #DC669A 1.5%, #877BE3 73.76%)
+  border-radius: 7px
+  padding: 41px
+
+  input
+    background: none
+    border: none
+    border-bottom: 1px solid #FFFFFF
+    width: 100%
+    box-sizing: border-box
+    margin-bottom: 30px
+    padding: 0px 0px 15px 0px
+
+    &[type="submit"]
+      width: 150px
+      height: 40px
+      font-size: 16px
+      color: #DE6598
+      background: #FFFFFF
+      margin: 40px 0 30px 0
+      padding: 0
+      box-shadow: none
+
+
+footer
+  background: #15262D
+  padding: 50px 0

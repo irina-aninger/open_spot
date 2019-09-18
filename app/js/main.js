@@ -27,7 +27,7 @@ $(function () {
                 {
                     result = response.responseText;
                 }
-                $('.modal-loading').modal('hide');
+                // $('.modal-loading').modal('hide');
                 new Noty({
                     'text': result,
                     'type': 'error'

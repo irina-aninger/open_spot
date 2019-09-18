@@ -49,101 +49,296 @@ html(lang='UTF-8')
                         .title__item Выгода
                         .desc Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения, а рекламораспространителям допродавть свой свободный инвентарь.
                     .lg-4.is-about__item.text_center
-                        .icon.transparency: img(src='./img/benefit.svg')
+                        .icon.transparency: img(src='./img/transparency.svg')
                         .title__item Прозрачность
                         .desc Прозрачная система позволяет оценивать все каналы оффлайн рекламы и выбирать наиболее эффективные.
                     .lg-4.is-about__item.text_center
-                        .icon.efficiency: img(src='./img/benefit.svg')
+                        .icon.efficiency: img(src='./img/efficiency.svg')
                         .title__item Эффективность
                         .desc Благодаря интеграции исследований в платформу, клиенты получают детализированную информацию для планирования рекламной кампании и могут распределять свои рекламные бюджеты наиболее эффективно.
 
-            .section.is-partners
-                .container
-                    .row
-                        .lg-4
-                            .title.text_left
-                                span.sub__title С кем мы работаем?
-                                span.h1__title Наши партнеры
-                            .desc Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
-                        .lg-8.is-partners__wrapper
-                            .is-partners__item
-                            .is-partners__item
-                            .is-partners__item
-                            .is-partners__item
-                            .is-partners__item
+        .section.is-partners
+            .container
+                .row
+                    .lg-4.is-partners__desc
+                        .title.text_left
+                            span.sub__title С кем мы работаем?
+                            span.h1__title Наши партнеры
+                        .desc Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
+                    .lg-8.is-partners__wrapper
+                        .is-partners__item.item_1
+                            img(src='./img/logo_partner_1.png')
+                        .is-partners__item.item_2
+                            img(src='./img/logo_partner_1.png')
+                        .is-partners__item.item_3
+                            img(src='./img/logo_partner_2.png')
+                        .is-partners__item.item_4
+                            img(src='./img/logo_partner_2.png')
+                        .is-partners__item.item_5
+                            img(src='./img/logo_partner_1.png')
 
-            .section.is-radio
-                .container
-                    .row
-                        .lg-6
-                        .lg-6
-                            .title.text_left
-                                span.sub__title Что мы предлагаем?
-                                span.h1__title Реклама на радио
-                            .desc Благодаря интеграции исследований в платформу, клиенты получают детализированную информацию для планирования рекламной кампании и могут распределять свои рекламные бюджеты наиболее эффективно.
+        .section.is-radio
+            .container
+                .row
+                    .lg-6
+                    .lg-6
+                        .title.text_left
+                            span.sub__title Что мы предлагаем?
+                            span.h1__title Реклама на радио
+                        .desc Благодаря интеграции исследований в платформу, клиенты получают детализированную информацию для планирования рекламной кампании и могут распределять свои рекламные бюджеты наиболее эффективно.
+                .form__wrapper
+                    .form__title.text_left Реклама на радио
                     form(method="get" action="http://178.172.173.58/cpt" class="calculator row ajax-form js-cpt-calculator" data-noreload data-response=".js-cpt-inner")
                         input(type="hidden" name="_token" value="Ng2x5rCQH887LZke6E8C7SdqeUT8fYem8Szt2r7q")
-                        .lg-6
+                        .lg-6.form__box
                             .h2__title Интересующий регион
-                            .tags
+                            .tags.tags__input
                                 input(type="checkbox" name="k[]" value="minsk" class="tag-input" id="rMinsk" checked)
                                 label(for="rMinsk" class="tag-label") Минск
-                                input(type="checkbox" name="k[]" value="obl" class="tag-input" id="rObl" checked)
+                                input(type="checkbox" name="k[]" value="obl" class="tag-input" id="rObl")
                                 label(for="rObl" class="tag-label") Областные центры
-                        .lg-6
-                            .h2__title Пол
-                            .tags
+                        .lg-6.form__box
+                            .h2__title Пол аудитории
+                            .tags.tags__input
                                 input(type="checkbox" name="k[]" value="male" class="tag-input" id="sM" checked)
                                 label(for="sM" class="tag-label") Мужской
-                                input(type="checkbox" name="k[]" value="female" class="tag-input" id="sF" checked)
+                                input(type="checkbox" name="k[]" value="female" class="tag-input" id="sF")
                                 label(for="sF" class="tag-label") Женский
 
-                        .lg-12
-                        .h2__title Возраст
-                        .tags
-                            input(type="checkbox" name="k[]" value="age18-24" class="tag-input" id="a1" checked)
-                            label(for="a1" class="tag-label") 18-24
+                        .lg-12.form__box
+                            .h2__title Возраст аудитории
+                            .tags.tags__input
+                                input(type="checkbox" name="k[]" value="age18-24" class="tag-input" id="a1" checked)
+                                label(for="a1" class="tag-label") 18-24
 
-                            input(type="checkbox" name="k[]" value="age25-29" class="tag-input" id="a2" checked)
-                            label(for="a2" class="tag-label") 25-29
+                                input(type="checkbox" name="k[]" value="age25-29" class="tag-input" id="a2")
+                                label(for="a2" class="tag-label") 25-29
 
-                            input(type="checkbox" name="k[]" value="age30-34" class="tag-input" id="a3" checked)
-                            label(for="a3" class="tag-label") 30-34
+                                input(type="checkbox" name="k[]" value="age30-34" class="tag-input" id="a3")
+                                label(for="a3" class="tag-label") 30-34
 
-                            input(type="checkbox" name="k[]" value="age35-39" class="tag-input" id="a4" checked)
-                            label(for="a4" class="tag-label") 35-39
+                                input(type="checkbox" name="k[]" value="age35-39" class="tag-input" id="a4")
+                                label(for="a4" class="tag-label") 35-39
 
-                            input(type="checkbox" name="k[]" value="age40-44" class="tag-input" id="a5" checked)
-                            label(for="a5" class="tag-label") 40-44
+                                input(type="checkbox" name="k[]" value="age40-44" class="tag-input" id="a5")
+                                label(for="a5" class="tag-label") 40-44
 
-                            input(type="checkbox" name="k[]" value="age45-49" class="tag-input" id="a6" checked)
-                            label(for="a6" class="tag-label") 45-49
+                                input(type="checkbox" name="k[]" value="age45-49" class="tag-input" id="a6")
+                                label(for="a6" class="tag-label") 45-49
 
-                            input(type="checkbox" name="k[]" value="age50-54" class="tag-input" id="a7" checked)
-                            label(for="a7" class="tag-label") 50-54
+                                input(type="checkbox" name="k[]" value="age50-54" class="tag-input" id="a7")
+                                label(for="a7" class="tag-label") 50-54
 
-                            input(type="checkbox" name="k[]" value="age55-59" class="tag-input" id="a8" checked)
-                            label(for="a8" class="tag-label") 55-59
+                                input(type="checkbox" name="k[]" value="age55-59" class="tag-input" id="a8")
+                                label(for="a8" class="tag-label") 55-59
 
-                            input(type="checkbox" name="k[]" value="age60-65" class="tag-input" id="a9" checked)
-                            label(for="a9" class="tag-label") 60-65
+                                input(type="checkbox" name="k[]" value="age60-65" class="tag-input" id="a9")
+                                label(for="a9" class="tag-label") 60-65
 
-                    .lg-12.calculator__table
-                        .h2__title Данные по СРТ для вашей аудитории
+                        .lg-12.form__box
+                            .h2__title Радиостанции
+                            .tags.tags__radio
+                                input(type="radio" name="radio" value="" class="tag-input" id="r1" checked)
+                                label(for="r1" class="tag-label") Все
+
+                                input(type="radio" name="radio" value="" class="tag-input" id="r2")
+                                label(for="r2" class="tag-label") Радио Рокс
+
+                                input(type="radio" name="radio" value="" class="tag-input" id="r3")
+                                label(for="r3" class="tag-label") Русское радио
+
+                                input(type="radio" name="radio" value="" class="tag-input" id="r4")
+                                label(for="r4" class="tag-label") Радио Рокс
+
+                                input(type="radio" name="radio" value="" class="tag-input" id="r5")
+                                label(for="r5" class="tag-label") Русское радио
+
+                                input(type="radio" name="radio" value="" class="tag-input" id="r6")
+                                label(for="r6" class="tag-label") Радио Рокс
+
+                    .calculator__table
                         .row.calculator__table__header
-                            .lg-2 Станция
-                            .lg-2 Пресет
-                            .lg-2 Аудитория, тыс
-                            .lg-2 Стоимость МП, руб
-                            .lg-2 CPT, руб
-                            .lg-2 Охват, тыс
+                            .lg-2.th Станция
+                            .lg-2.th Пресет
+                                span.th__filter
+                            .lg-1.th Стоимость МП, руб
+                                span.th__filter
+                            .lg-1.th CPT, руб
+                                span.th__filter
+                            .lg-1.th Охват, тыс
+                                span.th__filter
+                            .lg-1.th Время, сек
+                                span.th__filter
+                            .lg-2.th Количество выходов
+                                span.th__filter
+                            .lg-2.th
 
                         .jc-cpt-inner
+                            .row
+                                .lg-2.td Радио Рокс
+                                .lg-2.td Прайм
+                                .lg-1.td 2985.75
+                                .lg-1.td 254.61
+                                .lg-1.td 0.72
+                                .lg-1.td 0.72
+                                .lg-2.td Прайм
+                                .lg-2.td
+                                    a.btn(href="javascript:;") Разместить
+                            .row
+                                .lg-2.td Радио Рокс
+                                .lg-2.td Прайм
+                                .lg-1.td 2985.75
+                                .lg-1.td 254.61
+                                .lg-1.td 0.72
+                                .lg-1.td 0.72
+                                .lg-2.td Прайм
+                                .lg-2.td
+                                    a.btn(href="javascript:;") Разместить
+                            .row
+                                .lg-2.td Радио Рокс
+                                .lg-2.td Прайм
+                                .lg-1.td 2985.75
+                                .lg-1.td 254.61
+                                .lg-1.td 0.72
+                                .lg-1.td 0.72
+                                .lg-2.td Прайм
+                                .lg-2.td
+                                    a.btn(href="javascript:;") Разместить
+                            .row
+                                .lg-2.td Радио Рокс
+                                .lg-2.td Прайм
+                                .lg-1.td 2985.75
+                                .lg-1.td 254.61
+                                .lg-1.td 0.72
+                                .lg-1.td 0.72
+                                .lg-2.td Прайм
+                                .lg-2.td
+                                    a.btn(href="javascript:;") Разместить
+                            .row
+                                .lg-2.td Радио Рокс
+                                .lg-2.td Прайм
+                                .lg-1.td 2985.75
+                                .lg-1.td 254.61
+                                .lg-1.td 0.72
+                                .lg-1.td 0.72
+                                .lg-2.td Прайм
+                                .lg-2.td
+                                    a.btn(href="javascript:;") Разместить
+                            .row
+                                .lg-2.td Радио Рокс
+                                .lg-2.td Прайм
+                                .lg-1.td 2985.75
+                                .lg-1.td 254.61
+                                .lg-1.td 0.72
+                                .lg-1.td 0.72
+                                .lg-2.td Прайм
+                                .lg-2.td
+                                    a.btn(href="javascript:;") Разместить
+                            .row
+                                .lg-2.td Радио Рокс
+                                .lg-2.td Прайм
+                                .lg-1.td 2985.75
+                                .lg-1.td 254.61
+                                .lg-1.td 0.72
+                                .lg-1.td 0.72
+                                .lg-2.td Прайм
+                                .lg-2.td
+                                    a.btn(href="javascript:;") Разместить
+                            .row
+                                .lg-2.td Радио Рокс
+                                .lg-2.td Прайм
+                                .lg-1.td 2985.75
+                                .lg-1.td 254.61
+                                .lg-1.td 0.72
+                                .lg-1.td 0.72
+                                .lg-2.td Прайм
+                                .lg-2.td
+                                    a.btn(href="javascript:;") Разместить
+                            .row
+                                .lg-2.td Радио Рокс
+                                .lg-2.td Прайм
+                                .lg-1.td 2985.75
+                                .lg-1.td 254.61
+                                .lg-1.td 0.72
+                                .lg-1.td 0.72
+                                .lg-2.td Прайм
+                                .lg-2.td
+                                    a.btn(href="javascript:;") Разместить
+                            .row
+                                .lg-2.td Радио Рокс
+                                .lg-2.td Прайм
+                                .lg-1.td 2985.75
+                                .lg-1.td 254.61
+                                .lg-1.td 0.72
+                                .lg-1.td 0.72
+                                .lg-2.td Прайм
+                                .lg-2.td
+                                    a.btn(href="javascript:;") Разместить
+                            .row
+                                .lg-2.td Радио Рокс
+                                .lg-2.td Прайм
+                                .lg-1.td 2985.75
+                                .lg-1.td 254.61
+                                .lg-1.td 0.72
+                                .lg-1.td 0.72
+                                .lg-2.td Прайм
+                                .lg-2.td
+                                    a.btn(href="javascript:;") Разместить
+                            .row
+                                .lg-2.td Радио Рокс
+                                .lg-2.td Прайм
+                                .lg-1.td 2985.75
+                                .lg-1.td 254.61
+                                .lg-1.td 0.72
+                                .lg-1.td 0.72
+                                .lg-2.td Прайм
+                                .lg-2.td
+                                    a.btn(href="javascript:;") Разместить
 
-
-
+        .section.is-faq
+            .container
+                .row
+                    .lg-6.faq__wrapper
+                        .title.text_left
+                            span.sub__title Мы можем вам помочь
+                            span.h1__title Остались вопросы?
+                        .faq__items
+                            button.accordion.faq__item Как с вами связаться?
+                                span
+                            .faq__item__desc
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            button.accordion.faq__item Я внимательно изучил все материалы сайта, но у меня остались вопросы
+                                span
+                            .faq__item__desc
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            button.accordion.faq__item Что я тут забыл?
+                                span
+                            .faq__item__desc
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            button.accordion.faq__item Кто вы?
+                                span
+                            .faq__item__desc
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            button.accordion.faq__item Зачем вы мне надо?
+                                span
+                            .faq__item__desc
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    .lg-5.form__feedback
+                        form.feedback.form.text_center(action="")
+                            .title.text_center
+                                span.h1__title Все еще есть вопросы?
+                                span Заполните форму обратной связи и наши специалисты свяжутся с вами!
+                            input(type="text" placeholder="Имя*")
+                            input(type="tel" placeholder="Номер телефона:*")
+                            input(type="email" placeholder="E-mail*")
+                            input.btn(type="submit" value="Отправить")
 
         footer
+            .container
+                .row
+                    .lg-3
+                        .logo
+                            img(src='./img/LOGO.svg')
 
 
         script(src='./js/main.js')
