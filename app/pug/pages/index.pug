@@ -5,31 +5,145 @@ html(lang='UTF-8')
         meta(name='viewport' content='width=device-width, initial-scale=1')
         title Test
         link(href='./css/normalize.min.css', rel='stylesheet')
+
         link(href='./css/style.min.css', rel='stylesheet')
 
     body
 
         header
+            .header__navbar
+                .container
+                    .row
+                        .logo.lg-auto
+                            img(src='./img/LOGO.svg')
+                        .header__navbar__menu.lg-9
+                            .navbar__left
+                                a(href='#') О сервисе
+                                a(href='#') Партнеры
+                                a(href='#') Радио
+                            .navbar__right
+                                a(href='#') FAQ
+                                a(href='#') Контакты
+                        .header__feedback.lg-auto.text_right
+                            button#feedback.btn Связаться
+            .header__banner
+                .container
+                    .row
+                        .left__side__banner.lg-6
+                            h1 OpenSpot - размещение рекламы по справедливой цене
+                            p Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения.
+                            .btn__banner
+                                button.btn Начать
+                                button.btn.btn_transp Узнать больше
+                .banner__img
+                    img(src='./img/banner.png')
+
+        .section.is-about
             .container
-                img.logo(src="#")
-                nav
-                    ul.nav_menu.nav_left
-                        li: a(href='#') О сервисе
-                        li: a(href='#') Партнеры
-                        li: a(href='#') Радио
-                    ul.nav_menu.nav_right
-                        li: a(href='#') FAQ
-                        li: a(href='#') Контакты
-                button#feedback.btn Связаться
-        section#banner
-            .container
-                .left_side
-                    h1 OpenSpot - размещение рекламы по справедливой цене
-                    p.desc Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения.
-                    button.btn Начать
-                    button.btn.btn_transp Узнать больше
-                .right_side
-                    .img(src='')
+                .title.text_center
+                    span.sub__title Что мы предлагаем?
+                    span.h1__title Что такое OpenSpot?
+                .row.is-about__wrapper
+                    .lg-4.is-about__item.text_center
+                        .icon.benefit: img(src='./img/benefit.svg')
+                        .title__item Выгода
+                        .desc Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения, а рекламораспространителям допродавть свой свободный инвентарь.
+                    .lg-4.is-about__item.text_center
+                        .icon.transparency: img(src='./img/benefit.svg')
+                        .title__item Прозрачность
+                        .desc Прозрачная система позволяет оценивать все каналы оффлайн рекламы и выбирать наиболее эффективные.
+                    .lg-4.is-about__item.text_center
+                        .icon.efficiency: img(src='./img/benefit.svg')
+                        .title__item Эффективность
+                        .desc Благодаря интеграции исследований в платформу, клиенты получают детализированную информацию для планирования рекламной кампании и могут распределять свои рекламные бюджеты наиболее эффективно.
+
+            .section.is-partners
+                .container
+                    .row
+                        .lg-4
+                            .title.text_left
+                                span.sub__title С кем мы работаем?
+                                span.h1__title Наши партнеры
+                            .desc Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
+                        .lg-8.is-partners__wrapper
+                            .is-partners__item
+                            .is-partners__item
+                            .is-partners__item
+                            .is-partners__item
+                            .is-partners__item
+
+            .section.is-radio
+                .container
+                    .row
+                        .lg-6
+                        .lg-6
+                            .title.text_left
+                                span.sub__title Что мы предлагаем?
+                                span.h1__title Реклама на радио
+                            .desc Благодаря интеграции исследований в платформу, клиенты получают детализированную информацию для планирования рекламной кампании и могут распределять свои рекламные бюджеты наиболее эффективно.
+                    form(method="get" action="http://178.172.173.58/cpt" class="calculator row ajax-form js-cpt-calculator" data-noreload data-response=".js-cpt-inner")
+                        input(type="hidden" name="_token" value="Ng2x5rCQH887LZke6E8C7SdqeUT8fYem8Szt2r7q")
+                        .lg-6
+                            .h2__title Интересующий регион
+                            .tags
+                                input(type="checkbox" name="k[]" value="minsk" class="tag-input" id="rMinsk" checked)
+                                label(for="rMinsk" class="tag-label") Минск
+                                input(type="checkbox" name="k[]" value="obl" class="tag-input" id="rObl" checked)
+                                label(for="rObl" class="tag-label") Областные центры
+                        .lg-6
+                            .h2__title Пол
+                            .tags
+                                input(type="checkbox" name="k[]" value="male" class="tag-input" id="sM" checked)
+                                label(for="sM" class="tag-label") Мужской
+                                input(type="checkbox" name="k[]" value="female" class="tag-input" id="sF" checked)
+                                label(for="sF" class="tag-label") Женский
+
+                        .lg-12
+                        .h2__title Возраст
+                        .tags
+                            input(type="checkbox" name="k[]" value="age18-24" class="tag-input" id="a1" checked)
+                            label(for="a1" class="tag-label") 18-24
+
+                            input(type="checkbox" name="k[]" value="age25-29" class="tag-input" id="a2" checked)
+                            label(for="a2" class="tag-label") 25-29
+
+                            input(type="checkbox" name="k[]" value="age30-34" class="tag-input" id="a3" checked)
+                            label(for="a3" class="tag-label") 30-34
+
+                            input(type="checkbox" name="k[]" value="age35-39" class="tag-input" id="a4" checked)
+                            label(for="a4" class="tag-label") 35-39
+
+                            input(type="checkbox" name="k[]" value="age40-44" class="tag-input" id="a5" checked)
+                            label(for="a5" class="tag-label") 40-44
+
+                            input(type="checkbox" name="k[]" value="age45-49" class="tag-input" id="a6" checked)
+                            label(for="a6" class="tag-label") 45-49
+
+                            input(type="checkbox" name="k[]" value="age50-54" class="tag-input" id="a7" checked)
+                            label(for="a7" class="tag-label") 50-54
+
+                            input(type="checkbox" name="k[]" value="age55-59" class="tag-input" id="a8" checked)
+                            label(for="a8" class="tag-label") 55-59
+
+                            input(type="checkbox" name="k[]" value="age60-65" class="tag-input" id="a9" checked)
+                            label(for="a9" class="tag-label") 60-65
+
+                    .lg-12.calculator__table
+                        .h2__title Данные по СРТ для вашей аудитории
+                        .row.calculator__table__header
+                            .lg-2 Станция
+                            .lg-2 Пресет
+                            .lg-2 Аудитория, тыс
+                            .lg-2 Стоимость МП, руб
+                            .lg-2 CPT, руб
+                            .lg-2 Охват, тыс
+
+                        .jc-cpt-inner
+
+
+
+
         footer
 
-        script(src='./js/main.min.js')
+
+        script(src='./js/main.js')

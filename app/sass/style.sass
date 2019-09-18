@@ -33,8 +33,9 @@ html
   -ms-overflow-style: scrollbar
 
 body
-  font: normal 16px/1em 'Roboto', sans-serif
+  font: 100 14px/1em 'Roboto', sans-serif
   line-height: 1.5
+  color: #828589
 
 *::before,
 *::after
@@ -51,8 +52,16 @@ textarea
   &:focus
     outline: none
 
-h1, h2, h3
-  font: normal 28px/1em 'Roboto', sans-serif
+h1
+  font-size: 34px
+  line-height: 50px
+  color: #FFFFFF
+  margin: 0
+
+h2, h3
+  font-size: 28px
+  line-height: 50px
+  color: #000000
 
 a
   text-decoration: none
@@ -68,6 +77,7 @@ img
   max-width: 100%
   width: auto
   height: auto
+  vertical-align: middle
 
 div
   box-sizing: border-box
@@ -89,9 +99,104 @@ div
   @include x_large
     width: 1140px
 
+.btn
+  background: #FFFFFF
+  border-radius: 100px
+  border: none
+  box-shadow: 0 6px 15px hsla(6,59%,62%,.8)
+  color: #FF6351
+  width: 150px
+  height: 40px
+  cursor: pointer
+
 header
-  nav
+  .header__navbar
+    position: absolute
+    top: 0
+    width: 100%
+    padding: 30px 0
+    font-size: 16px
+    a
+      color: #FFFFFF
+    .row
+      align-items: center
+  .header__navbar__menu
+    display: flex
+    justify-content: space-between
+    a
+      padding-right: 50px
+      &:last-child
+        padding-right: 0
 
 
-#banner
+.header__banner
   background: linear-gradient(107.45deg, #DF6598 1.5%, #857BE4 73.76%)
+  font-size: 16px
+  color: #FFFFFF
+  padding-top: 200px
+  .banner__img
+    position: absolute
+    right: 0
+    top: 0
+    width: 43%
+
+.title
+  display: flex
+  flex-direction: column
+  padding: 90px 0
+  span
+    &.h1__title
+      font-size: 28px
+      line-height: 50px
+      color: #000000
+      position: relative
+      &::after
+        content: ''
+        position: absolute
+        bottom: -10px
+        width: 125px
+        height: 5px
+        background: linear-gradient(270deg, #DE6598 0%, rgba(222, 101, 152, 0) 100%)
+    &.sub__title
+      font-size: 16px
+      line-height: 24px
+      color: #DE6598
+      letter-spacing: 0.05em
+.is-about__item
+  padding: 0 40px
+  .icon
+    padding: 20px 0
+    position: relative
+    display: inline-block
+    &::after
+      content: ''
+      position: absolute
+      top: -12px
+      right: -39px
+      width: 84px
+      height: 84px
+      border-radius: 50%
+      z-index: -10
+    &.benefit
+      &::after
+        background: #E9E5FF
+    &.transparency
+      &::after
+        background: #EAF4FD
+    &.efficiency
+      &::after
+        background: #FDF3EA
+  .title__item
+    font-size: 18px
+    line-height: 50px
+    color: #313639
+  .desc
+    font-size: 14px
+    line-height: 22px
+
+.is-partners__item
+  background: linear-gradient(99.68deg, #DD6599 1.5%, #897BE2 73.76%)
+  box-shadow: 0px 20px 30px #8a7ae080
+  border-radius: 50%
+  width: 150px
+  height: 150px

@@ -9,35 +9,142 @@
   </head>
   <body>
     <header>
-      <div class="container"><img class="logo" src="#">
-        <nav>
-          <ul class="nav_menu nav_left">
-            <li><a href="#">О сервисе</a></li>
-            <li><a href="#">Партнеры</a></li>
-            <li><a href="#">Радио</a></li>
-          </ul>
-          <ul class="nav_menu nav_right">
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Контакты</a></li>
-          </ul>
-        </nav>
-        <button class="btn" id="feedback">Связаться</button>
+      <div class="header__navbar">
+        <div class="container">
+          <div class="row">
+            <div class="logo lg-auto"><img src="./img/LOGO.svg"></div>
+            <div class="header__navbar__menu lg-9">
+              <div class="navbar__left"><a href="#">О сервисе</a><a href="#">Партнеры</a><a href="#">Радио</a></div>
+              <div class="navbar__right"><a href="#">FAQ</a><a href="#">Контакты</a></div>
+            </div>
+            <div class="header__feedback lg-auto text_right">
+              <button class="btn" id="feedback">Связаться</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__banner">
+        <div class="container">
+          <div class="row">
+            <div class="left__side__banner lg-6">
+              <h1>OpenSpot - размещение рекламы по справедливой цене</h1>
+              <p>Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения.</p>
+              <div class="btn__banner">
+                <button class="btn">Начать</button>
+                <button class="btn btn_transp">Узнать больше</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner__img"><img src="./img/banner.png"></div>
       </div>
     </header>
-    <section id="banner">
+    <div class="section is-about">
       <div class="container">
-        <div class="left_side">
-          <h1>OpenSpot - размещение рекламы по справедливой цене</h1>
-          <p class="desc">Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения.</p>
-          <button class="btn">Начать</button>
-          <button class="btn btn_transp">Узнать больше</button>
-        </div>
-        <div class="right_side">
-          <div class="img" src=""></div>
+        <div class="title text_center"><span class="sub__title">Что мы предлагаем?</span><span class="h1__title">Что такое OpenSpot?</span></div>
+        <div class="row is-about__wrapper">
+          <div class="lg-4 is-about__item text_center">
+            <div class="icon benefit"><img src="./img/benefit.svg"></div>
+            <div class="title__item">Выгода</div>
+            <div class="desc">Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения, а рекламораспространителям допродавть свой свободный инвентарь.</div>
+          </div>
+          <div class="lg-4 is-about__item text_center">
+            <div class="icon transparency"><img src="./img/benefit.svg"></div>
+            <div class="title__item">Прозрачность</div>
+            <div class="desc">Прозрачная система позволяет оценивать все каналы оффлайн рекламы и выбирать наиболее эффективные.</div>
+          </div>
+          <div class="lg-4 is-about__item text_center">
+            <div class="icon efficiency"><img src="./img/benefit.svg"></div>
+            <div class="title__item">Эффективность</div>
+            <div class="desc">Благодаря интеграции исследований в платформу, клиенты получают детализированную информацию для планирования рекламной кампании и могут распределять свои рекламные бюджеты наиболее эффективно.</div>
+          </div>
         </div>
       </div>
-    </section>
+      <div class="section is-partners">
+        <div class="container">
+          <div class="row">
+            <div class="lg-4">
+              <div class="title text_left"><span class="sub__title">С кем мы работаем?</span><span class="h1__title">Наши партнеры</span></div>
+              <div class="desc">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.</div>
+            </div>
+            <div class="lg-8 is-partners__wrapper">
+              <div class="is-partners__item"></div>
+              <div class="is-partners__item"></div>
+              <div class="is-partners__item"></div>
+              <div class="is-partners__item"></div>
+              <div class="is-partners__item"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section is-radio">
+        <div class="container">
+          <div class="row">
+            <div class="lg-6"></div>
+            <div class="lg-6">
+              <div class="title text_left"><span class="sub__title">Что мы предлагаем?</span><span class="h1__title">Реклама на радио</span></div>
+              <div class="desc">Благодаря интеграции исследований в платформу, клиенты получают детализированную информацию для планирования рекламной кампании и могут распределять свои рекламные бюджеты наиболее эффективно.</div>
+            </div>
+          </div>
+          <form class="calculator row ajax-form js-cpt-calculator" method="get" action="http://178.172.173.58/cpt" data-noreload data-response=".js-cpt-inner">
+            <input type="hidden" name="_token" value="Ng2x5rCQH887LZke6E8C7SdqeUT8fYem8Szt2r7q">
+            <div class="lg-6">
+              <div class="h2__title">Интересующий регион</div>
+              <div class="tags">
+                <input class="tag-input" type="checkbox" name="k[]" value="minsk" id="rMinsk" checked>
+                <label class="tag-label" for="rMinsk">Минск</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="obl" id="rObl" checked>
+                <label class="tag-label" for="rObl">Областные центры</label>
+              </div>
+            </div>
+            <div class="lg-6">
+              <div class="h2__title">Пол</div>
+              <div class="tags">
+                <input class="tag-input" type="checkbox" name="k[]" value="male" id="sM" checked>
+                <label class="tag-label" for="sM">Мужской</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="female" id="sF" checked>
+                <label class="tag-label" for="sF">Женский</label>
+              </div>
+            </div>
+            <div class="lg-12"></div>
+            <div class="h2__title">Возраст</div>
+            <div class="tags">
+              <input class="tag-input" type="checkbox" name="k[]" value="age18-24" id="a1" checked>
+              <label class="tag-label" for="a1">18-24</label>
+              <input class="tag-input" type="checkbox" name="k[]" value="age25-29" id="a2" checked>
+              <label class="tag-label" for="a2">25-29</label>
+              <input class="tag-input" type="checkbox" name="k[]" value="age30-34" id="a3" checked>
+              <label class="tag-label" for="a3">30-34</label>
+              <input class="tag-input" type="checkbox" name="k[]" value="age35-39" id="a4" checked>
+              <label class="tag-label" for="a4">35-39</label>
+              <input class="tag-input" type="checkbox" name="k[]" value="age40-44" id="a5" checked>
+              <label class="tag-label" for="a5">40-44</label>
+              <input class="tag-input" type="checkbox" name="k[]" value="age45-49" id="a6" checked>
+              <label class="tag-label" for="a6">45-49</label>
+              <input class="tag-input" type="checkbox" name="k[]" value="age50-54" id="a7" checked>
+              <label class="tag-label" for="a7">50-54</label>
+              <input class="tag-input" type="checkbox" name="k[]" value="age55-59" id="a8" checked>
+              <label class="tag-label" for="a8">55-59</label>
+              <input class="tag-input" type="checkbox" name="k[]" value="age60-65" id="a9" checked>
+              <label class="tag-label" for="a9">60-65</label>
+            </div>
+          </form>
+          <div class="lg-12 calculator__table">
+            <div class="h2__title">Данные по СРТ для вашей аудитории</div>
+            <div class="row calculator__table__header">
+              <div class="lg-2">Станция</div>
+              <div class="lg-2">Пресет</div>
+              <div class="lg-2">Аудитория, тыс</div>
+              <div class="lg-2">Стоимость МП, руб</div>
+              <div class="lg-2">CPT, руб</div>
+              <div class="lg-2">Охват, тыс</div>
+            </div>
+            <div class="jc-cpt-inner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer></footer>
-    <script src="./js/main.min.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
