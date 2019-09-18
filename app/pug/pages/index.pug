@@ -1,0 +1,35 @@
+doctype html
+html(lang='UTF-8')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title Test
+        link(href='./css/normalize.min.css', rel='stylesheet')
+        link(href='./css/style.min.css', rel='stylesheet')
+
+    body
+
+        header
+            .container
+                img.logo(src="#")
+                nav
+                    ul.nav_menu.nav_left
+                        li: a(href='#') О сервисе
+                        li: a(href='#') Партнеры
+                        li: a(href='#') Радио
+                    ul.nav_menu.nav_right
+                        li: a(href='#') FAQ
+                        li: a(href='#') Контакты
+                button#feedback.btn Связаться
+        section#banner
+            .container
+                .left_side
+                    h1 OpenSpot - размещение рекламы по справедливой цене
+                    p.desc Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения.
+                    button.btn Начать
+                    button.btn.btn_transp Узнать больше
+                .right_side
+                    .img(src='')
+        footer
+
+        script(src='./js/main.min.js')

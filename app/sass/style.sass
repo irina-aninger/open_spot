@@ -1,0 +1,97 @@
+@import 'fonts.sass'
+@import 'grid.sass'
+
+//MIXIN
+@mixin x_large
+  @media (min-width: 1200px)
+    @content
+
+@mixin large
+  @media (min-width: 992px)
+    @content
+
+@mixin medium
+  @media (min-width: 768px)
+    @content
+
+@mixin small
+  @media (min-width: 576px)
+    @content
+
+@mixin xs_small
+  @media (max-width: 575px)
+    @content
+//END MIXIN
+
+
+//ANIMATION
+//END ANIMATION
+
+
+html
+  box-sizing: border-box
+  -ms-overflow-style: scrollbar
+
+body
+  font: normal 16px/1em 'Roboto', sans-serif
+  line-height: 1.5
+
+*::before,
+*::after
+  box-sizing: inherit
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+::-ms-input-placeholder
+  color: inherit
+
+button,
+input,
+textarea
+  &:focus
+    outline: none
+
+h1, h2, h3
+  font: normal 28px/1em 'Roboto', sans-serif
+
+a
+  text-decoration: none
+  cursor: pointer
+
+ul,
+li
+  padding: 0
+  margin: 0
+  list-style: none
+
+img
+  max-width: 100%
+  width: auto
+  height: auto
+
+div
+  box-sizing: border-box
+
+.container
+  width: 100%
+  padding-right: 15px
+  padding-left: 15px
+  margin-right: auto
+  margin-left: auto
+  @include xs_small
+    width: auto
+  @include small
+    width: 540px
+  @include medium
+    width: 720px
+  @include large
+    width: 960px
+  @include x_large
+    width: 1140px
+
+header
+  nav
+
+
+#banner
+  background: linear-gradient(107.45deg, #DF6598 1.5%, #857BE4 73.76%)

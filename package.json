@@ -1,0 +1,36 @@
+{
+  "name": "open_spot",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Irina Petrushenko",
+  "description": "grid layout",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irina-aninger/grid-layout.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irina-aninger/grid-layout/issues"
+  },
+  "homepage": "https://github.com/irina-aninger/grid-layout#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-changed": "^4.0.1",
+    "gulp-critical-css": "^1.0.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-imagemin": "^6.1.0",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uncss": "^1.0.6"
+  }
+}
