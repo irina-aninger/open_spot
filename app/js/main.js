@@ -14,5 +14,5 @@ window.addEventListener('scroll', function () {
 
 // parallax
 
-var scene = document.getElementById('scene');
-var parallaxInstance = new Parallax(scene);
+let scene = document.getElementById('elipse__wrapper');
+let parallaxInstance = new Parallax(scene);

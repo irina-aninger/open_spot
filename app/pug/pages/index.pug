@@ -28,6 +28,12 @@ html(lang='UTF-8')
                         .header__feedback.lg-auto.text_right
                             a#feedback.btn(href='#' style='box-shadow: 0 6px 15px #C27E3E') Связаться
             .header__banner
+                ul#elipse__wrapper(data-relative-input="true" )
+                    li(data-depth="0.2"): img(src='/img/elipse_1.svg')
+                    li(data-depth="0.6"): img(src='/img/elipse_2.svg')
+                    li(data-depth="1"): img(src='/img/elipse_3.svg')
+                    li(data-depth="1.4"): img(src='/img/elipse_4.svg')
+                    li(data-depth="1.8"): img(src='/img/elipse_5.svg')
                 .container
                     .row
                         .left__side__banner.lg-6
@@ -437,10 +443,6 @@ html(lang='UTF-8')
                             li: a(href=""): img(src="./img/tw.svg")
                             li: a(href=""): img(src="./img/vk.svg")
 
-
-            #scene(data-relative-input="true" )
-                div(data-depth="0.2") My first Layer!
-                div(data-depth="0.6") My second Layer!
 
 
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')

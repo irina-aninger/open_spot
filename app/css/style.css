@@ -612,6 +612,18 @@ header .header__navbar__menu {
   height: 1060px;
   background-size: cover;
   position: relative; }
+  .header__banner #elipse__wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; }
+    .header__banner #elipse__wrapper li {
+      width: 100%;
+      height: 100%; }
+      .header__banner #elipse__wrapper li:nth-child(1) img {
+        position: absolute;
+        left: 55%;
+        top: 45%; }
   .header__banner .banner__img {
     position: absolute;
     right: 0;
