@@ -560,21 +560,24 @@ header .header__navbar__menu {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 46px 0; }
-  .title span.h1__title {
-    font-size: 28px;
-    line-height: 50px;
-    color: #000000;
-    position: relative; }
-    .title span.h1__title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      width: 125px;
-      height: 5px;
-      background: -webkit-gradient(linear, right top, left top, from(#DE6598), to(rgba(222, 101, 152, 0)));
-      background: -o-linear-gradient(right, #DE6598 0%, rgba(222, 101, 152, 0) 100%);
-      background: linear-gradient(270deg, #DE6598 0%, rgba(222, 101, 152, 0) 100%); }
+  margin: 46px 0;
+  font-size: 28px;
+  line-height: 50px;
+  color: #000000;
+  position: relative; }
+  .title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 125px;
+    height: 5px;
+    background: -webkit-gradient(linear, right top, left top, from(#DE6598), to(rgba(222, 101, 152, 0)));
+    background: -o-linear-gradient(right, #DE6598 0%, rgba(222, 101, 152, 0) 100%);
+    background: linear-gradient(270deg, #DE6598 0%, rgba(222, 101, 152, 0) 100%); }
+  .title.text_center::after {
+    right: 0;
+    left: 0;
+    margin: auto; }
   .title span.sub__title {
     font-size: 16px;
     line-height: 24px;
@@ -763,7 +766,8 @@ header .header__navbar__menu {
     padding: 8px 31px; }
 
 .faq__items {
-  margin-right: 70px; }
+  margin-right: 70px;
+  padding-top: 20px; }
   .faq__items .faq__item {
     background: #f8f8f8;
     -webkit-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.04);
@@ -842,6 +846,24 @@ header .header__navbar__menu {
       padding: 0;
       -webkit-box-shadow: none;
               box-shadow: none; }
+
+.title__form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 28px;
+  line-height: 50px; }
+  .title__form span.sub__title {
+    font-size: 16px;
+    line-height: 2;
+    padding-top: 20px;
+    padding-bottom: 20px; }
 
 footer {
   background: #15262D;
