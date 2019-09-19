@@ -31,9 +31,10 @@
 html
   box-sizing: border-box
   -ms-overflow-style: scrollbar
+  scroll-behavior: smooth
 
 body
-  font: 100 14px/1em 'Roboto', sans-serif
+  font: 100 14px/1em 'Roboto Light', sans-serif
   line-height: 1.5
   color: #828589
 
@@ -41,10 +42,10 @@ body
 *::after
   box-sizing: inherit
 
-::-webkit-input-placeholder,
-::-moz-placeholder,
-::-ms-input-placeholder
-  color: inherit
+input::placeholder
+  color: #FFFFFF
+  opacity: 1
+  font-style: italic
 
 button,
 input,
@@ -53,9 +54,10 @@ textarea
     outline: none
 
 h1
-  font-size: 34px
+  font: 34px Roboto, sans-serif
   line-height: 50px
   color: #FFFFFF
+  padding-bottom: 8px
   margin: 0
 
 h2, h3
@@ -97,23 +99,37 @@ div
   @include large
     width: 960px
   @include x_large
-    width: 1140px
+    width: 1180px
 
 .btn
+  font: 16px 'Roboto Light', sans-serif
   background: #FFFFFF
   border-radius: 100px
   border: none
-  box-shadow: 0 6px 15px hsla(6, 59%, 62%, .8)
-  color: #FF6351
+  color: #493F7B
   width: 150px
   height: 40px
+  display: flex
+  align-items: center
+  justify-content: center
   cursor: pointer
+  transition: .1s
 
   &.btn_transp
     background: transparent
     border: 1px solid #FFFFFF
     color: #FFFFFF
     box-shadow: none
+
+    &:hover
+      color: #493F7B
+      border: 1px solid #493F7B
+      background: transparent
+      box-shadow: 0 6px 15px rgba(210, 84, 146, 0.89)
+
+  &:hover
+    background: #493F7B
+    color: #FFFFFF
 
 header
   .header__navbar
@@ -123,9 +139,23 @@ header
     padding: 30px 0
     font-size: 16px
     z-index: 10
+    transition: .2s
+
+    &.fixed
+      position: fixed
+      background: rgba(0, 0, 0, 0.6)
+      backdrop-filter: blur(10px)
+      padding: 13px 0
+
+      .btn
+        box-shadow: 0 6px 15px rgba(137, 123, 226, 0.4) !important
 
     a
       color: #FFFFFF
+      &.btn
+        color: #493f7b
+        &:hover
+          color: #ffffff
 
     .row
       align-items: center
@@ -137,23 +167,35 @@ header
     a
       padding-right: 50px
 
+      &:first-child
+        padding-left: 20px
+
       &:last-child
         padding-right: 0
 
 
 .header__banner
-  background: linear-gradient(107.45deg, #DF6598 1.5%, #857BE4 73.76%)
+  background-image: url("/img/background.svg")
   font-size: 16px
-  color: #FFFFFF
+  color: #fff
   padding: 200px 0
+  height: 1060px
+  background-size: cover
+  position: relative
 
   .banner__img
     position: absolute
     right: 0
     top: 0
-    width: 43%
+    height: 100%
+    z-index: -10
+    img
+      height: 90%
 
 .btn__banner
+  padding-top: 20px
+  display: flex
+
   .btn
     margin-right: 20px
 
@@ -161,16 +203,27 @@ header
       margin-right: 0
 
 .section
-  margin-bottom: 170px
+  padding-top: 100px
+  margin-bottom: 100px
+  &:first-child
+    padding-top: 0
 
 .title
+  font: 28px Roboto, sans-serif
   display: flex
   flex-direction: column
   margin: 46px 0
-  font-size: 28px
+  //font-size: 28px
   line-height: 50px
   color: #000000
   position: relative
+
+  @include xs_small
+    text-align: center !important
+    &::after
+      right: 0
+      left: 0
+      margin: auto
 
   &::after
     content: ''
@@ -193,6 +246,22 @@ header
       line-height: 24px
       color: #DE6598
       letter-spacing: 0.05em
+
+#is-about
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    right: 0
+    top: 18%
+    width: 489px
+    height: 670px
+    background-image: url("data:image/svg+xml,%3Csvg width='486' height='654' viewBox='0 0 486 654' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse opacity='0.3' cx='307' cy='405' rx='249' ry='249' transform='rotate(-90 307 405)' fill='url(%23paint0_linear)'/%3E%3Ccircle opacity='0.3' cx='299' cy='299' r='299' transform='rotate(-90 299 299)' fill='url(%23paint1_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='307' y1='156' x2='307' y2='654' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='299' y1='0' x2='299' y2='598' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
+    background-repeat: no-repeat
+    z-index: -10
+
+.is-about__wrapper
+  padding-top: 40px
 
 .is-about__item
   padding: 0 40px
@@ -225,9 +294,10 @@ header
         background: #FDF3EA
 
   .title__item
-    font-size: 18px
+    font: 18px Roboto, sans-serif
     line-height: 50px
     color: #313639
+    padding-bottom: 6px
 
   .desc
     font-size: 14px
@@ -243,13 +313,23 @@ header
 .is-partners__item
   position: absolute
   background: linear-gradient(99.68deg, #DD6599 1.5%, #897BE2 73.76%)
-  box-shadow: 0px 20px 30px #8a7ae0 80
+  box-shadow: 0 20px 30px rgba(138, 122, 224, 0.5)
   border-radius: 50%
   width: 150px
   height: 150px
   display: flex
   justify-content: center
   align-items: center
+
+  @include xs_small
+    position: inherit
+    width: 120px !important
+    height: 120px !important
+    left: 0 !important
+    right: 0 !important
+    top: 0 !important
+    bottom: 0 !important
+
 
   &.item_1
     left: 0
@@ -279,17 +359,69 @@ header
     right: 160px
     bottom: 10px
 
+#is-radio
+  margin-bottom: 114px
+
+.screen__wrapper
+  position: relative
+  padding: 26px 10px 10px 10px
+  background: linear-gradient(106.36deg, #DE6599 1.5%, #877BE3 73.76%)
+  box-shadow: 0 12px 40px rgba(138, 122, 224, 0.5)
+  border-radius: 10px
+
+  .sub__screen
+    position: absolute
+    right: 25px
+    bottom: -70px
+
+.text__wrapper
+  padding-left: 90px
+  position: relative
+
+  &::before
+    content: ''
+    position: absolute
+    left: -22%
+    top: -68%
+    width: 498px
+    height: 498px
+    background-image: url("data:image/svg+xml,%3Csvg width='498' height='498' viewBox='0 0 498 498' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse opacity='0.5' cx='249' cy='249' rx='249' ry='249' transform='rotate(-90 249 249)' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='249' y1='-1.52588e-05' x2='249' y2='498' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
+    z-index: -10
+
 .form__wrapper
   background: #F8F8F8
   border-radius: 15px
   padding: 20px
-  margin-top: 200px
+  margin-top: 244px
+  box-shadow: 10px 40px 50px 0px #e9e9e9
+  margin-left: -15px
+  margin-right: -15px
+  position: relative
+
+  @include xs_small
+    margin-left: 0px
+    margin-right: 0px
+
+  &::after
+    content: ''
+    position: absolute
+    left: -16%
+    bottom: -12%
+    width: 498px
+    height: 504px
+    background-image: url("data:image/svg+xml,%3Csvg width='507' height='504' viewBox='0 0 507 504' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse opacity='0.5' cx='249' cy='249' rx='249' ry='249' transform='rotate(-90 249 249)' fill='url(%23paint0_linear)'/%3E%3Cellipse opacity='0.5' cx='258' cy='255' rx='249' ry='249' transform='rotate(-90 258 255)' fill='url(%23paint1_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='249' y1='-1.52588e-05' x2='249' y2='498' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FFE6E6'/%3E%3Cstop offset='1' stop-color='%23FFE6E6' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='258' y1='5.99998' x2='258' y2='504' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
+    z-index: -10
 
   .form__title
     font-size: 28px
+    font-weight: 600
     line-height: 50px
     color: #000000
     padding: 23px 0
+
+    @include xs_small
+      font-size: 18px
+      padding: 0
 
 .calculator
   .h2__title
@@ -313,6 +445,7 @@ header
     &.tags__input
       .tag-input
         width: 0
+        display: none
 
         & + [for]
           position: relative
@@ -326,28 +459,35 @@ header
             height: 16px
             border: 1px solid rgba(1, 1, 1, 0.54)
             border-radius: 2px
+            box-sizing: border-box
 
         &:checked + [for]
           &::before
-            border: 1px solid #DF6598
-            background: #DF6598
+            border: none
 
           &::after
-            content: '✔'
+            content: ''
             position: absolute
+            width: 16px
+            height: 16px
             top: 0px
-            left: 4px
-            color: #f8f8f8
+            left: 0
+            background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.2222 0H1.77778C0.8 0 0 0.8 0 1.77778V14.2222C0 15.2 0.8 16 1.77778 16H14.2222C15.2 16 16 15.2 16 14.2222V1.77778C16 0.8 15.2 0 14.2222 0V0ZM6.22222 12.4444L1.77778 8.17094L3.02222 6.97436L6.22222 10.0513L12.9778 3.55556L14.2222 4.75214L6.22222 12.4444V12.4444Z' fill='%23DF6598'/%3E%3C/svg%3E")
 
       label
+        font: 14px 'Roboto', sans-serif
         padding-left: 23px
 
     &.tags__radio
+      @include xs_small
+        flex-wrap: nowrap
       label
+        font: 14px 'Roboto', sans-serif
         margin-right: 0
 
       .tag-input
         width: 0
+        display: none
 
         & + [for]
           padding: 10px 18px
@@ -357,30 +497,163 @@ header
           border-radius: 7px
           color: #493F7B
 
+.calculator__table
+  overflow: hidden
+
 .calculator__table__header
   align-items: flex-end
   border-bottom: 1px solid #CBCBCB
+  padding-bottom: 5px
+
+  @include xs_small
+    align-items: flex-start
 
   .th
     font-size: 12px
     line-height: 22px
     color: #828589
 
+    @include xs_small
+      &:nth-child(n+4)
+        display: none
+
+.stock__title
+  font-weight: 600
+  font-size: 18px
+  line-height: 50px
+  color: #313639
+  padding-bottom: 15px
+
+.stock__wrapper
+  margin-bottom: 41px
+  margin-left: -10px
+  margin-right: -10px
+  line-height: 22px
+
+  @include xs_small
+    flex-wrap: nowrap
+
+.stock__item
+  padding-right: 10px
+  padding-left: 10px
+
+  @include xs_small
+    padding-right: 15px
+    padding-left: 15px
+
+  > div
+    padding: 13px
+    padding-bottom: 30px
+    color: #FFFFFF
+    background: linear-gradient(90deg, #FF978B 0%, #DC669B 100%)
+    border-radius: 10px
+
+  &:nth-child(1)
+    > div
+      background: linear-gradient(90deg, #FF978B 0%, #DC669B 100%)
+      box-shadow: 0px 12px 30px rgba(255, 99, 81, 0.61)
+
+    .btn
+      box-shadow: 0 6px 15px rgba(215, 111, 99, 0.8)
+
+  &:nth-child(2)
+    > div
+      background: linear-gradient(270deg, #FF9458 0%, #FF825A 100%)
+      box-shadow: 0px 12px 30px rgba(255, 166, 74, 0.6)
+
+    .btn
+      box-shadow: 0 6px 15px rgba(215, 111, 99, 0.8)
+
+  &:nth-child(3)
+    > div
+      background: linear-gradient(270deg, #877BE3 0%, #71AAFF 100%)
+      box-shadow: 0px 12px 30px rgba(87, 179, 255, 0.6)
+
+    .btn
+      box-shadow: 0 6px 15px rgba(108, 99, 215, 0.8)
+
+  &:nth-child(4)
+    > div
+      background: linear-gradient(270deg, #6FA8B3 0%, #59BCD1 100%)
+      box-shadow: 0px 12px 30px rgba(65, 200, 182, 0.6)
+
+    .btn
+      box-shadow: 0 6px 15px rgba(99, 166, 215, 0.8)
+
+  .stock__head
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-bottom: 16px
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15)
+
+    .logo
+      width: 90px
+      height: 58px
+      background: rgba(255, 255, 255, 0.23)
+      border-radius: 5px
+      padding: 8px 11px
+      display: flex
+      align-items: center
+      justify-content: center
+
+    .sale
+      font-size: 24px
+      font-weight: 600
+
+  .property
+    padding-top: 10px
+    padding-bottom: 25px
+
+    li
+      display: flex
+      justify-content: space-between
+      align-items: center
+      font-size: 12px
+      font-weight: 100
+      padding-bottom: 8px
+
+      &:last-child
+        padding-bottom: 0
+
+      span
+        font: 14px 'Roboto', sans-serif
+
+  .btn
+    width: 150px
+    height: 40px
+    font-size: 16px
+    text-align: center
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 0 auto
+
 .jc-cpt-inner
-  font-size: 14px
+  font: 14px 'Roboto', sans-serif
   line-height: 50px
   color: #313639
 
   .row
     padding: 8px 0
     border-bottom: 1px solid rgba(203, 203, 203, 0.25)
+    align-items: center
 
     &:last-child
       border-bottom: none
 
+    div
+      &:last-child
+        padding-right: 0
+
+  .td
+    @include xs_small
+      &:nth-child(n+4)
+        display: none
+
   a
     &.btn
-      font-size: 16px
+      font: 16px 'Roboto Light', sans-serif
       line-height: 24px
       color: #493F7B
       border: 1px solid #493F7B
@@ -388,14 +661,46 @@ header
       background: transparent
       box-shadow: none
       padding: 8px 31px
+      display: inline
+      &:hover
+        background: #493F7B
+        color: #ffffff
+        box-shadow: 0 6px 15px rgba(73, 63, 123, 0.47)
+
+  span
+    font: 14px 'Roboto Light', sans-serif
+    width: 80px
+    height: 22px
+    color: #fff
+    background: #dc669b
+    border-radius: 100px
+    display: flex
+    justify-content: center
+    align-items: center
+
+#is-faq
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    right: 0
+    top: -11%
+    width: 598px
+    height: 598px
+    background-image: url("data:image/svg+xml,%3Csvg width='545' height='598' viewBox='0 0 545 598' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle opacity='0.3' cx='299' cy='299' r='299' transform='rotate(-90 299 299)' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='299' y1='0' x2='299' y2='598' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
+    background-repeat: no-repeat
+    z-index: -10
+
+.faq__wrapper
+  .title
+    margin-top: 0
 
 .faq__items
-  margin-right: 70px
   padding-top: 20px
 
   .faq__item
     background: #f8f8f8
-    box-shadow: 0 4px 7px rgba(0, 0, 0, .04)
+    box-shadow: 0 8px 43px 8px rgba(148,75,66,.11)
     border-radius: 7px
     border: none
     width: 100%
@@ -453,6 +758,15 @@ header
   background: linear-gradient(99.54deg, #DC669A 1.5%, #877BE3 73.76%)
   border-radius: 7px
   padding: 41px
+  width: 480px
+  height: 487px
+  margin-left: 90px
+  box-sizing: border-box
+
+  @include xs_small
+    width: 100%
+    margin-left: 0
+    padding: 28px
 
   input
     background: none
@@ -462,6 +776,7 @@ header
     box-sizing: border-box
     margin-bottom: 30px
     padding: 0px 0px 15px 0px
+    color: #ffffff
 
     &[type="submit"]
       width: 150px
@@ -469,23 +784,86 @@ header
       font-size: 16px
       color: #DE6598
       background: #FFFFFF
-      margin: 40px 0 30px 0
+      box-shadow: rgba(138, 122, 224, 0.8)
+      margin: 0 auto
+      margin-top: 13px
+      margin-bottom: 20px
       padding: 0
-      box-shadow: none
+      border: none
+      &:hover
+        background: #493F7B
+        color: #ffffff
 
 .title__form
   display: flex
   flex-direction: column
-  font-size: 28px
+  font: 28px 'Roboto', sans-serif
   line-height: 50px
+
+  @include xs_small
+    font-size: 26px
 
   span
     &.sub__title
-      font-size: 16px
+      font: 16px 'Roboto Thin', sans-serif
       line-height: 2
-      padding-top: 20px
-      padding-bottom: 20px
+      padding-top: 10px
+      padding-bottom: 30px
+
+      @include xs_small
+        padding-bottom: 40px
 
 footer
   background: #15262D
   padding: 50px 0
+  font-size: 12px
+  line-height: 22px
+  color: #FFFFFF
+  overflow: hidden
+
+  a
+    color: #FFFFFF
+
+  .logo
+    padding-top: 15px
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      bottom: -65px
+      right: -25px
+      width: 354px
+      height: 280px
+      background-image: url("data:image/svg+xml,%3Csvg width='355' height='282' viewBox='0 0 355 282' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='177.78' cy='177.78' r='177' transform='rotate(75 177.78 177.78)' fill='url(%23paint0_linear)' fill-opacity='0.07'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='177.78' y1='0.779846' x2='177.78' y2='354.78' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='white'/%3E%3Cstop offset='1' stop-color='white' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
+
+  .footer__navbar
+    display: flex
+    flex-direction: column
+
+    a
+      padding-bottom: 10px
+
+  .footer__contact
+    display: flex
+    flex-direction: column
+    font-weight: 100
+
+  .footer__adress
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      bottom: 0px
+      right: -145px
+      width: 354px
+      height: 356px
+      background-image: url("data:image/svg+xml,%3Csvg width='355' height='355' viewBox='0 0 355 355' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='177.78' cy='177.78' r='177' transform='rotate(75 177.78 177.78)' fill='url(%23paint0_linear)' fill-opacity='0.07'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='177.78' y1='0.779846' x2='177.78' y2='354.78' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='white'/%3E%3Cstop offset='1' stop-color='white' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
+
+  .soc_link
+    display: flex
+
+    li
+      padding-right: 26px
+
+      &:last-child
+        padding-right: 0
