@@ -14,7 +14,8 @@ html(lang='UTF-8')
             .header__navbar
                 .container
                     .row
-                        .logo.lg-auto
+                        .burger.md-4: span
+                        .logo.lg-auto.md-4
                             img(src='./img/LOGO.svg')
                         .header__navbar__menu.lg-9
                             .navbar__left
@@ -27,6 +28,8 @@ html(lang='UTF-8')
                                 a(href='#contact') Контакты
                         .header__feedback.lg-auto.text_right
                             a#feedback.btn(href='#' style='box-shadow: 0 6px 15px #C27E3E') Связаться
+                        .header__phone.md-4
+                            a(href="tel:+375291234567")
             .header__banner
                 ul#elipse__wrapper(data-relative-input="true" )
                     li(data-depth="0.2"): img(src='/img/elipse_1.svg')
@@ -36,7 +39,7 @@ html(lang='UTF-8')
                     li(data-depth="1.8"): img(src='/img/elipse_5.svg')
                 .container
                     .row
-                        .left__side__banner.lg-6
+                        .left__side__banner.lg-6.md-12
                             h1.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") OpenSpot - размещение рекламы по справедливой цене
                             p.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="2s") Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения.
                             .btn__banner.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="3s")
@@ -51,15 +54,15 @@ html(lang='UTF-8')
                     span.sub__title Что мы предлагаем?
                     | Что такое OpenSpot?
                 .row.is-about__wrapper
-                    .lg-4.is-about__item.text_center
+                    .lg-4.md-12.is-about__item.text_center
                         .icon.benefit: img(src='./img/benefit.svg')
                         .title__item.wow.fadeInUp(data-wow-duration="1s") Выгода
                         .desc.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения, а рекламораспространителям допродавть свой свободный инвентарь.
-                    .lg-4.is-about__item.text_center
+                    .lg-4.md-12.is-about__item.text_center
                         .icon.transparency: img(src='./img/transparency.svg')
                         .title__item.wow.fadeInUp(data-wow-duration="1s") Прозрачность
                         .desc.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") Прозрачная система позволяет оценивать все каналы оффлайн рекламы и выбирать наиболее эффективные.
-                    .lg-4.is-about__item.text_center
+                    .lg-4.md-12.is-about__item.text_center
                         .icon.efficiency: img(src='./img/efficiency.svg')
                         .title__item.wow.fadeInUp(data-wow-duration="1s") Эффективность
                         .desc.wow.fadeInUp.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") Благодаря интеграции исследований в платформу, клиенты получают детализированную информацию для планирования рекламной кампании и могут распределять свои рекламные бюджеты наиболее эффективно.
@@ -67,12 +70,12 @@ html(lang='UTF-8')
         #is-partners.section
             .container
                 .row
-                    .lg-4.is-partners__desc
+                    .lg-4.md-12.is-partners__desc
                         .title.text_left.wow.fadeInUp(data-wow-duration="1s")
                             span.sub__title С кем мы работаем?
                             | Наши партнеры
                         .desc.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
-                    .lg-8.is-partners__wrapper
+                    .lg-8.md-12.is-partners__wrapper
                         .is-partners__item.item_1
                             img(src='./img/logo_partner_1.png')
                         .is-partners__item.item_2
@@ -87,13 +90,13 @@ html(lang='UTF-8')
         #is-radio.section
             .container
                 .row
-                    .lg-6
+                    .lg-6.md-6.screen__section
                         .screen__wrapper
                             .main__screen
                                 img(src="/img/screen_1.png")
                             .sub__screen
                                 img(src="/img/screen_2.png")
-                    .lg-6
+                    .lg-6.md-6
                         .text__wrapper
                             .title.text_left.wow.fadeInUp(data-wow-duration="1s")
                                 span.sub__title Что мы предлагаем?
@@ -103,14 +106,14 @@ html(lang='UTF-8')
                     .form__title.text_left Реклама на радио
                     form(method="get" action="http://178.172.173.58/cpt" class="calculator row ajax-form js-cpt-calculator" data-noreload data-response=".js-cpt-inner")
                         input(type="hidden" name="_token" value="Ng2x5rCQH887LZke6E8C7SdqeUT8fYem8Szt2r7q")
-                        .lg-6.sm-6.form__box
+                        .lg-6.md-6.form__box
                             .h2__title Интересующий регион
                             .tags.tags__input
                                 input(type="checkbox" name="k[]" value="minsk" class="tag-input" id="rMinsk" checked)
                                 label(for="rMinsk" class="tag-label") Минск
                                 input(type="checkbox" name="k[]" value="obl" class="tag-input" id="rObl")
                                 label(for="rObl" class="tag-label") Областные центры
-                        .lg-6.sm-6.form__box
+                        .lg-6.md-6.form__box
                             .h2__title Пол аудитории
                             .tags.tags__input
                                 input(type="checkbox" name="k[]" value="male" class="tag-input" id="sM" checked)
@@ -171,7 +174,7 @@ html(lang='UTF-8')
 
                     .stock__title Акционные предложения
                         .row.stock__wrapper
-                            .lg-3.sm-11.stock__item
+                            .lg-3.md-10.stock__item
                                 div
                                     .stock__head
                                         .logo
@@ -186,7 +189,7 @@ html(lang='UTF-8')
                                         li Стоимость МП, руб
                                             span 254,61
                                     a.btn(href="javascript:;") Разместить
-                            .lg-3.sm-11.stock__item
+                            .lg-3.md-10.stock__item
                                 div
                                     .stock__head
                                         .logo
@@ -201,7 +204,7 @@ html(lang='UTF-8')
                                         li Стоимость МП, руб
                                             span 254,61
                                     a.btn(href="javascript:;") Разместить
-                            .lg-3.sm-11.stock__item
+                            .lg-3.md-10.stock__item
                                 div
                                     .stock__head
                                         .logo
@@ -216,7 +219,7 @@ html(lang='UTF-8')
                                         li Стоимость МП, руб
                                             span 254,61
                                     a.btn(href="javascript:;") Разместить
-                            .lg-3.sm-11.stock__item
+                            .lg-3.md-10.stock__item
                                 div
                                     .stock__head
                                         .logo
@@ -234,151 +237,151 @@ html(lang='UTF-8')
 
                     .calculator__table
                         .row.calculator__table__header
-                            .lg-2.sm-4.th Станция
-                            .lg-2.sm-4.th Пресет
+                            .lg-2.md-4.th Станция
+                            .lg-2.md-4.th Пресет
                                 span.th__filter
-                            .lg-1.sm-4.th Стоимость МП, руб
+                            .lg-1.md-4.th Стоимость МП, руб
                                 span.th__filter
-                            .lg-1.sm-4.th CPT, руб
+                            .lg-1.md-4.th CPT, руб
                                 span.th__filter
-                            .lg-1.sm-4.th Охват, тыс
+                            .lg-1.md-4.th Охват, тыс
                                 span.th__filter
-                            .lg-1.sm-4.th Время, сек
+                            .lg-1.md-4.th Время, сек
                                 span.th__filter
                             .lg-auto.th Количество выходов
                                 span.th__filter
-                            .lg-2.sm-4.th
+                            .lg-2.md-4.th
 
                         .jc-cpt-inner
                             .row
-                                .lg-2.sm-4.td Радио Рокс
-                                .lg-2.sm-4.td
+                                .lg-2.md-4.td Радио Рокс
+                                .lg-2.md-4.td
                                     span.preset Прайм
-                                .lg-1.sm-4.td 2985.75
-                                .lg-1.sm-4.td 254.61
-                                .lg-1.sm-4.td 0.72
-                                .lg-1.sm-4.td 0.72
+                                .lg-1.md-4.td 2985.75
+                                .lg-1.md-4.td 254.61
+                                .lg-1.md-4.td 0.72
+                                .lg-1.md-4.td 0.72
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
                             .row
-                                .lg-2.sm-4.td Радио Рокс
-                                .lg-2.sm-4.td
+                                .lg-2.md-4.td Радио Рокс
+                                .lg-2.md-4.td
                                     span.preset Прайм
-                                .lg-1.sm-4.td 2985.75
-                                .lg-1.sm-4.td 254.61
-                                .lg-1.sm-4.td 0.72
-                                .lg-1.sm-4.td 0.72
+                                .lg-1.md-4.td 2985.75
+                                .lg-1.md-4.td 254.61
+                                .lg-1.md-4.td 0.72
+                                .lg-1.md-4.td 0.72
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
                             .row
-                                .lg-2.sm-4.td Радио Рокс
-                                .lg-2.sm-4.td
+                                .lg-2.md-4.td Радио Рокс
+                                .lg-2.md-4.td
                                     span.preset Прайм
-                                .lg-1.sm-4.td 2985.75
-                                .lg-1.sm-4.td 254.61
-                                .lg-1.sm-4.td 0.72
-                                .lg-1.sm-4.td 0.72
+                                .lg-1.md-4.td 2985.75
+                                .lg-1.md-4.td 254.61
+                                .lg-1.md-4.td 0.72
+                                .lg-1.md-4.td 0.72
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
                             .row
-                                .lg-2.sm-4.td Радио Рокс
-                                .lg-2.sm-4.td
+                                .lg-2.md-4.td Радио Рокс
+                                .lg-2.md-4.td
                                     span.preset Прайм
-                                .lg-1.sm-4.td 2985.75
-                                .lg-1.sm-4.td 254.61
-                                .lg-1.sm-4.td 0.72
-                                .lg-1.sm-4.td 0.72
+                                .lg-1.md-4.td 2985.75
+                                .lg-1.md-4.td 254.61
+                                .lg-1.md-4.td 0.72
+                                .lg-1.md-4.td 0.72
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
                             .row
-                                .lg-2.sm-4.td Радио Рокс
-                                .lg-2.sm-4.td
+                                .lg-2.md-4.td Радио Рокс
+                                .lg-2.md-4.td
                                     span.preset Прайм
-                                .lg-1.sm-4.td 2985.75
-                                .lg-1.sm-4.td 254.61
-                                .lg-1.sm-4.td 0.72
-                                .lg-1.sm-4.td 0.72
+                                .lg-1.md-4.td 2985.75
+                                .lg-1.md-4.td 254.61
+                                .lg-1.md-4.td 0.72
+                                .lg-1.md-4.td 0.72
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
                             .row
-                                .lg-2.sm-4.td Радио Рокс
-                                .lg-2.sm-4.td
+                                .lg-2.md-4.td Радио Рокс
+                                .lg-2.md-4.td
                                     span.preset Прайм
-                                .lg-1.sm-4.td 2985.75
-                                .lg-1.sm-4.td 254.61
-                                .lg-1.sm-4.td 0.72
-                                .lg-1.sm-4.td 0.72
+                                .lg-1.md-4.td 2985.75
+                                .lg-1.md-4.td 254.61
+                                .lg-1.md-4.td 0.72
+                                .lg-1.md-4.td 0.72
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
                             .row
-                                .lg-2.sm-4.td Радио Рокс
-                                .lg-2.sm-4.td
+                                .lg-2.md-4.td Радио Рокс
+                                .lg-2.md-4.td
                                     span.preset Прайм
-                                .lg-1.sm-4.td 2985.75
-                                .lg-1.sm-4.td 254.61
-                                .lg-1.sm-4.td 0.72
-                                .lg-1.sm-4.td 0.72
+                                .lg-1.md-4.td 2985.75
+                                .lg-1.md-4.td 254.61
+                                .lg-1.md-4.td 0.72
+                                .lg-1.md-4.td 0.72
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
                             .row
-                                .lg-2.sm-4.td Радио Рокс
-                                .lg-2.sm-4.td
+                                .lg-2.md-4.td Радио Рокс
+                                .lg-2.md-4.td
                                     span.preset Прайм
-                                .lg-1.sm-4.td 2985.75
-                                .lg-1.sm-4.td 254.61
-                                .lg-1.sm-4.td 0.72
-                                .lg-1.sm-4.td 0.72
+                                .lg-1.md-4.td 2985.75
+                                .lg-1.md-4.td 254.61
+                                .lg-1.md-4.td 0.72
+                                .lg-1.md-4.td 0.72
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
                             .row
-                                .lg-2.sm-4.td Радио Рокс
-                                .lg-2.sm-4.td
+                                .lg-2.md-4.td Радио Рокс
+                                .lg-2.md-4.td
                                     span.preset Прайм
-                                .lg-1.sm-4.td 2985.75
-                                .lg-1.sm-4.td 254.61
-                                .lg-1.sm-4.td 0.72
-                                .lg-1.sm-4.td 0.72
+                                .lg-1.md-4.td 2985.75
+                                .lg-1.md-4.td 254.61
+                                .lg-1.md-4.td 0.72
+                                .lg-1.md-4.td 0.72
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
                             .row
-                                .lg-2.sm-4.td Радио Рокс
-                                .lg-2.sm-4.td
+                                .lg-2.md-4.td Радио Рокс
+                                .lg-2.md-4.td
                                     span.preset Прайм
-                                .lg-1.sm-4.td 2985.75
-                                .lg-1.sm-4.td 254.61
-                                .lg-1.sm-4.td 0.72
-                                .lg-1.sm-4.td 0.72
+                                .lg-1.md-4.td 2985.75
+                                .lg-1.md-4.td 254.61
+                                .lg-1.md-4.td 0.72
+                                .lg-1.md-4.td 0.72
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
                             .row
-                                .lg-2.sm-4.td Радио Рокс
-                                .lg-2.sm-4.td
+                                .lg-2.md-4.td Радио Рокс
+                                .lg-2.md-4.td
                                     span.preset Прайм
-                                .lg-1.sm-4.td 2985.75
-                                .lg-1.sm-4.td 254.61
-                                .lg-1.sm-4.td 0.72
-                                .lg-1.sm-4.td 0.72
+                                .lg-1.md-4.td 2985.75
+                                .lg-1.md-4.td 254.61
+                                .lg-1.md-4.td 0.72
+                                .lg-1.md-4.td 0.72
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
                             .row
-                                .lg-2.sm-4.td Радио Рокс
-                                .lg-2.sm-4.td
+                                .lg-2.md-4.td Радио Рокс
+                                .lg-2.md-4.td
                                     span.preset Прайм
-                                .lg-1.sm-4.td 2985.75
-                                .lg-1.sm-4.td 254.61
-                                .lg-1.sm-4.td 0.72
-                                .lg-1.sm-4.td 0.72
+                                .lg-1.md-4.td 2985.75
+                                .lg-1.md-4.td 254.61
+                                .lg-1.md-4.td 0.72
+                                .lg-1.md-4.td 0.72
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
@@ -386,57 +389,57 @@ html(lang='UTF-8')
         #is-faq.section
             .container
                 .row
-                    .lg-5.faq__wrapper
+                    .lg-5.md-12.faq__wrapper
                         .title.text_left
                             span.sub__title Мы можем вам помочь
                             | Остались вопросы?
                         .faq__items
-                            button.accordion.faq__item Как с вами связаться?
+                            .accordion.faq__item Как с вами связаться?
                                 span
-                            .faq__item__desc
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            button.accordion.faq__item Я внимательно изучил все материалы сайта, но у меня остались вопросы
+                                .faq__item__desc
+                                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            .accordion.faq__item Я внимательно изучил все материалы сайта, но у меня остались вопросы
                                 span
-                            .faq__item__desc
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            button.accordion.faq__item Что я тут забыл?
+                                .faq__item__desc
+                                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            .accordion.faq__item Что я тут забыл?
                                 span
-                            .faq__item__desc
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            button.accordion.faq__item Кто вы?
+                                .faq__item__desc
+                                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            .accordion.faq__item Кто вы?
                                 span
-                            .faq__item__desc
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            button.accordion.faq__item Зачем вы мне надо?
+                                .faq__item__desc
+                                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            .accordion.faq__item Зачем вы мне надо?
                                 span
-                            .faq__item__desc
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    .lg-auto.sm-12.form__feedback
+                                .faq__item__desc
+                                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    .lg-auto.md-12.form__feedback
                         form.feedback.form.text_center(action="")
                             .title__form.text_center Все еще есть вопросы?
                                 span.sub__title Заполните форму обратной связи и наши специалисты свяжутся с вами!
                             input(type="text" placeholder="Имя*")
                             input(type="tel" placeholder="Номер телефона:*")
                             input(type="email" placeholder="E-mail*")
-                            input.btn(type="submit" value="Отправить")
+                            input.btn.submit(type="submit" value="Отправить")
 
         footer#contact
             .container
                 .row
-                    .lg-3
+                    .lg-3.md-6
                         .logo
                             img(src='./img/LOGO.svg')
                             p © OPENSPOT.BY <br>+375(29)6332756 ИП Маринич М.М. <br>УНП 690731091
-                    .lg-3.footer__navbar
+                    .lg-3.md-7.footer__navbar
                         a(href="#") О сервисе
                         a(href="#") Наши партнеры
                         a(href="#") Реклама на радио
                         a(href="#") FAQ
-                    .lg-3.footer__contact
+                    .lg-3.md-6.footer__contact
                         a(href="tel:+375291234567") +375 29 123 45 67
                         a(href="tel:+375331234567") +375 33 123 45 67
                         a(href="mailto:mailbox@mail.com") mailbox@mail.com
-                    .lg-3.footer__adress
+                    .lg-3.md-5.footer__adress
                         p Минск, пр-т Дзержинского, 104
                         ul.soc_link
                             li: a(href=""): img(src="./img/fb.svg")

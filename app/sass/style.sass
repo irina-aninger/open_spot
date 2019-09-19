@@ -1,28 +1,49 @@
 @import 'fonts.sass'
 @import 'grid.sass'
 
+////MIXIN
+//@mixin x_large
+//  @media (min-width: 1200px)
+//    @content
+//
+//@mixin large
+//  @media (min-width: 992px) and (max-width: 1199px)
+//    @content
+//
+//@mixin medium
+//  @media (min-width: 768px) and (max-width: 991px)
+//    @content
+//
+//@mixin small
+//  @media (min-width: 576px) and (max-width: 767px)
+//    @content
+//
+//@mixin xs_small
+//  @media (max-width: 575px)
+//    @content
+////END MIXIN
+
 //MIXIN
 @mixin x_large
   @media (min-width: 1200px)
     @content
 
 @mixin large
-  @media (min-width: 992px)
+  @media (max-width: 1199px)
     @content
 
 @mixin medium
-  @media (min-width: 768px)
+  @media (max-width: 991px)
     @content
 
 @mixin small
-  @media (min-width: 576px)
+  @media (max-width: 767px)
     @content
 
 @mixin xs_small
   @media (max-width: 575px)
     @content
 //END MIXIN
-
 
 //ANIMATION
 //END ANIMATION
@@ -60,6 +81,10 @@ h1
   padding-bottom: 8px
   margin: 0
 
+  @include medium
+    font-size: 26px
+    line-height: 36px
+
 h2, h3
   font-size: 28px
   line-height: 50px
@@ -90,16 +115,16 @@ div
   padding-left: 15px
   margin-right: auto
   margin-left: auto
-  @include xs_small
-    width: auto
-  @include small
-    width: 540px
-  @include medium
-    width: 720px
-  @include large
-    width: 960px
   @include x_large
     width: 1180px
+  @include large
+    width: 960px
+  @include medium
+    width: 720px
+  @include small
+    width: 540px
+  @include xs_small
+    width: auto
 
 .btn
   font: 16px 'Roboto Light', sans-serif
@@ -132,6 +157,14 @@ div
     color: #FFFFFF
 
 header
+  overflow: hidden
+  @include medium
+    .logo
+      text-align: center
+
+      img
+        width: 65px
+
   .header__navbar
     position: absolute
     top: 0
@@ -140,6 +173,9 @@ header
     font-size: 16px
     z-index: 10
     transition: .2s
+
+    @include medium
+      padding: 23px 0
 
     &.fixed
       position: fixed
@@ -152,17 +188,47 @@ header
 
     a
       color: #FFFFFF
+
       &.btn
         color: #493f7b
+
         &:hover
           color: #ffffff
 
     .row
       align-items: center
 
+  .burger,
+  .header__phone
+    display: none
+    @include medium
+      display: block
+
+  .burger
+    span
+      display: block
+      width: 30px
+      height: 20px
+      background-image: url("data:image/svg+xml,%3Csvg width='30' height='19' viewBox='0 0 30 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='0.7' x2='30' y2='0.7' stroke='white' stroke-width='0.6'/%3E%3Cline y1='9.7' x2='30' y2='9.7' stroke='white' stroke-width='0.6'/%3E%3Cline y1='18.7' x2='30' y2='18.7' stroke='white' stroke-width='0.6'/%3E%3C/svg%3E%0A")
+      background-size: cover
+
+  .header__phone
+    width: 20px
+    height: 20px
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.5738 15.0156L15.6395 12.081C15.0551 11.4989 14.0872 11.5166 13.4824 12.1216L12.0041 13.5996C11.9107 13.5481 11.8141 13.4943 11.7124 13.4373C10.7789 12.92 9.50122 12.2111 8.15672 10.8656C6.80824 9.51728 6.09863 8.23763 5.57979 7.3035C5.52504 7.20454 5.47258 7.10912 5.42078 7.01851L6.41293 6.02783L6.90071 5.53946C7.50644 4.93356 7.52315 3.96597 6.94006 3.38218L4.00581 0.447275C3.42273 -0.1357 2.45444 -0.118014 1.8487 0.487886L1.02173 1.31961L1.04433 1.34204C0.76703 1.69587 0.535314 2.10395 0.362878 2.54402C0.203925 2.96291 0.104961 3.36264 0.0597099 3.76319C-0.327739 6.97522 1.14007 9.91078 5.12351 13.8943C10.6298 19.4002 15.0672 18.9843 15.2586 18.964C15.6756 18.9141 16.0751 18.8145 16.4812 18.6568C16.9174 18.4864 17.3253 18.255 17.6789 17.9783L17.6969 17.9944L18.5347 17.174C19.1392 16.5682 19.1566 15.6003 18.5738 15.0156Z' fill='white' fill-opacity='0.8'/%3E%3C/svg%3E%0A")
+    background-repeat: no-repeat
+    background-position: 85%
+    a
+      width: 100%
+      height: 100%
+      display: inline-block
+
   .header__navbar__menu
     display: flex
     justify-content: space-between
+
+    @include medium
+      display: none
 
     a
       padding-right: 50px
@@ -171,7 +237,17 @@ header
         padding-left: 20px
 
       &:last-child
-        padding-right: 0
+        padding-right: 20px
+
+      @include large
+        padding-right: 10px
+
+  .header__feedback
+    @include large
+      .btn
+        width: 105px
+    @include medium
+      display: none
 
 
 .header__banner
@@ -183,6 +259,19 @@ header
   background-size: cover
   position: relative
 
+  @include medium
+    height: 514px
+    background: linear-gradient(97.09deg, #DF6598 1.5%, #857BE4 73.76%)
+    margin-bottom: 20px
+    font-size: 14px
+    text-align: center
+
+    .btn_transp
+      display: none
+
+  @include small
+    padding-top: 117px
+
   #elipse__wrapper
     position: absolute
     width: 100%
@@ -192,6 +281,7 @@ header
     li
       width: 100%
       height: 100%
+
       &:nth-child(1)
         img
           position: absolute
@@ -204,6 +294,7 @@ header
     top: 0
     height: 100%
     z-index: -10
+
     img
       height: 90%
 
@@ -211,17 +302,26 @@ header
   padding-top: 20px
   display: flex
 
+  @include medium
+    justify-content: center
+
   .btn
     margin-right: 20px
+    @include medium
+      margin-right: 0
 
     &:last-child
       margin-right: 0
 
 .section
   padding-top: 100px
-  margin-bottom: 100px
-  &:first-child
-    padding-top: 0
+  padding-bottom: 100px
+  overflow: hidden
+
+  @include small
+    padding-top: 30px
+    padding-bottom: 0
+    text-align: center
 
 .title
   font: 28px Roboto, sans-serif
@@ -233,7 +333,7 @@ header
   color: #000000
   position: relative
 
-  @include xs_small
+  @include small
     text-align: center !important
     &::after
       right: 0
@@ -263,28 +363,38 @@ header
       letter-spacing: 0.05em
 
 #is-about
-  position: relative
-  &::after
-    content: ''
-    position: absolute
-    right: 0
-    top: 18%
-    width: 489px
-    height: 670px
-    background-image: url("data:image/svg+xml,%3Csvg width='486' height='654' viewBox='0 0 486 654' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse opacity='0.3' cx='307' cy='405' rx='249' ry='249' transform='rotate(-90 307 405)' fill='url(%23paint0_linear)'/%3E%3Ccircle opacity='0.3' cx='299' cy='299' r='299' transform='rotate(-90 299 299)' fill='url(%23paint1_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='307' y1='156' x2='307' y2='654' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='299' y1='0' x2='299' y2='598' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
-    background-repeat: no-repeat
-    z-index: -10
+  padding-top: 0
+  padding-bottom: 30px
+
+  //&::after
+  //  content: ''
+  //  position: absolute
+  //  right: 0
+  //  top: 18%
+  //  width: 489px
+  //  height: 670px
+  //  background-image: url("data:image/svg+xml,%3Csvg width='486' height='654' viewBox='0 0 486 654' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse opacity='0.3' cx='307' cy='405' rx='249' ry='249' transform='rotate(-90 307 405)' fill='url(%23paint0_linear)'/%3E%3Ccircle opacity='0.3' cx='299' cy='299' r='299' transform='rotate(-90 299 299)' fill='url(%23paint1_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='307' y1='156' x2='307' y2='654' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='299' y1='0' x2='299' y2='598' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
+  //  background-repeat: no-repeat
+  //  z-index: -10
 
 .is-about__wrapper
   padding-top: 40px
 
 .is-about__item
   padding: 0 40px
+  padding-bottom: 70px
+
+  @include medium
+    &:last-child
+      padding-bottom: 0
 
   .icon
     padding: 20px 0
     position: relative
     display: inline-block
+
+    @include medium
+      padding: 0
 
     &::after
       content: ''
@@ -325,6 +435,13 @@ header
   position: relative
   height: 430px
 
+  @include medium
+    display: -webkit-inline-box
+    overflow: scroll
+    height: auto
+    padding-top: 40px
+    padding-bottom: 50px
+
 .is-partners__item
   position: absolute
   background: linear-gradient(99.68deg, #DD6599 1.5%, #897BE2 73.76%)
@@ -336,7 +453,7 @@ header
   justify-content: center
   align-items: center
 
-  @include xs_small
+  @include medium
     position: inherit
     width: 120px !important
     height: 120px !important
@@ -344,7 +461,12 @@ header
     right: 0 !important
     top: 0 !important
     bottom: 0 !important
-
+    margin-right: 33px !important
+    &.item_2
+      margin: inherit !important
+      margin-right: 33px !important
+    img
+      width: 90px
 
   &.item_1
     left: 0
@@ -375,7 +497,14 @@ header
     bottom: 10px
 
 #is-radio
-  margin-bottom: 114px
+  //margin-bottom: 114px
+
+  @include small
+    margin-bottom: 0px
+    padding-bottom: 35px
+    padding-top: 0px
+    .screen__section
+      order: 2
 
 .screen__wrapper
   position: relative
@@ -384,24 +513,37 @@ header
   box-shadow: 0 12px 40px rgba(138, 122, 224, 0.5)
   border-radius: 10px
 
+  @include small
+    margin-top: 35px
+
   .sub__screen
     position: absolute
+    width: 39%
+    height: 100%
     right: 25px
     bottom: -70px
+
+    img
+      width: 100%
+      height: 100%
+
 
 .text__wrapper
   padding-left: 90px
   position: relative
 
-  &::before
-    content: ''
-    position: absolute
-    left: -22%
-    top: -68%
-    width: 498px
-    height: 498px
-    background-image: url("data:image/svg+xml,%3Csvg width='498' height='498' viewBox='0 0 498 498' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse opacity='0.5' cx='249' cy='249' rx='249' ry='249' transform='rotate(-90 249 249)' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='249' y1='-1.52588e-05' x2='249' y2='498' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
-    z-index: -10
+  @include medium
+    padding-left: 0
+
+  //&::before
+  //  content: ''
+  //  position: absolute
+  //  left: -22%
+  //  top: -68%
+  //  width: 498px
+  //  height: 498px
+  //  background-image: url("data:image/svg+xml,%3Csvg width='498' height='498' viewBox='0 0 498 498' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse opacity='0.5' cx='249' cy='249' rx='249' ry='249' transform='rotate(-90 249 249)' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='249' y1='-1.52588e-05' x2='249' y2='498' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
+  //  z-index: -10
 
 .form__wrapper
   background: #F8F8F8
@@ -411,21 +553,24 @@ header
   box-shadow: 10px 40px 50px 0px #e9e9e9
   margin-left: -15px
   margin-right: -15px
+  text-align: left
   position: relative
 
-  @include xs_small
+  @include medium
+    margin-top: 146px
     margin-left: 0px
     margin-right: 0px
+    box-shadow: 0px 20px 20px 0 #e9e9e9
 
-  &::after
-    content: ''
-    position: absolute
-    left: -16%
-    bottom: -12%
-    width: 498px
-    height: 504px
-    background-image: url("data:image/svg+xml,%3Csvg width='507' height='504' viewBox='0 0 507 504' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse opacity='0.5' cx='249' cy='249' rx='249' ry='249' transform='rotate(-90 249 249)' fill='url(%23paint0_linear)'/%3E%3Cellipse opacity='0.5' cx='258' cy='255' rx='249' ry='249' transform='rotate(-90 258 255)' fill='url(%23paint1_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='249' y1='-1.52588e-05' x2='249' y2='498' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FFE6E6'/%3E%3Cstop offset='1' stop-color='%23FFE6E6' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='258' y1='5.99998' x2='258' y2='504' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
-    z-index: -10
+  //&::after
+  //  content: ''
+  //  position: absolute
+  //  left: -16%
+  //  bottom: -12%
+  //  width: 498px
+  //  height: 504px
+  //  background-image: url("data:image/svg+xml,%3Csvg width='507' height='504' viewBox='0 0 507 504' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse opacity='0.5' cx='249' cy='249' rx='249' ry='249' transform='rotate(-90 249 249)' fill='url(%23paint0_linear)'/%3E%3Cellipse opacity='0.5' cx='258' cy='255' rx='249' ry='249' transform='rotate(-90 258 255)' fill='url(%23paint1_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='249' y1='-1.52588e-05' x2='249' y2='498' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FFE6E6'/%3E%3Cstop offset='1' stop-color='%23FFE6E6' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='258' y1='5.99998' x2='258' y2='504' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
+  //  z-index: -10
 
   .form__title
     font-size: 28px
@@ -434,7 +579,7 @@ header
     color: #000000
     padding: 23px 0
 
-    @include xs_small
+    @include medium
       font-size: 18px
       padding: 0
 
@@ -494,8 +639,10 @@ header
         padding-left: 23px
 
     &.tags__radio
-      @include xs_small
+      @include medium
         flex-wrap: nowrap
+        overflow: scroll
+
       label
         font: 14px 'Roboto', sans-serif
         margin-right: 0
@@ -520,7 +667,7 @@ header
   border-bottom: 1px solid #CBCBCB
   padding-bottom: 5px
 
-  @include xs_small
+  @include medium
     align-items: flex-start
 
   .th
@@ -528,7 +675,7 @@ header
     line-height: 22px
     color: #828589
 
-    @include xs_small
+    @include medium
       &:nth-child(n+4)
         display: none
 
@@ -540,19 +687,20 @@ header
   padding-bottom: 15px
 
 .stock__wrapper
-  margin-bottom: 41px
+  padding-bottom: 41px
   margin-left: -10px
   margin-right: -10px
   line-height: 22px
 
-  @include xs_small
+  @include medium
     flex-wrap: nowrap
+    overflow: scroll
 
 .stock__item
   padding-right: 10px
   padding-left: 10px
 
-  @include xs_small
+  @include medium
     padding-right: 15px
     padding-left: 15px
 
@@ -616,6 +764,9 @@ header
       font-size: 24px
       font-weight: 600
 
+      @include large
+        padding-left: 10px
+
   .property
     padding-top: 10px
     padding-bottom: 25px
@@ -662,7 +813,7 @@ header
         padding-right: 0
 
   .td
-    @include xs_small
+    @include medium
       &:nth-child(n+4)
         display: none
 
@@ -677,6 +828,10 @@ header
       box-shadow: none
       padding: 8px 31px
       display: inline
+
+      @include large
+        margin-right: 12px
+
       &:hover
         background: #493F7B
         color: #ffffff
@@ -694,17 +849,21 @@ header
     align-items: center
 
 #is-faq
-  position: relative
-  &::after
-    content: ''
-    position: absolute
-    right: 0
-    top: -11%
-    width: 598px
-    height: 598px
-    background-image: url("data:image/svg+xml,%3Csvg width='545' height='598' viewBox='0 0 545 598' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle opacity='0.3' cx='299' cy='299' r='299' transform='rotate(-90 299 299)' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='299' y1='0' x2='299' y2='598' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
-    background-repeat: no-repeat
-    z-index: -10
+  padding-top: 30px
+
+  @include medium
+    padding-bottom: 60px
+
+  //&::after
+  //  content: ''
+  //  position: absolute
+  //  right: 0
+  //  top: -11%
+  //  width: 598px
+  //  height: 598px
+  //  background-image: url("data:image/svg+xml,%3Csvg width='545' height='598' viewBox='0 0 545 598' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle opacity='0.3' cx='299' cy='299' r='299' transform='rotate(-90 299 299)' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='299' y1='0' x2='299' y2='598' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
+  //  background-repeat: no-repeat
+  //  z-index: -10
 
 .faq__wrapper
   .title
@@ -713,19 +872,23 @@ header
 .faq__items
   padding-top: 20px
 
+  @include medium
+    padding-top: 0
+
   .faq__item
+    font: 14px 'Roboto', sans-serif
     background: #f8f8f8
-    box-shadow: 0 8px 43px 8px rgba(148,75,66,.11)
+    box-shadow: 0 8px 43px 8px rgba(148, 75, 66, .11)
     border-radius: 7px
     border: none
     width: 100%
     text-align: left
     color: #313639
-    font-size: 14px
     line-height: 26px
     padding: 15px 85px 15px 26px
     margin-bottom: 11px
     position: relative
+    cursor: pointer
 
     &:last-child
       margin-bottom: 0
@@ -738,7 +901,6 @@ header
       bottom: 0
       right: 10px
       margin: auto
-      cursor: pointer
 
       &::before
         content: ''
@@ -765,8 +927,18 @@ header
         background: #DE6598
         transform: rotate(90deg)
 
-  .faq__item__desc
-    display: none
+    &.active
+      background: #F6EFF9
+      span
+        &::after
+          content: none
+      .faq__item__desc
+        display: block
+
+    .faq__item__desc
+      display: none
+      font: 14px 'Roboto Light', sans-serif
+      line-height: 22px
 
 .feedback.form
   color: #FFFFFF
@@ -778,10 +950,17 @@ header
   margin-left: 90px
   box-sizing: border-box
 
-  @include xs_small
+  @include large
+    margin-left: 45px
+
+  @include medium
+    margin-left: 45px
+
+  @include small
     width: 100%
-    margin-left: 0
     padding: 28px
+    margin-top: 60px
+    margin-left: 0
 
   input
     background: none
@@ -805,6 +984,7 @@ header
       margin-bottom: 20px
       padding: 0
       border: none
+
       &:hover
         background: #493F7B
         color: #ffffff
@@ -815,26 +995,29 @@ header
   font: 28px 'Roboto', sans-serif
   line-height: 50px
 
-  @include xs_small
+  @include medium
     font-size: 26px
 
   span
     &.sub__title
       font: 16px 'Roboto Thin', sans-serif
-      line-height: 2
+      line-height: 22px
       padding-top: 10px
       padding-bottom: 30px
 
-      @include xs_small
+      @include medium
         padding-bottom: 40px
 
 footer
   background: #15262D
-  padding: 50px 0
+  padding: 40px 0
   font-size: 12px
   line-height: 22px
   color: #FFFFFF
   overflow: hidden
+
+  @include medium
+    padding: 17px 0 34px 0
 
   a
     color: #FFFFFF
@@ -842,40 +1025,62 @@ footer
   .logo
     padding-top: 15px
     position: relative
-    &:before
-      content: ''
-      position: absolute
-      bottom: -65px
-      right: -25px
-      width: 354px
-      height: 280px
-      background-image: url("data:image/svg+xml,%3Csvg width='355' height='282' viewBox='0 0 355 282' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='177.78' cy='177.78' r='177' transform='rotate(75 177.78 177.78)' fill='url(%23paint0_linear)' fill-opacity='0.07'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='177.78' y1='0.779846' x2='177.78' y2='354.78' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='white'/%3E%3Cstop offset='1' stop-color='white' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
+
+    p
+      padding-top: 20px
+
+    //&:before
+    //  content: ''
+    //  position: absolute
+    //  bottom: -65px
+    //  right: -25px
+    //  width: 354px
+    //  height: 280px
+    //  background-image: url("data:image/svg+xml,%3Csvg width='355' height='282' viewBox='0 0 355 282' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='177.78' cy='177.78' r='177' transform='rotate(75 177.78 177.78)' fill='url(%23paint0_linear)' fill-opacity='0.07'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='177.78' y1='0.779846' x2='177.78' y2='354.78' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='white'/%3E%3Cstop offset='1' stop-color='white' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
 
   .footer__navbar
     display: flex
     flex-direction: column
+    padding-top: 20px
+    @include medium
+      order: 3
 
     a
+      font: 14px 'Roboto', sans-serif
+      line-height: 22px
       padding-bottom: 10px
 
   .footer__contact
     display: flex
     flex-direction: column
     font-weight: 100
+    padding-top: 20px
+    @include medium
+      order: 2
+      padding-top: 70px
+      text-align: right
 
   .footer__adress
-    position: relative
-    &:before
-      content: ''
-      position: absolute
-      bottom: 0px
-      right: -145px
-      width: 354px
-      height: 356px
-      background-image: url("data:image/svg+xml,%3Csvg width='355' height='355' viewBox='0 0 355 355' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='177.78' cy='177.78' r='177' transform='rotate(75 177.78 177.78)' fill='url(%23paint0_linear)' fill-opacity='0.07'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='177.78' y1='0.779846' x2='177.78' y2='354.78' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='white'/%3E%3Cstop offset='1' stop-color='white' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
+    padding-top: 7px
+    @include medium
+      order: 4
+      text-align: right
+
+    //&:before
+    //  content: ''
+    //  position: absolute
+    //  bottom: 0px
+    //  right: -145px
+    //  width: 354px
+    //  height: 356px
+    //  background-image: url("data:image/svg+xml,%3Csvg width='355' height='355' viewBox='0 0 355 355' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='177.78' cy='177.78' r='177' transform='rotate(75 177.78 177.78)' fill='url(%23paint0_linear)' fill-opacity='0.07'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='177.78' y1='0.779846' x2='177.78' y2='354.78' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='white'/%3E%3Cstop offset='1' stop-color='white' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E ")
 
   .soc_link
     display: flex
+    padding-top: 10px
+
+    @include medium
+      justify-content: flex-end
 
     li
       padding-right: 26px
