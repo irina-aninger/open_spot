@@ -5,18 +5,468 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Test</title>
     <link href="./css/normalize.min.css" rel="stylesheet">
+    <link href="./css/libs.min.css" rel="stylesheet">
     <link href="./css/style.min.css" rel="stylesheet">
   </head>
   <body>
-    <header></header>
-    <div class="main">
+    <header>
+      <div class="header__navbar">
+        <div class="container">
+          <div class="row">
+            <div class="burger md-4"><span></span></div>
+            <div class="logo lg-auto md-4"><img src="./img/LOGO.svg"></div>
+            <div class="header__navbar__menu lg-9">
+              <div class="navbar__left"><a href="#is-about">О сервисе</a><a href="#is-partners">Партнеры</a><a href="#is-radio">Радио</a><a href="#">Статистика</a></div>
+              <div class="navbar__right"><a href="#is-faq">FAQ</a><a href="#contact">Контакты</a></div>
+            </div>
+            <div class="header__feedback lg-auto text_right"><a class="btn" id="feedback" href="#" style="box-shadow: 0 6px 15px #C27E3E">Связаться</a></div>
+            <div class="header__phone md-4"><a href="tel:+375291234567"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="header__banner">
+        <ul class="elipse__wrapper elipse__banner" data-relative-input="true">
+          <li data-depth="0.1"><img src="./img/elipse_1.svg"></li>
+          <li data-depth="0.3"><img src="./img/elipse_2.svg"></li>
+          <li data-depth="0.2"><img src="./img/elipse_3.svg"></li>
+          <li data-depth="0.3"><img src="./img/elipse_4.svg"></li>
+          <li data-depth="0.2"><img src="./img/elipse_5.svg"></li>
+          <li data-depth="0.3"><img src="./img/elipse_6.svg"></li>
+        </ul>
+        <div class="container">
+          <div class="row">
+            <div class="left__side__banner lg-6 md-12">
+              <h1 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">OpenSpot - размещение рекламы по справедливой цене</h1>
+              <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения.</p>
+              <div class="btn__banner wow fadeInUp" data-wow-duration="1s" data-wow-delay="3s"><a class="btn" href="#" style="box-shadow: 0 6px 15px rgba(210, 84, 146, 0.89)">Начать</a><a class="btn btn_transp" href="#">Узнать больше</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="banner__img"><img src="./img/banner.png"></div>
+      </div>
+    </header>
+    <div class="section" id="is-about">
+      <div class="container">
+        <div class="title text_center"><span class="sub__title">Что мы предлагаем?</span>Что такое OpenSpot?</div>
+        <div class="row is-about__wrapper">
+          <div class="lg-4 md-12 is-about__item text_center">
+            <div class="icon icon_1"><img src="./img/benefit.svg"></div>
+            <div class="title__item wow fadeInUp" data-wow-duration="1s">Выгода</div>
+            <div class="desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения, а рекламораспространителям допродавть свой свободный инвентарь.</div>
+          </div>
+          <div class="lg-4 md-12 is-about__item text_center">
+            <div class="icon icon_2"><img src="./img/transparency.svg"></div>
+            <div class="title__item wow fadeInUp" data-wow-duration="1s">Прозрачность</div>
+            <div class="desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Прозрачная система позволяет оценивать все каналы оффлайн рекламы и выбирать наиболее эффективные.</div>
+          </div>
+          <div class="lg-4 md-12 is-about__item text_center">
+            <div class="icon icon_3"><img src="./img/efficiency.svg"></div>
+            <div class="title__item wow fadeInUp" data-wow-duration="1s">Эффективность</div>
+            <div class="desc wow fadeInUp wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Благодаря интеграции исследований в платформу, клиенты получают детализированную информацию для планирования рекламной кампании и могут распределять свои рекламные бюджеты наиболее эффективно.</div>
+          </div>
+        </div>
+      </div>
+      <ul class="elipse__wrapper elipse__about" data-relative-input="true">
+        <li data-depth="0.1"><img src="./img/elipse_big_7.svg"></li>
+        <li data-depth="0.2"><img src="./img/elipse_big_8.svg"></li>
+      </ul>
+    </div>
+    <div class="section" id="is-partners">
       <div class="container">
         <div class="row">
-          <div class="lg-2 md-12">Test</div>
+          <div class="lg-4 md-12 is-partners__desc">
+            <div class="title text_left wow fadeInUp" data-wow-duration="1s"><span class="sub__title">С кем мы работаем?</span>Наши партнеры</div>
+            <div class="desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.</div>
+          </div>
+          <div class="lg-8 md-12 is-partners__wrapper">
+            <div class="is-partners__item item_1"><img src="./img/logo_partner_1.png"></div>
+            <div class="is-partners__item item_2"><img src="./img/logo_partner_1.png"></div>
+            <div class="is-partners__item item_3"><img src="./img/logo_partner_2.png"></div>
+            <div class="is-partners__item item_4"><img src="./img/logo_partner_2.png"></div>
+            <div class="is-partners__item item_5"><img src="./img/logo_partner_1.png"></div>
+          </div>
         </div>
       </div>
     </div>
-    <footer></footer>
+    <div class="section" id="is-radio">
+      <div class="container">
+        <div class="row">
+          <div class="lg-6 md-6 sm-12 screen__section">
+            <div class="screen__wrapper">
+              <div class="main__screen"><img src="./img/screen_1.png"></div>
+              <div class="sub__screen"><img src="./img/screen_2.png"></div>
+            </div>
+          </div>
+          <div class="lg-6 md-6 sm-12">
+            <div class="text__wrapper">
+              <div class="title text_left wow fadeInUp" data-wow-duration="1s"><span class="sub__title">Что мы предлагаем?</span>Реклама на радио</div>
+              <div class="desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Благодаря интеграции исследований в платформу, клиенты получают детализированную информацию для планирования рекламной кампании и могут распределять свои рекламные бюджеты наиболее эффективно.</div>
+            </div>
+          </div>
+        </div>
+        <div class="form__wrapper">
+          <div class="form__title text_left">Реклама на радио</div>
+          <form class="calculator row ajax-form js-cpt-calculator" method="get" action="http://178.172.173.58/cpt" data-noreload data-response=".js-cpt-inner">
+            <input type="hidden" name="_token" value="Ng2x5rCQH887LZke6E8C7SdqeUT8fYem8Szt2r7q">
+            <div class="lg-6 md-6 form__box">
+              <div class="h2__title">Интересующий регион</div>
+              <div class="tags tags__input">
+                <input class="tag-input" type="checkbox" name="k[]" value="minsk" id="rMinsk" checked>
+                <label class="tag-label" for="rMinsk">Минск</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="obl" id="rObl">
+                <label class="tag-label" for="rObl">Областные центры</label>
+              </div>
+              <div class="tags__toggle">Все регионы</div>
+            </div>
+            <div class="lg-6 md-6 form__box">
+              <div class="h2__title">Пол аудитории</div>
+              <div class="tags tags__input">
+                <input class="tag-input" type="checkbox" name="k[]" value="male" id="sM" checked>
+                <label class="tag-label" for="sM">Мужской</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="female" id="sF">
+                <label class="tag-label" for="sF">Женский</label>
+              </div>
+              <div class="tags__toggle">Все полы</div>
+            </div>
+            <div class="lg-12 form__box">
+              <div class="h2__title">Возраст аудитории</div>
+              <div class="tags tags__input">
+                <input class="tag-input" type="checkbox" name="k[]" value="age18-24" id="a1" checked>
+                <label class="tag-label" for="a1">18-24</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age25-29" id="a2">
+                <label class="tag-label" for="a2">25-29</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age30-34" id="a3">
+                <label class="tag-label" for="a3">30-34</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age35-39" id="a4">
+                <label class="tag-label" for="a4">35-39</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age40-44" id="a5">
+                <label class="tag-label" for="a5">40-44</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age45-49" id="a6">
+                <label class="tag-label" for="a6">45-49</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age50-54" id="a7">
+                <label class="tag-label" for="a7">50-54</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age55-59" id="a8">
+                <label class="tag-label" for="a8">55-59</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age60-65" id="a9">
+                <label class="tag-label" for="a9">60-65</label>
+              </div>
+              <div class="tags__toggle">Все возраста</div>
+            </div>
+            <div class="lg-12 form__box">
+              <div class="h2__title">Радиостанции</div>
+              <div class="tags tags__radio">
+                <input class="tag-input" type="radio" name="radio" value="" id="r1" checked>
+                <label class="tag-label" for="r1">Все</label>
+                <input class="tag-input" type="radio" name="radio" value="" id="r2">
+                <label class="tag-label" for="r2">Радио Рокс</label>
+                <input class="tag-input" type="radio" name="radio" value="" id="r3">
+                <label class="tag-label" for="r3">Русское радио</label>
+                <input class="tag-input" type="radio" name="radio" value="" id="r4">
+                <label class="tag-label" for="r4">Радио Рокс</label>
+                <input class="tag-input" type="radio" name="radio" value="" id="r5">
+                <label class="tag-label" for="r5">Русское радио</label>
+                <input class="tag-input" type="radio" name="radio" value="" id="r6">
+                <label class="tag-label" for="r6">Радио Рокс</label>
+              </div>
+            </div>
+          </form>
+          <div class="stock__title">Акционные предложения
+            <div class="row stock__wrapper">
+              <div class="lg-3 md-10 stock__item">
+                <div>
+                  <div class="stock__head">
+                    <div class="logo"><img src="./img/logo_stock.svg"></div>
+                    <div class="sale">Прайм<span>-15%</span></div>
+                  </div>
+                  <ul class="property">
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                  </ul><a class="btn" href="javascript:;">Разместить</a>
+                </div>
+              </div>
+              <div class="lg-3 md-10 stock__item">
+                <div>
+                  <div class="stock__head">
+                    <div class="logo"><img src="./img/logo_stock.svg"></div>
+                    <div class="sale">Прайм<span>-15%</span></div>
+                  </div>
+                  <ul class="property">
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                  </ul><a class="btn" href="javascript:;">Разместить</a>
+                </div>
+              </div>
+              <div class="lg-3 md-10 stock__item">
+                <div>
+                  <div class="stock__head">
+                    <div class="logo"><img src="./img/logo_stock.svg"></div>
+                    <div class="sale">Прайм<span>-15%</span></div>
+                  </div>
+                  <ul class="property">
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                  </ul><a class="btn" href="javascript:;">Разместить</a>
+                </div>
+              </div>
+              <div class="lg-3 md-10 stock__item">
+                <div>
+                  <div class="stock__head">
+                    <div class="logo"><img src="./img/logo_stock.svg"></div>
+                    <div class="sale">Прайм<span>-15%</span></div>
+                  </div>
+                  <ul class="property">
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                  </ul><a class="btn" href="javascript:;">Разместить</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="calculator__table">
+            <div class="row calculator__table__header">
+              <div class="lg-2 md-4 th">Станция</div>
+              <div class="lg-2 md-4 th">Пресет<span class="th__filter"></span></div>
+              <div class="lg-1 md-4 th">Стоимость МП, руб<span class="th__filter"></span></div>
+              <div class="lg-1 md-4 th">CPT, руб<span class="th__filter"></span></div>
+              <div class="lg-1 md-4 th">Охват, тыс<span class="th__filter"></span></div>
+              <div class="lg-1 md-4 th">Время, сек<span class="th__filter"></span></div>
+              <div class="lg-auto th">Количество выходов<span class="th__filter"></span></div>
+              <div class="lg-2 md-4 th"></div>
+            </div>
+            <div class="jc-cpt-inner">
+              <div class="row">
+                <div class="lg-2 md-4 td">Радио Рокс</div>
+                <div class="lg-2 md-4 td"><span class="preset">Прайм</span></div>
+                <div class="lg-1 md-4 td">2985.75</div>
+                <div class="lg-1 md-4 td">254.61</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-auto td">Прайм</div>
+                <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div>
+                <div class="dropdown__property">
+                  <div class="md-8 th">
+                    <div class="th">CPT, руб</div>
+                    <div class="th">Охват, тыс</div>
+                    <div class="th">Время, сек</div>
+                    <div class="th">Количество выходов</div>
+                  </div>
+                  <div class="md-4 td">
+                    <div class="td">254.61</div>
+                    <div class="td">0.72</div>
+                    <div class="td">0.72</div>
+                    <div class="td">Прайм</div>
+                  </div><a class="btn" href="javascript:;">Разместить</a>
+                </div><span class="arrow"></span>
+              </div>
+              <div class="row">
+                <div class="lg-2 md-4 td">Радио Рокс</div>
+                <div class="lg-2 md-4 td"><span class="preset">Прайм</span></div>
+                <div class="lg-1 md-4 td">2985.75</div>
+                <div class="lg-1 md-4 td">254.61</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-auto td">Прайм</div>
+                <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+              </div>
+              <div class="row">
+                <div class="lg-2 md-4 td">Радио Рокс</div>
+                <div class="lg-2 md-4 td"><span class="preset">Прайм</span></div>
+                <div class="lg-1 md-4 td">2985.75</div>
+                <div class="lg-1 md-4 td">254.61</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-auto td">Прайм</div>
+                <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+              </div>
+              <div class="row">
+                <div class="lg-2 md-4 td">Радио Рокс</div>
+                <div class="lg-2 md-4 td"><span class="preset">Прайм</span></div>
+                <div class="lg-1 md-4 td">2985.75</div>
+                <div class="lg-1 md-4 td">254.61</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-auto td">Прайм</div>
+                <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+              </div>
+              <div class="row">
+                <div class="lg-2 md-4 td">Радио Рокс</div>
+                <div class="lg-2 md-4 td"><span class="preset">Прайм</span></div>
+                <div class="lg-1 md-4 td">2985.75</div>
+                <div class="lg-1 md-4 td">254.61</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-auto td">Прайм</div>
+                <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+              </div>
+              <div class="row">
+                <div class="lg-2 md-4 td">Радио Рокс</div>
+                <div class="lg-2 md-4 td"><span class="preset">Прайм</span></div>
+                <div class="lg-1 md-4 td">2985.75</div>
+                <div class="lg-1 md-4 td">254.61</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-auto td">Прайм</div>
+                <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+              </div>
+              <div class="row">
+                <div class="lg-2 md-4 td">Радио Рокс</div>
+                <div class="lg-2 md-4 td"><span class="preset">Прайм</span></div>
+                <div class="lg-1 md-4 td">2985.75</div>
+                <div class="lg-1 md-4 td">254.61</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-auto td">Прайм</div>
+                <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+              </div>
+              <div class="row">
+                <div class="lg-2 md-4 td">Радио Рокс</div>
+                <div class="lg-2 md-4 td"><span class="preset">Прайм</span></div>
+                <div class="lg-1 md-4 td">2985.75</div>
+                <div class="lg-1 md-4 td">254.61</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-auto td">Прайм</div>
+                <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+              </div>
+              <div class="row">
+                <div class="lg-2 md-4 td">Радио Рокс</div>
+                <div class="lg-2 md-4 td"><span class="preset">Прайм</span></div>
+                <div class="lg-1 md-4 td">2985.75</div>
+                <div class="lg-1 md-4 td">254.61</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-auto td">Прайм</div>
+                <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+              </div>
+              <div class="row">
+                <div class="lg-2 md-4 td">Радио Рокс</div>
+                <div class="lg-2 md-4 td"><span class="preset">Прайм</span></div>
+                <div class="lg-1 md-4 td">2985.75</div>
+                <div class="lg-1 md-4 td">254.61</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-auto td">Прайм</div>
+                <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+              </div>
+              <div class="row">
+                <div class="lg-2 md-4 td">Радио Рокс</div>
+                <div class="lg-2 md-4 td"><span class="preset">Прайм</span></div>
+                <div class="lg-1 md-4 td">2985.75</div>
+                <div class="lg-1 md-4 td">254.61</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-auto td">Прайм</div>
+                <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+              </div>
+              <div class="row">
+                <div class="lg-2 md-4 td">Радио Рокс</div>
+                <div class="lg-2 md-4 td"><span class="preset">Прайм</span></div>
+                <div class="lg-1 md-4 td">2985.75</div>
+                <div class="lg-1 md-4 td">254.61</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-1 md-4 td">0.72</div>
+                <div class="lg-auto td">Прайм</div>
+                <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="elipse__wrapper elipse__radio" data-relative-input="true">
+        <li data-depth="0.1"><img src="./img/elipse_big_4.svg"></li>
+        <li data-depth="0.1"><img src="./img/elipse_big_5.svg"></li>
+        <li data-depth="0.1"><img src="./img/elipse_big_6.svg"></li>
+      </ul>
+    </div>
+    <div class="section" id="is-faq">
+      <div class="container">
+        <div class="row">
+          <div class="lg-5 md-12 faq__wrapper">
+            <div class="title text_left"><span class="sub__title">Мы можем вам помочь</span>Остались вопросы?</div>
+            <div class="faq__items">
+              <div class="accordion faq__item">Как с вами связаться?<span></span>
+                <div class="faq__item__desc">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+              </div>
+              <div class="accordion faq__item">Я внимательно изучил все материалы сайта, но у меня остались вопросы<span></span>
+                <div class="faq__item__desc">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+              </div>
+              <div class="accordion faq__item">Что я тут забыл?<span></span>
+                <div class="faq__item__desc">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+              </div>
+              <div class="accordion faq__item">Кто вы?<span></span>
+                <div class="faq__item__desc">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+              </div>
+              <div class="accordion faq__item">Зачем вы мне надо?<span></span>
+                <div class="faq__item__desc">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg-auto md-12 form__feedback">
+            <form class="feedback form text_center" action="">
+              <div class="title__form text_center">Все еще есть вопросы?<span class="sub__title">Заполните форму обратной связи и наши специалисты свяжутся с вами!</span></div>
+              <input type="text" placeholder="Имя*">
+              <input type="tel" placeholder="Номер телефона:*">
+              <input type="email" placeholder="E-mail*">
+              <input class="btn submit" type="submit" value="Отправить">
+            </form>
+          </div>
+        </div>
+      </div>
+      <ul class="elipse__wrapper elipse__faq" data-relative-input="true">
+        <li data-depth="0.1"><img src="./img/elipse_big_3.svg"></li>
+      </ul>
+    </div>
+    <footer id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="lg-3 md-6">
+            <div class="logo"><img src="./img/LOGO.svg">
+              <p>© OPENSPOT.BY <br>+375(29)6332756 ИП Маринич М.М. <br>УНП 690731091</p>
+            </div>
+          </div>
+          <div class="lg-3 md-7 footer__navbar"><a href="#">О сервисе</a><a href="#">Наши партнеры</a><a href="#">Реклама на радио</a><a href="#">FAQ</a></div>
+          <div class="lg-3 md-6 footer__contact"><a href="tel:+375291234567">+375 29 123 45 67</a><a href="tel:+375331234567">+375 33 123 45 67</a><a href="mailto:mailbox@mail.com">mailbox@mail.com</a></div>
+          <div class="lg-3 md-5 footer__adress">
+            <p>Минск, пр-т Дзержинского, 104</p>
+            <ul class="soc_link">
+              <li><a href=""><img src="./img/fb.svg"></a></li>
+              <li><a href=""><img src="./img/tw.svg"></a></li>
+              <li><a href=""><img src="./img/vk.svg"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <ul class="elipse__wrapper elipse__footer" data-relative-input="true">
+        <li data-depth="0.1"><img src="./img/elipse_big_1.svg"></li>
+        <li data-depth="0.3"><img src="./img/elipse_big_2.svg"></li>
+      </ul>
+      <div class="pop-up" id="tags_pop-up">
+        <div class="overlay">
+          <div class="tags__body">
+            <div class="bg tags"></div>
+            <div class="bg btn__control">
+              <button class="cancel">Отмена</button>
+              <button class="ok">Ок</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/libs.min.js"></script>
     <script src="./js/main.min.js"></script>
   </body>
 </html>

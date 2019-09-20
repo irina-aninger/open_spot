@@ -5,7 +5,7 @@ html(lang='UTF-8')
         meta(name='viewport' content='width=device-width, initial-scale=1')
         title Test
         link(href='./css/normalize.min.css', rel='stylesheet')
-        link(href='./css/animate.css', rel='stylesheet')
+        link(href='./css/libs.min.css', rel='stylesheet')
         link(href='./css/style.min.css', rel='stylesheet')
 
     body
@@ -31,12 +31,13 @@ html(lang='UTF-8')
                         .header__phone.md-4
                             a(href="tel:+375291234567")
             .header__banner
-                ul#elipse__wrapper(data-relative-input="true" )
-                    li(data-depth="0.2"): img(src='/img/elipse_1.svg')
-                    li(data-depth="0.6"): img(src='/img/elipse_2.svg')
-                    li(data-depth="1"): img(src='/img/elipse_3.svg')
-                    li(data-depth="1.4"): img(src='/img/elipse_4.svg')
-                    li(data-depth="1.8"): img(src='/img/elipse_5.svg')
+                ul.elipse__wrapper.elipse__banner(data-relative-input="true" )
+                    li(data-depth="0.1"): img(src='./img/elipse_1.svg')
+                    li(data-depth="0.3"): img(src='./img/elipse_2.svg')
+                    li(data-depth="0.2"): img(src='./img/elipse_3.svg')
+                    li(data-depth="0.3"): img(src='./img/elipse_4.svg')
+                    li(data-depth="0.2"): img(src='./img/elipse_5.svg')
+                    li(data-depth="0.3"): img(src='./img/elipse_6.svg')
                 .container
                     .row
                         .left__side__banner.lg-6.md-12
@@ -55,17 +56,20 @@ html(lang='UTF-8')
                     | Что такое OpenSpot?
                 .row.is-about__wrapper
                     .lg-4.md-12.is-about__item.text_center
-                        .icon.benefit: img(src='./img/benefit.svg')
+                        .icon.icon_1: img(src='./img/benefit.svg')
                         .title__item.wow.fadeInUp(data-wow-duration="1s") Выгода
                         .desc.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения, а рекламораспространителям допродавть свой свободный инвентарь.
                     .lg-4.md-12.is-about__item.text_center
-                        .icon.transparency: img(src='./img/transparency.svg')
+                        .icon.icon_2: img(src='./img/transparency.svg')
                         .title__item.wow.fadeInUp(data-wow-duration="1s") Прозрачность
                         .desc.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") Прозрачная система позволяет оценивать все каналы оффлайн рекламы и выбирать наиболее эффективные.
                     .lg-4.md-12.is-about__item.text_center
-                        .icon.efficiency: img(src='./img/efficiency.svg')
+                        .icon.icon_3: img(src='./img/efficiency.svg')
                         .title__item.wow.fadeInUp(data-wow-duration="1s") Эффективность
                         .desc.wow.fadeInUp.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") Благодаря интеграции исследований в платформу, клиенты получают детализированную информацию для планирования рекламной кампании и могут распределять свои рекламные бюджеты наиболее эффективно.
+            ul.elipse__wrapper.elipse__about(data-relative-input="true" )
+                li(data-depth="0.1"): img(src='./img/elipse_big_7.svg')
+                li(data-depth="0.2"): img(src='./img/elipse_big_8.svg')
 
         #is-partners.section
             .container
@@ -90,13 +94,13 @@ html(lang='UTF-8')
         #is-radio.section
             .container
                 .row
-                    .lg-6.md-6.screen__section
+                    .lg-6.md-6.sm-12.screen__section
                         .screen__wrapper
                             .main__screen
-                                img(src="/img/screen_1.png")
+                                img(src="./img/screen_1.png")
                             .sub__screen
-                                img(src="/img/screen_2.png")
-                    .lg-6.md-6
+                                img(src="./img/screen_2.png")
+                    .lg-6.md-6.sm-12
                         .text__wrapper
                             .title.text_left.wow.fadeInUp(data-wow-duration="1s")
                                 span.sub__title Что мы предлагаем?
@@ -113,6 +117,7 @@ html(lang='UTF-8')
                                 label(for="rMinsk" class="tag-label") Минск
                                 input(type="checkbox" name="k[]" value="obl" class="tag-input" id="rObl")
                                 label(for="rObl" class="tag-label") Областные центры
+                            .tags__toggle Все регионы
                         .lg-6.md-6.form__box
                             .h2__title Пол аудитории
                             .tags.tags__input
@@ -120,6 +125,7 @@ html(lang='UTF-8')
                                 label(for="sM" class="tag-label") Мужской
                                 input(type="checkbox" name="k[]" value="female" class="tag-input" id="sF")
                                 label(for="sF" class="tag-label") Женский
+                            .tags__toggle Все полы
 
                         .lg-12.form__box
                             .h2__title Возраст аудитории
@@ -151,6 +157,8 @@ html(lang='UTF-8')
                                 input(type="checkbox" name="k[]" value="age60-65" class="tag-input" id="a9")
                                 label(for="a9" class="tag-label") 60-65
 
+                            .tags__toggle Все возраста
+
                         .lg-12.form__box
                             .h2__title Радиостанции
                             .tags.tags__radio
@@ -178,7 +186,7 @@ html(lang='UTF-8')
                                 div
                                     .stock__head
                                         .logo
-                                            img(src="/img/logo_stock.svg")
+                                            img(src="./img/logo_stock.svg")
                                         .sale Прайм
                                             span -15%
                                     ul.property
@@ -193,7 +201,7 @@ html(lang='UTF-8')
                                 div
                                     .stock__head
                                         .logo
-                                            img(src="/img/logo_stock.svg")
+                                            img(src="./img/logo_stock.svg")
                                         .sale Прайм
                                             span -15%
                                     ul.property
@@ -208,7 +216,7 @@ html(lang='UTF-8')
                                 div
                                     .stock__head
                                         .logo
-                                            img(src="/img/logo_stock.svg")
+                                            img(src="./img/logo_stock.svg")
                                         .sale Прайм
                                             span -15%
                                     ul.property
@@ -223,7 +231,7 @@ html(lang='UTF-8')
                                 div
                                     .stock__head
                                         .logo
-                                            img(src="/img/logo_stock.svg")
+                                            img(src="./img/logo_stock.svg")
                                         .sale Прайм
                                             span -15%
                                     ul.property
@@ -264,6 +272,19 @@ html(lang='UTF-8')
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
+                                .dropdown__property
+                                    .md-8.th
+                                        .th CPT, руб
+                                        .th Охват, тыс
+                                        .th Время, сек
+                                        .th Количество выходов
+                                    .md-4.td
+                                        .td 254.61
+                                        .td 0.72
+                                        .td 0.72
+                                        .td Прайм
+                                    a.btn(href="javascript:;") Разместить
+                                span.arrow
                             .row
                                 .lg-2.md-4.td Радио Рокс
                                 .lg-2.md-4.td
@@ -275,6 +296,7 @@ html(lang='UTF-8')
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
+                                span.arrow
                             .row
                                 .lg-2.md-4.td Радио Рокс
                                 .lg-2.md-4.td
@@ -286,6 +308,7 @@ html(lang='UTF-8')
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
+                                span.arrow
                             .row
                                 .lg-2.md-4.td Радио Рокс
                                 .lg-2.md-4.td
@@ -297,6 +320,7 @@ html(lang='UTF-8')
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
+                                span.arrow
                             .row
                                 .lg-2.md-4.td Радио Рокс
                                 .lg-2.md-4.td
@@ -308,6 +332,7 @@ html(lang='UTF-8')
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
+                                span.arrow
                             .row
                                 .lg-2.md-4.td Радио Рокс
                                 .lg-2.md-4.td
@@ -319,6 +344,7 @@ html(lang='UTF-8')
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
+                                span.arrow
                             .row
                                 .lg-2.md-4.td Радио Рокс
                                 .lg-2.md-4.td
@@ -330,6 +356,7 @@ html(lang='UTF-8')
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
+                                span.arrow
                             .row
                                 .lg-2.md-4.td Радио Рокс
                                 .lg-2.md-4.td
@@ -341,6 +368,7 @@ html(lang='UTF-8')
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
+                                span.arrow
                             .row
                                 .lg-2.md-4.td Радио Рокс
                                 .lg-2.md-4.td
@@ -352,6 +380,7 @@ html(lang='UTF-8')
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
+                                span.arrow
                             .row
                                 .lg-2.md-4.td Радио Рокс
                                 .lg-2.md-4.td
@@ -363,6 +392,7 @@ html(lang='UTF-8')
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
+                                span.arrow
                             .row
                                 .lg-2.md-4.td Радио Рокс
                                 .lg-2.md-4.td
@@ -374,6 +404,7 @@ html(lang='UTF-8')
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
+                                span.arrow
                             .row
                                 .lg-2.md-4.td Радио Рокс
                                 .lg-2.md-4.td
@@ -385,6 +416,13 @@ html(lang='UTF-8')
                                 .lg-auto.td Прайм
                                 .lg-3.text_right.td
                                     a.btn(href="javascript:;") Разместить
+                                span.arrow
+
+
+            ul.elipse__wrapper.elipse__radio(data-relative-input="true" )
+                li(data-depth="0.1"): img(src='./img/elipse_big_4.svg')
+                li(data-depth="0.1"): img(src='./img/elipse_big_5.svg')
+                li(data-depth="0.1"): img(src='./img/elipse_big_6.svg')
 
         #is-faq.section
             .container
@@ -422,6 +460,8 @@ html(lang='UTF-8')
                             input(type="tel" placeholder="Номер телефона:*")
                             input(type="email" placeholder="E-mail*")
                             input.btn.submit(type="submit" value="Отправить")
+            ul.elipse__wrapper.elipse__faq(data-relative-input="true" )
+                li(data-depth="0.1"): img(src='./img/elipse_big_3.svg')
 
         footer#contact
             .container
@@ -446,9 +486,19 @@ html(lang='UTF-8')
                             li: a(href=""): img(src="./img/tw.svg")
                             li: a(href=""): img(src="./img/vk.svg")
 
+            ul.elipse__wrapper.elipse__footer(data-relative-input="true" )
+                li(data-depth="0.1"): img(src='./img/elipse_big_1.svg')
+                li(data-depth="0.3"): img(src='./img/elipse_big_2.svg')
+
+            #tags_pop-up.pop-up
+                .overlay
+                    .tags__body
+                        .bg.tags
+                        .bg.btn__control
+                            button.cancel Отмена
+                            button.ok Ок
 
 
-        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
-        script(src='./js/wow.min.js')
-        script(src='./js/parallax.min.js')
-        script(src='./js/main.js')
+
+        script(src='./js/libs.min.js')
+        script(src='./js/main.min.js')

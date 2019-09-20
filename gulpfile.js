@@ -5,6 +5,7 @@ const gulp         = require('gulp'),
       pug          = require('gulp-pug'),
       htmlbeautify = require('gulp-html-beautify'),
       jsmin        = require('gulp-jsmin'),
+      concat       = require('gulp-concat'),
       imagemin     = require('gulp-imagemin'),
       rename       = require('gulp-rename'),
       changed      = require('gulp-changed'),
@@ -29,6 +30,17 @@ gulp.task('sass', function () {
         .pipe(browserSync.reload({stream: true}))
 });
 
+gulp.task('css-libs', function() {
+    return gulp.src([
+        'app/css/libs/*.css'
+    ])
+        .pipe(concat('libs.css')) // Собираем их в кучу в новом файле libs.min.js
+        .pipe(cssnano())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(changed('app/css/libs'))
+        .pipe(gulp.dest('app/css'));
+});
+
 gulp.task('uncss', function () {
     return gulp.src('app/css/style.css')
         .pipe(uncss({
@@ -51,6 +63,18 @@ gulp.task('scripts', function () {
         .pipe(jsmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(changed('app/js'))
+        .pipe(gulp.dest('app/js'))
+        .pipe(browserSync.reload({stream: true}))
+});
+
+gulp.task('scripts-libs', function() {
+    return gulp.src([
+        'app/js/libs/*.js'
+    ])
+        .pipe(concat('libs.js')) // Собираем их в кучу в новом файле libs.min.js
+        .pipe(jsmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(changed('app/js/libs'))
         .pipe(gulp.dest('app/js'));
 });
 
@@ -157,5 +181,5 @@ gulp.task('watch', function () {
 
 // Build tasks
 
-gulp.task('default', gulp.parallel('pug', 'sass', 'scripts', 'imagemin', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('pug', 'sass', 'scripts', 'browser-sync', 'watch'));
 gulp.task('build', gulp.parallel('clean', 'prebuild'));
