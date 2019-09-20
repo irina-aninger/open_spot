@@ -1,38 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2538a4fc-12c8-4aa6-b127-3051af33118d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/css/animate.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/style.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/img/elipse_1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/img/elipse_1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/img/elipse_2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/img/elipse_2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/img/elipse_3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/img/elipse_3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/img/elipse_4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/img/elipse_4.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/img/elipse_5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/img/elipse_5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/img/fb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/img/fb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/img/logo_stock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/img/logo_stock.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/img/screen_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/img/screen_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/img/screen_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/img/screen_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/img/tw.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/img/tw.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/img/vk.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/img/vk.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/main.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/main.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/parallax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/parallax.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/wow.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pug/pages/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/pug/pages/index.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sass/style.sass" beforeDir="false" afterPath="$PROJECT_DIR$/app/sass/style.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/style.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/main.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/main.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +31,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -81,7 +57,7 @@
       <updated>1568810581487</updated>
       <workItem from="1568810583581" duration="8433000" />
       <workItem from="1568826629589" duration="23866000" />
-      <workItem from="1568976782117" duration="10794000" />
+      <workItem from="1568976782117" duration="11499000" />
     </task>
     <servers />
   </component>
