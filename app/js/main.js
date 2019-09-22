@@ -1,5 +1,6 @@
 new WOW().init();
 
+
 let banner = document.querySelector('.header__banner'),
     header = document.querySelector('.header__navbar');
 
@@ -7,72 +8,87 @@ window.addEventListener('scroll', function () {
     if (window.pageYOffset >= (banner.offsetHeight/2)) {
         header.classList.add('fixed')
     }
-    if (window.pageYOffset == 0) {
+    if (window.pageYOffset === 0) {
         header.classList.remove('fixed')
     }
 });
 
+
 // parallax
-let bannerElipse = document.querySelector('.elipse__banner'),
-    footerElipse = document.querySelector('.elipse__footer'),
-    faqElipse = document.querySelector('.elipse__faq'),
-    radioElipse = document.querySelector('.elipse__radio'),
-    aboutElipse = document.querySelector('.elipse__about');
-let parallaxInstance = new Parallax(bannerElipse);
-let parallaxInstanceFooter = new Parallax(footerElipse);
-let parallaxInstanceFaq = new Parallax(faqElipse);
-let parallaxInstanceRadio = new Parallax(radioElipse);
-let parallaxInstanceAbout = new Parallax(aboutElipse);
+let elipse = document.querySelectorAll('.elipse__wrapper');
+
+for (let i=0; i<elipse.length; i++) {
+    let parallaxInstance       = new Parallax(elipse[i])
+}
+
 
 // accordion
-let acc = document.getElementsByClassName("accordion");
+let acc = document.getElementsByClassName('accordion');
 
 for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
+    acc[i].addEventListener('click', function() {
+        this.classList.toggle('active');
     });
 }
 
+
 // tags pop-up
-$('.tags__toggle').click(function () {
-    $('#tags_pop-up').show();
+let toggle    = $('.tags__toggle'),
+    popUpTags = $('#tags_pop-up'),
+    tagsWrap  = $('.tags__wrapper');
+
+
+toggle.click(function (el) {
+    el.preventDefault();
+    $(popUpTags).show();
     $('body').addClass('open__modal');
-    $(this).parent().children('.tags__input').appendTo('#tags_pop-up .tags');
-    $('#tags_pop-up input').attr('checked','checked');
-    $(this).clone().prependTo('#tags_pop-up .tags__input');
-    let a = $("#tags_pop-up .tags__input input");
-    if(a.length === a.filter(":checked").length){
-        $('#tags_pop-up .tags__toggle').addClass('checked')
-    }
+
+    let newInput = $(this).next('.tags__input'),
+        checkAll = $(this).clone();
+
+    tagsWrap.append(newInput);
+    $(checkAll).prependTo('#tags_pop-up .tags__input');
+
+    setChecked();
+
+    $('.ok').click(function () {
+        $(popUpTags).hide();
+        $('body').removeClass('open__modal');
+        $(el.target).parents('.form__box').append(newInput);
+        checkAll.remove();
+    });
+
+    $('.cancel').click(function () {
+        $(popUpTags).hide();
+        $('body').removeClass('open__modal');
+        $('#tags_pop-up .tags__input > input:checkbox').prop('checked', 'checked');
+        $(el.target).parents('.form__box').append(newInput);
+        checkAll.remove();
+    });
+
 });
 
-let a = $("#tags_pop-up .tags__input input");
-$("#tags_pop-up .tags__input").change(function(){
-    if(a.length > a.filter(":checked").length){
-        $('#tags_pop-up .tags__toggle').removeClass('checked')
-    } else {
-        $('#tags_pop-up .tags__toggle').addClass('checked')
-    }
-});
+function setChecked() {
+    let tagsInput = $('#tags_pop-up .tags__input > input:checkbox'),
+        newToggle = $('#tags_pop-up .tags__toggle');
 
-$(a).click(function () {
-    $('#tags_pop-up .tags__toggle').removeClass('checked');
-    $(this).addClass('checked');
-    $(this).attr('checked','checked');
-    $(a).not(this).attr('checked','');
-});
+    const statusCheck = () => {
+        if (tagsInput.length === tagsInput.filter(':checked').length ) {
+            $(newToggle).addClass('checked')
+        } else {
+            $(newToggle).removeClass('checked')
+        }
+    };
 
-$('.ok').click(function () {
-    $('#tags_pop-up').hide();
-    $('.bg.tags').html('');
-    $('body').removeClass('open__modal');
-});
+    statusCheck();
 
-$('.cancel').click(function () {
-    $('#tags_pop-up').hide();
-    $('.bg.tags').html('');
-    $('body').removeClass('open__modal');
-});
+    $(tagsWrap).change(statusCheck);
+
+    $('#tags_pop-up .check_all').click(function(){
+        $(tagsInput).not(this).prop('checked', 'checked');
+    });
+}
+
 
 // dropdown calculator
 if ($(window).width() < 992) {
@@ -81,19 +97,25 @@ if ($(window).width() < 992) {
     });
 }
 
-// form validation
 
-// let form = document.querySelectorAll('.feedback input');
-// let btnSubmit = document.querySelector('.feedback input.submit');
-//
-// console.log(btnSubmit);
-//
-// btnSubmit.addEventListener('mouseover', function () {
-//     console.log(form.value);
-//     for (let i=0; i<form.length; i++){
-//         console.log(form[i].value)
-//         if (form[i].value <= 0) {
-//             this.classList.add('error')
-//         }
-//     }
-// });
+// form validation
+let formInput = document.querySelectorAll('.feedback input'),
+    btnSubmit = document.querySelector('.feedback input.submit');
+
+
+btnSubmit.addEventListener('click', function (e) {
+    e.preventDefault();
+    for (let i=0; i<formInput.length; i++){
+        if (formInput[i].value === '') {
+            formInput[i].classList.add('error')
+        } else {
+            formInput[i].classList.remove('error')
+        }
+    }
+});
+
+for (let i=0; i<formInput.length; i++){
+    formInput[i].addEventListener('focus', function () {
+        this.classList.remove('error');
+    })
+}

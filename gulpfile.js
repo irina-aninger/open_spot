@@ -6,7 +6,6 @@ const gulp         = require('gulp'),
       htmlbeautify = require('gulp-html-beautify'),
       jsmin        = require('gulp-jsmin'),
       concat       = require('gulp-concat'),
-      imagemin     = require('gulp-imagemin'),
       rename       = require('gulp-rename'),
       changed      = require('gulp-changed'),
       browserSync  = require('browser-sync'),
@@ -59,12 +58,11 @@ gulp.task('criticalCss', function () {
 });
 
 gulp.task('scripts', function () {
-    gulp.src('app/js/main.js')
+    return gulp.src('app/js/main.js')
         .pipe(jsmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(changed('app/js'))
         .pipe(gulp.dest('app/js'))
-        .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('scripts-libs', function() {
@@ -108,12 +106,6 @@ gulp.task('htmlbeautify', function () {
 gulp.task('code', function () {
     return gulp.src('app/*.html')
         .pipe(browserSync.reload({stream: true}))
-});
-
-gulp.task('imagemin', function () {
-    return gulp.src('app/img/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('app/img'))
 });
 
 gulp.task('browser-sync', function () {
@@ -175,7 +167,7 @@ gulp.task('prebuild', async function () {
 gulp.task('watch', function () {
     gulp.watch('app/sass/**/*.sass', gulp.parallel('sass'));
     gulp.watch('app/*.html', gulp.parallel('code'));
-    gulp.watch(['app/js/*.js', 'app/libs/**/*.js'], gulp.parallel('scripts'));
+    gulp.watch('app/js/*.js', gulp.parallel('scripts'));
 });
 
 

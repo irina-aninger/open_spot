@@ -14,10 +14,10 @@ html(lang='UTF-8')
             .header__navbar
                 .container
                     .row
-                        .burger.md-4: span
+                        .md-4.burger: span
                         .logo.lg-auto.md-4
                             img(src='./img/LOGO.svg')
-                        .header__navbar__menu.lg-9
+                        .lg-9.navbar__wrapper
                             .navbar__left
                                 a(href='#is-about') О сервисе
                                 a(href='#is-partners') Партнеры
@@ -26,9 +26,9 @@ html(lang='UTF-8')
                             .navbar__right
                                 a(href='#is-faq') FAQ
                                 a(href='#contact') Контакты
-                        .header__feedback.lg-auto.text_right
+                        .lg-auto.text_right.header__feedback
                             a#feedback.btn(href='#' style='box-shadow: 0 6px 15px #C27E3E') Связаться
-                        .header__phone.md-4
+                        .md-4.header__phone
                             a(href="tel:+375291234567")
             .header__banner
                 ul.elipse__wrapper.elipse__banner(data-relative-input="true" )
@@ -40,10 +40,10 @@ html(lang='UTF-8')
                     li(data-depth="0.3"): img(src='./img/elipse_6.svg')
                 .container
                     .row
-                        .left__side__banner.lg-6.md-12
+                        .lg-6.md-12.banner__desc
                             h1.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") OpenSpot - размещение рекламы по справедливой цене
                             p.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="2s") Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения.
-                            .btn__banner.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="3s")
+                            .banner__btn.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="3s")
                                 a.btn(href='#' style='box-shadow: 0 6px 15px rgba(210, 84, 146, 0.89)') Начать
                                 a.btn.btn_transp(href='#') Узнать больше
                 .banner__img
@@ -51,19 +51,19 @@ html(lang='UTF-8')
 
         #is-about.section
             .container
-                .title.text_center
+                .text_center.title
                     span.sub__title Что мы предлагаем?
                     | Что такое OpenSpot?
-                .row.is-about__wrapper
-                    .lg-4.md-12.is-about__item.text_center
+                .row.about__wrapper
+                    .lg-4.md-12.text_center.about__item
                         .icon.icon_1: img(src='./img/benefit.svg')
                         .title__item.wow.fadeInUp(data-wow-duration="1s") Выгода
                         .desc.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения, а рекламораспространителям допродавть свой свободный инвентарь.
-                    .lg-4.md-12.is-about__item.text_center
+                    .lg-4.md-12.text_center.about__item
                         .icon.icon_2: img(src='./img/transparency.svg')
                         .title__item.wow.fadeInUp(data-wow-duration="1s") Прозрачность
                         .desc.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") Прозрачная система позволяет оценивать все каналы оффлайн рекламы и выбирать наиболее эффективные.
-                    .lg-4.md-12.is-about__item.text_center
+                    .lg-4.md-12.text_center.about__item
                         .icon.icon_3: img(src='./img/efficiency.svg')
                         .title__item.wow.fadeInUp(data-wow-duration="1s") Эффективность
                         .desc.wow.fadeInUp.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") Благодаря интеграции исследований в платформу, клиенты получают детализированную информацию для планирования рекламной кампании и могут распределять свои рекламные бюджеты наиболее эффективно.
@@ -74,21 +74,21 @@ html(lang='UTF-8')
         #is-partners.section
             .container
                 .row
-                    .lg-4.md-12.is-partners__desc
-                        .title.text_left.wow.fadeInUp(data-wow-duration="1s")
+                    .lg-4.md-12.partners__desc
+                        .text_left.title.wow.fadeInUp(data-wow-duration="1s")
                             span.sub__title С кем мы работаем?
                             | Наши партнеры
                         .desc.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.
-                    .lg-8.md-12.is-partners__wrapper
-                        .is-partners__item.item_1
+                    .lg-8.md-12.partners__wrapper
+                        .partners__item.item_1
                             img(src='./img/logo_partner_1.png')
-                        .is-partners__item.item_2
+                        .partners__item.item_2
                             img(src='./img/logo_partner_1.png')
-                        .is-partners__item.item_3
+                        .partners__item.item_3
                             img(src='./img/logo_partner_2.png')
-                        .is-partners__item.item_4
+                        .partners__item.item_4
                             img(src='./img/logo_partner_2.png')
-                        .is-partners__item.item_5
+                        .partners__item.item_5
                             img(src='./img/logo_partner_1.png')
 
         #is-radio.section
@@ -102,7 +102,7 @@ html(lang='UTF-8')
                                 img(src="./img/screen_2.png")
                     .lg-6.md-6.sm-12
                         .text__wrapper
-                            .title.text_left.wow.fadeInUp(data-wow-duration="1s")
+                            .text_left.title.wow.fadeInUp(data-wow-duration="1s")
                                 span.sub__title Что мы предлагаем?
                                 | Реклама на радио
                             .desc.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") Благодаря интеграции исследований в платформу, клиенты получают детализированную информацию для планирования рекламной кампании и могут распределять свои рекламные бюджеты наиболее эффективно.
@@ -112,52 +112,57 @@ html(lang='UTF-8')
                         input(type="hidden" name="_token" value="Ng2x5rCQH887LZke6E8C7SdqeUT8fYem8Szt2r7q")
                         .lg-6.md-6.form__box
                             .h2__title Интересующий регион
+                            .tags__toggle
+                                label.tag-label Все регионы
+                                    input(type="checkbox" class="tag-input check_all")
                             .tags.tags__input
                                 input(type="checkbox" name="k[]" value="minsk" class="tag-input" id="rMinsk" checked)
                                 label(for="rMinsk" class="tag-label") Минск
-                                input(type="checkbox" name="k[]" value="obl" class="tag-input" id="rObl")
+                                input(type="checkbox" name="k[]" value="obl" class="tag-input" id="rObl" checked)
                                 label(for="rObl" class="tag-label") Областные центры
-                            .tags__toggle Все регионы
                         .lg-6.md-6.form__box
                             .h2__title Пол аудитории
+                            .tags__toggle
+                                label.tag-label Все полы
+                                    input(type="checkbox" class="tag-input check_all")
                             .tags.tags__input
                                 input(type="checkbox" name="k[]" value="male" class="tag-input" id="sM" checked)
                                 label(for="sM" class="tag-label") Мужской
-                                input(type="checkbox" name="k[]" value="female" class="tag-input" id="sF")
+                                input(type="checkbox" name="k[]" value="female" class="tag-input" id="sF" checked)
                                 label(for="sF" class="tag-label") Женский
-                            .tags__toggle Все полы
 
                         .lg-12.form__box
                             .h2__title Возраст аудитории
+                            .tags__toggle
+                                label.tag-label Все возраста
+                                    input(type="checkbox" class="tag-input check_all")
                             .tags.tags__input
                                 input(type="checkbox" name="k[]" value="age18-24" class="tag-input" id="a1" checked)
                                 label(for="a1" class="tag-label") 18-24
 
-                                input(type="checkbox" name="k[]" value="age25-29" class="tag-input" id="a2")
+                                input(type="checkbox" name="k[]" value="age25-29" class="tag-input" id="a2" checked)
                                 label(for="a2" class="tag-label") 25-29
 
-                                input(type="checkbox" name="k[]" value="age30-34" class="tag-input" id="a3")
+                                input(type="checkbox" name="k[]" value="age30-34" class="tag-input" id="a3" checked)
                                 label(for="a3" class="tag-label") 30-34
 
-                                input(type="checkbox" name="k[]" value="age35-39" class="tag-input" id="a4")
+                                input(type="checkbox" name="k[]" value="age35-39" class="tag-input" id="a4" checked)
                                 label(for="a4" class="tag-label") 35-39
 
-                                input(type="checkbox" name="k[]" value="age40-44" class="tag-input" id="a5")
+                                input(type="checkbox" name="k[]" value="age40-44" class="tag-input" id="a5" checked)
                                 label(for="a5" class="tag-label") 40-44
 
-                                input(type="checkbox" name="k[]" value="age45-49" class="tag-input" id="a6")
+                                input(type="checkbox" name="k[]" value="age45-49" class="tag-input" id="a6" checked)
                                 label(for="a6" class="tag-label") 45-49
 
-                                input(type="checkbox" name="k[]" value="age50-54" class="tag-input" id="a7")
+                                input(type="checkbox" name="k[]" value="age50-54" class="tag-input" id="a7" checked)
                                 label(for="a7" class="tag-label") 50-54
 
-                                input(type="checkbox" name="k[]" value="age55-59" class="tag-input" id="a8")
+                                input(type="checkbox" name="k[]" value="age55-59" class="tag-input" id="a8" checked)
                                 label(for="a8" class="tag-label") 55-59
 
-                                input(type="checkbox" name="k[]" value="age60-65" class="tag-input" id="a9")
+                                input(type="checkbox" name="k[]" value="age60-65" class="tag-input" id="a9" checked)
                                 label(for="a9" class="tag-label") 60-65
-
-                            .tags__toggle Все возраста
 
                         .lg-12.form__box
                             .h2__title Радиостанции
@@ -428,7 +433,7 @@ html(lang='UTF-8')
             .container
                 .row
                     .lg-5.md-12.faq__wrapper
-                        .title.text_left
+                        .text_left.title
                             span.sub__title Мы можем вам помочь
                             | Остались вопросы?
                         .faq__items
@@ -453,8 +458,8 @@ html(lang='UTF-8')
                                 .faq__item__desc
                                     p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     .lg-auto.md-12.form__feedback
-                        form.feedback.form.text_center(action="")
-                            .title__form.text_center Все еще есть вопросы?
+                        form.text_center.feedback.form(action="")
+                            .text_center.title__form Все еще есть вопросы?
                                 span.sub__title Заполните форму обратной связи и наши специалисты свяжутся с вами!
                             input(type="text" placeholder="Имя*")
                             input(type="tel" placeholder="Номер телефона:*")
@@ -492,8 +497,8 @@ html(lang='UTF-8')
 
             #tags_pop-up.pop-up
                 .overlay
-                    .tags__body
-                        .bg.tags
+                    .pop-up__body
+                        .bg.tags__wrapper
                         .bg.btn__control
                             button.cancel Отмена
                             button.ok Ок
