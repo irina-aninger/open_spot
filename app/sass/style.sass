@@ -640,7 +640,7 @@ header
     padding-bottom: 11px
 
   .form__box
-    margin-bottom: 30px
+    margin-bottom: 28px
 
   .tags
     display: flex
@@ -692,6 +692,7 @@ header
         padding-bottom: 10px
 
     &.tags__radio
+      padding-bottom: 12px
       @include medium
         flex-wrap: nowrap
         overflow: scroll
@@ -761,14 +762,48 @@ header
 .calculator__table
   overflow: hidden
 
+.select-sort
+  display: none
+
+.mobile__sort
+  display: none
+  font-size: 12px
+  line-height: 22px
+  color: #828589
+  @include medium
+    display: block
+    select
+      width: 100%
+      font: 14px 'Roboto', sans-serif
+      color: #313639
+      line-height: 50px
+      background: #FFFFFF
+      border: 0.6px solid #BCBCBC
+      box-sizing: border-box
+      border-radius: 5px
+      padding: 8px 17px
+      margin: 7px 0 23px
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        top: auto
+        bottom: auto
+        right: 15px
+        width: 10px
+        height: 8px
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.19935 5.55975L9.9167 0.842401C10.0278 0.73133 10.0278 0.553199 9.9167 0.442128C9.80563 0.331058 9.6275 0.331058 9.51642 0.442128L5.00026 4.95829L0.4841 0.442128C0.37303 0.331058 0.194899 0.331058 0.083828 0.442128C0.0293407 0.496615 1.89812e-06 0.569964 1.895e-06 0.641216C1.89189e-06 0.712469 0.0272455 0.785818 0.083828 0.840305L4.80117 5.55765C4.91015 5.66872 5.09038 5.66872 5.19935 5.55975Z' fill='%23BCBCBC'/%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
+
+
 .calculator__table__header
-  align-items: flex-end
+  align-items: baseline
   border-bottom: 1px solid #CBCBCB
   padding-bottom: 5px
   position: relative
 
   @include medium
-    align-items: flex-start
+    align-items: baseline
 
   .th
     font-size: 12px
@@ -783,18 +818,22 @@ header
       &::after
         content: none
 
-    &::after
-      content: ''
-      position: absolute
-      bottom: 5px
-      margin-left: 6px
-      width: 8px
-      height: 11px
-      background-image: url("data:image/svg+xml,%3Csvg width='8' height='11' viewBox='0 0 8 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 0L7.4641 3.75H0.535898L4 0Z' fill='%23FF8B7C'/%3E%3Cpath d='M4 11L0.535899 7.25L7.4641 7.25L4 11Z' fill='%23FF8B7C'/%3E%3C/svg%3E%0A")
-
     @include medium
       &:nth-child(n+4)
         display: none
+
+  .js-sort-selector
+    cursor: pointer
+    &.is-active
+      cursor: default
+      &::after
+        content: ''
+        position: absolute
+        bottom: 5px
+        margin-left: 6px
+        width: 8px
+        height: 11px
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='11' viewBox='0 0 8 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 0L7.4641 3.75H0.535898L4 0Z' fill='%23FF8B7C'/%3E%3Cpath d='M4 11L0.535899 7.25L7.4641 7.25L4 11Z' fill='%23FF8B7C'/%3E%3C/svg%3E%0A")
 
 .stock__title
   font-weight: 600
@@ -867,8 +906,6 @@ header
     border-bottom: 1px solid rgba(255, 255, 255, 0.15)
 
     .logo
-      width: 90px
-      height: 58px
       background: rgba(255, 255, 255, 0.23)
       border-radius: 5px
       padding: 8px 11px
@@ -882,6 +919,9 @@ header
 
       @include large
         padding-left: 10px
+
+      @include large
+        font-size: 20px
 
   .property
     padding-top: 10px
@@ -912,7 +952,7 @@ header
     margin: 0 auto
     transition: 0s
 
-.jc-cpt-inner
+.js-cpt-inner
   font: 14px 'Roboto', sans-serif
   line-height: 50px
   color: #313639
@@ -931,8 +971,8 @@ header
         display: flex
       .arrow
         transform: rotate(-90deg)
-        top: 21px
-        right: 11px
+        top: 27px
+        right: 15px
 
     div
       &:last-child
@@ -940,6 +980,8 @@ header
 
   .td
     @include medium
+      &:first-child
+        line-height: 1.2
       &:nth-child(n+4)
         display: none
 
@@ -966,12 +1008,14 @@ header
 
   .preset
     font: 14px 'Roboto Light', sans-serif
-    width: 80px
+    width: auto
+    max-width: 100%
     height: 22px
+    padding: 0 20px
     color: #fff
     background: #dc669b
     border-radius: 100px
-    display: flex
+    display: inline-flex
     justify-content: center
     align-items: center
 
@@ -994,16 +1038,16 @@ header
     .btn
       margin: auto
       text-align: center
-      height: auto
-      width: auto
+      width: 150px
 
   .arrow
     display: none
     position: absolute
-    top: 28px
+    top: auto
+    bottom: auto
     right: 15px
     width: 10px
-    height: 20px
+    height: 8px
     background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.19935 5.55975L9.9167 0.842401C10.0278 0.73133 10.0278 0.553199 9.9167 0.442128C9.80563 0.331058 9.6275 0.331058 9.51642 0.442128L5.00026 4.95829L0.4841 0.442128C0.37303 0.331058 0.194899 0.331058 0.083828 0.442128C0.0293407 0.496615 1.89812e-06 0.569964 1.895e-06 0.641216C1.89189e-06 0.712469 0.0272455 0.785818 0.083828 0.840305L4.80117 5.55765C4.91015 5.66872 5.09038 5.66872 5.19935 5.55975Z' fill='%23BCBCBC'/%3E%3C/svg%3E%0A")
     background-repeat: no-repeat
     transition: .3s
@@ -1174,6 +1218,14 @@ header
 
       @include medium
         padding-bottom: 40px
+
+#statistics
+  .desc
+    font-size: 14px
+    line-height: 22px
+    color: #828589
+    p
+      padding-bottom: 10px
 
 .stat__item
   background: #F8F8F8
@@ -1346,6 +1398,8 @@ footer
     .tags__checkbox
       display: flex
       flex-direction: column
+      max-height: calc(100vh - 110px)
+      overflow-x: scroll
       input
         width: 0
         display: none
@@ -1375,13 +1429,11 @@ footer
     display: flex
     margin-top: 13px
     button
-      width: 50%
+      width: 100%
       background: none
       border: none
       font-size: 20px
       font-weight: 600
       color: #DF6598
       padding: 17px 0
-      &:first-child
-        border-right: 1px solid #C9C9C9
 
