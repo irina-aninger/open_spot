@@ -730,8 +730,6 @@ header {
     top: 0;
     height: 100%;
     z-index: -10; }
-    .header__banner .banner__img img {
-      height: 90%; }
 
 .banner__btn {
   padding-top: 20px;
