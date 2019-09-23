@@ -11,6 +11,7 @@ function getTable() {
             //contentType: $contentType,
             success: function (response) {
                 $('.js-cpt-inner').html(response.table);
+                showhide();
             },
             error: function (response) {
                 let result;
@@ -71,7 +72,7 @@ for (let i = 0; i < acc.length; i++) {
 
 // table sort
 let selectSort = $('.js-sort-selector'),
-    inputSort  = $('#sort');
+    inputSort = $('#sort');
 
 
 selectSort.click(function (e) {
@@ -82,9 +83,62 @@ selectSort.click(function (e) {
         $(this).addClass('is-active');
         $(selectSort).not(this).removeClass('is-active');
         $(inputSort).val($(this).data("sort")).trigger('change');
-        $(this).css('cursor', 'default');
     }
 });
+
+let mobileSort = $('.mobile__sort select');
+
+if ($(window).width() < 992) {
+    function showhide() {
+        let _class;
+        let optionVal = $('.mobile__sort option:selected').val();
+
+        switch (optionVal) {
+            case 'title ASC':
+                _class = '.js-showhide-preset';
+                break;
+            case 'price ASC':
+                _class = '.js-showhide-cost';
+                break;
+            case 'cpt ASC':
+                _class = '.js-showhide-cpt';
+                break;
+            case 'reach ASC':
+                _class = '.js-showhide-cover';
+                break;
+            case 'time ASC':
+                _class = '.js-showhide-time';
+                break;
+            case 'count ASC':
+                _class = '.js-showhide-count';
+                break;
+        }
+
+        $(_class).show();
+        $('.result__table .row > .td:not(:nth-child(1)):not(:nth-child(2))').not(_class).hide()
+    }
+
+    selectSort.each(function () {
+        let el = $(this);
+
+        setSelect();
+
+        mobileSort.change(function () {
+            setSelect();
+        });
+
+        function setSelect() {
+            if ($(el).data('sort') === $('.mobile__sort option:selected').val()) {
+                el.show();
+                el.addClass('is-active');
+                $(inputSort).val($(el).data("sort")).trigger('change');
+            } else {
+                el.removeClass('is-active');
+                $(el).not(':nth-child(2)').hide()
+            }
+        }
+    });
+}
 
 
 let tagsRadio = $('.tags__radio >input:checkbox'),
@@ -105,7 +159,6 @@ $('.tags__radio').change(statusCheck);
 $('.tags__radio .check_all').click(function () {
     $(tagsRadio).not(this).prop('checked', 'checked');
 });
-
 
 
 // replace button text
@@ -146,9 +199,12 @@ toggle.click(function (el) {
 
 // dropdown calculator
 if ($(window).width() < 992) {
-    $('.js-cpt-inner .row').click(function () {
+    // $('.js-cpt-inner .row').click(function () {
+    //     $(this).toggleClass('active');
+    // });
+    $(document).on('click', '.result__table .row', function (e) {
         $(this).toggleClass('active');
-    });
+    })
 }
 
 

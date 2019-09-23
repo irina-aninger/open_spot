@@ -69,7 +69,8 @@ gulp.task('scripts', function () {
 gulp.task('scripts-libs', function() {
     return gulp.src([
         'app/js/libs/jquery.js',
-        'app/js/libs/*.js'
+        'app/js/libs/parallax.min.js',
+        'app/js/libs/wow.min.js'
     ])
         .pipe(concat('libs.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(jsmin())
@@ -176,7 +177,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('deploy', function() {
-    return gulp.src(['dist/**/*'])
+    return gulp.src(['dist/**/*', '!dist/*.html'])
         .pipe(sftp({
             host: '178.172.173.58',
             user: 'dev',

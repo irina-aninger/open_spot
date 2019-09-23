@@ -54,9 +54,14 @@ input::placeholder
 
 button,
 input,
-textarea
+textarea,
+select
   &:focus
     outline: none
+    outline-offset: 0
+
+option
+  border: none
 
 h1
   font: 34px Roboto, sans-serif
@@ -776,7 +781,6 @@ header
       width: 100%
       font: 14px 'Roboto', sans-serif
       color: #313639
-      line-height: 50px
       background: #FFFFFF
       border: 0.6px solid #BCBCBC
       box-sizing: border-box
@@ -784,6 +788,10 @@ header
       padding: 8px 17px
       margin: 7px 0 23px
       position: relative
+      appearance: none
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.19935 5.55975L9.9167 0.842401C10.0278 0.73133 10.0278 0.553199 9.9167 0.442128C9.80563 0.331058 9.6275 0.331058 9.51642 0.442128L5.00026 4.95829L0.4841 0.442128C0.37303 0.331058 0.194899 0.331058 0.083828 0.442128C0.0293407 0.496615 1.89812e-06 0.569964 1.895e-06 0.641216C1.89189e-06 0.712469 0.0272455 0.785818 0.083828 0.840305L4.80117 5.55765C4.91015 5.66872 5.09038 5.66872 5.19935 5.55975Z' fill='%23BCBCBC'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: right 13px top 13px
       &::before
         content: ''
         position: absolute
@@ -824,8 +832,11 @@ header
 
   .js-sort-selector
     cursor: pointer
+    @include medium
+      max-width: 33.333333%
     &.is-active
       cursor: default
+
       &::after
         content: ''
         position: absolute
@@ -1018,6 +1029,7 @@ header
     display: inline-flex
     justify-content: center
     align-items: center
+    box-sizing: border-box
 
   .dropdown__property
     display: none
@@ -1245,6 +1257,9 @@ header
       height: 1px
       width: 100%
       background: #EAEAEA
+
+#chartdiv
+  height: 600px
 
 footer
   background: #15262D

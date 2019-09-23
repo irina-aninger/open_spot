@@ -47,16 +47,322 @@ html(lang='UTF-8')
                     .lg-6.sm-12
                         .stat__item
                             .stat__title Аудиторные доли радиостанций (все 12-65 лет)
-                            #chartdiv
+                            #chartdiv(style='height="600px"')
                     .lg-6.sm-12
                         .stat__item
-                            .stat__title Аудиторные доли радиостанций (все 12-65 лет)
+                            .stat__title Средние охваты радиостанций, тыс. чел
                     .lg-12
                         .stat__item
-                            .stat__title Аудиторные доли радиостанций (все 12-65 лет)
+                            .stat__title Почасовое слушание радио, пн-вс
                     .lg-12
                         .stat__item
-                            .stat__title Аудиторные доли радиостанций (все 12-65 лет)
+                            .stat__title Профиль радиостанции <span>Радио РОКС<span> среди жителей Минска и областных центров
+                    .lg-12
+                        .stat__item
+                            .stat__title Стоимость за 1 000 контактов (CPT OTS)
+
+        #is-radio.section
+            .container
+                .form__wrapper.page__stat
+                    .form__title.text_left Реклама на радио
+                    form(method="get" action="http://178.172.173.58/cpt" class="calculator row ajax-form js-cpt-calculator" data-noreload data-response=".js-cpt-inner")
+                        input(type="hidden" name="_token" value="Ng2x5rCQH887LZke6E8C7SdqeUT8fYem8Szt2r7q")
+                        .lg-6.md-6.form__box
+                            .h2__title Интересующий регион
+                            .tags__toggle Все регионы
+                            .tags.tags__checkbox
+                                input(type="checkbox" name="k[]" value="minsk" class="tag-input" id="rMinsk" checked)
+                                label(for="rMinsk" class="tag-label") Минск
+                                input(type="checkbox" name="k[]" value="obl" class="tag-input" id="rObl" checked)
+                                label(for="rObl" class="tag-label") Областные центры
+                        .lg-6.md-6.form__box
+                            .h2__title Пол аудитории
+                            .tags__toggle Все полы
+                            .tags.tags__checkbox
+                                input(type="checkbox" name="k[]" value="male" class="tag-input" id="sM" checked)
+                                label(for="sM" class="tag-label") Мужской
+                                input(type="checkbox" name="k[]" value="female" class="tag-input" id="sF" checked)
+                                label(for="sF" class="tag-label") Женский
+
+                        .lg-12.form__box
+                            .h2__title Возраст аудитории
+                            .tags__toggle Все возраста
+                            .tags.tags__checkbox
+                                input(type="checkbox" name="k[]" value="age18-24" class="tag-input" id="a1" checked)
+                                label(for="a1" class="tag-label") 18-24
+
+                                input(type="checkbox" name="k[]" value="age25-29" class="tag-input" id="a2" checked)
+                                label(for="a2" class="tag-label") 25-29
+
+                                input(type="checkbox" name="k[]" value="age30-34" class="tag-input" id="a3" checked)
+                                label(for="a3" class="tag-label") 30-34
+
+                                input(type="checkbox" name="k[]" value="age35-39" class="tag-input" id="a4" checked)
+                                label(for="a4" class="tag-label") 35-39
+
+                                input(type="checkbox" name="k[]" value="age40-44" class="tag-input" id="a5" checked)
+                                label(for="a5" class="tag-label") 40-44
+
+                                input(type="checkbox" name="k[]" value="age45-49" class="tag-input" id="a6" checked)
+                                label(for="a6" class="tag-label") 45-49
+
+                                input(type="checkbox" name="k[]" value="age50-54" class="tag-input" id="a7" checked)
+                                label(for="a7" class="tag-label") 50-54
+
+                                input(type="checkbox" name="k[]" value="age55-59" class="tag-input" id="a8" checked)
+                                label(for="a8" class="tag-label") 55-59
+
+                                input(type="checkbox" name="k[]" value="age60-65" class="tag-input" id="a9" checked)
+                                label(for="a9" class="tag-label") 60-65
+
+                        input(type="text" name="sort" value="sort-cpt" class="select-sort" id="sort")
+
+                    .stock__title Акционные предложения
+                        .row.stock__wrapper
+                            .lg-3.md-10.stock__item
+                                div
+                                    .stock__head
+                                        .logo
+                                            img(src="./img/logo_stock.svg")
+                                        .sale Прайм
+                                            span -15%
+                                    ul.property
+                                        li Стоимость МП, руб
+                                            span 254,61
+                                        li Стоимость МП, руб
+                                            span 254,61
+                                        li Стоимость МП, руб
+                                            span 254,61
+                                    a.btn(href="javascript:;") Разместить
+                            .lg-3.md-10.stock__item
+                                div
+                                    .stock__head
+                                        .logo
+                                            img(src="./img/logo_stock.svg")
+                                        .sale Прайм
+                                            span -15%
+                                    ul.property
+                                        li Стоимость МП, руб
+                                            span 254,61
+                                        li Стоимость МП, руб
+                                            span 254,61
+                                        li Стоимость МП, руб
+                                            span 254,61
+                                    a.btn(href="javascript:;") Разместить
+                            .lg-3.md-10.stock__item
+                                div
+                                    .stock__head
+                                        .logo
+                                            img(src="./img/logo_stock.svg")
+                                        .sale Прайм
+                                            span -15%
+                                    ul.property
+                                        li Стоимость МП, руб
+                                            span 254,61
+                                        li Стоимость МП, руб
+                                            span 254,61
+                                        li Стоимость МП, руб
+                                            span 254,61
+                                    a.btn(href="javascript:;") Разместить
+                            .lg-3.md-10.stock__item
+                                div
+                                    .stock__head
+                                        .logo
+                                            img(src="./img/logo_stock.svg")
+                                        .sale Прайм
+                                            span -15%
+                                    ul.property
+                                        li Стоимость МП, руб
+                                            span 254,61
+                                        li Стоимость МП, руб
+                                            span 254,61
+                                        li Стоимость МП, руб
+                                            span 254,61
+                                    a.btn(href="javascript:;") Разместить
+
+                    .calculator__table
+                        .mobile__sort Сортировать по
+                            select(name='sort')
+                                option(value="sort-cost") Стоимость МП
+                                option(value="sort-cpt" selected) СРТ
+                                option(value="sort-cover") Охват
+                                option(value="sort-time") Время
+                                option(value="sort-count") Количество выходов
+
+                        .row.calculator__table__header
+                            .lg-2.md-4.th Станция
+                            .lg-2.md-4.th.js-sort-selector(data-sort='sort-preset') Пресет
+                                span.th__filter
+                            .lg-1.md-4.th.js-sort-selector(data-sort='sort-cost') Стоимость МП, руб
+                                span.th__filter
+                            .lg-1.md-4.th.js-sort-selector.is-active(data-sort='sort-cpt') CPT, руб
+                                span.th__filter
+                            .lg-1.md-4.th.js-sort-selector(data-sort='sort-cover') Охват, тыс
+                                span.th__filter
+                            .lg-1.md-4.th.js-sort-selector(data-sort='sort-time') Время, сек
+                                span.th__filter
+                            .lg-auto.th.js-sort-selector(data-sort='sort-count') Количество выходов
+                                span.th__filter
+                            .lg-2.md-4.th
+
+                        .result__table
+                            .js-cpt-inner
+                                .row
+                                    .lg-2.md-4.td Радио Рокс
+                                    .lg-2.md-4.td.js-showhide-preset
+                                        span.preset Прайм
+                                    .lg-1.md-4.td.js-showhide-cost 2985.75
+                                    .lg-1.md-4.td.js-showhide-cpt 254.61
+                                    .lg-1.md-4.td.js-showhide-cover 0.72
+                                    .lg-1.md-4.td.js-showhide-time 0.72
+                                    .lg-auto.td.js-showhide-count Прайм
+                                    .lg-3.text_right.td
+                                        a.btn(href="javascript:;") Разместить
+                                    .dropdown__property
+                                        .md-8.th
+                                            .th CPT, руб
+                                            .th Охват, тыс
+                                            .th Время, сек
+                                            .th Количество выходов
+                                        .md-4.td
+                                            .td 254.61
+                                            .td 0.72
+                                            .td 0.72
+                                            .td Прайм
+                                        a.btn(href="javascript:;") Разместить
+                                    span.arrow
+                                .row
+                                    .lg-2.md-4.td Радио Рокс
+                                    .lg-2.md-4.td.js-showhide-preset
+                                        span.preset Прайм
+                                    .lg-1.md-4.td.js-showhide-cost 2985.75
+                                    .lg-1.md-4.td.js-showhide-cpt 254.61
+                                    .lg-1.md-4.td.js-showhide-cover 0.72
+                                    .lg-1.md-4.td.js-showhide-time 0.72
+                                    .lg-auto.td.js-showhide-count Прайм
+                                    .lg-3.text_right.td
+                                        a.btn(href="javascript:;") Разместить
+                                    span.arrow
+                                .row
+                                    .lg-2.md-4.td Радио Рокс
+                                    .lg-2.md-4.td.js-showhide-preset
+                                        span.preset Прайм
+                                    .lg-1.md-4.td.js-showhide-cost 2985.75
+                                    .lg-1.md-4.td.js-showhide-cpt 254.61
+                                    .lg-1.md-4.td.js-showhide-cover 0.72
+                                    .lg-1.md-4.td.js-showhide-time 0.72
+                                    .lg-auto.td.js-showhide-count Прайм
+                                    .lg-3.text_right.td
+                                        a.btn(href="javascript:;") Разместить
+                                    span.arrow
+                                .row
+                                    .lg-2.md-4.td Радио Рокс
+                                    .lg-2.md-4.td.js-showhide-preset
+                                        span.preset Прайм
+                                    .lg-1.md-4.td.js-showhide-cost 2985.75
+                                    .lg-1.md-4.td.js-showhide-cpt 254.61
+                                    .lg-1.md-4.td.js-showhide-cover 0.72
+                                    .lg-1.md-4.td.js-showhide-time 0.72
+                                    .lg-auto.td.js-showhide-count Прайм
+                                    .lg-3.text_right.td
+                                        a.btn(href="javascript:;") Разместить
+                                    span.arrow
+                                .row
+                                    .lg-2.md-4.td Радио Рокс
+                                    .lg-2.md-4.td.js-showhide-preset
+                                        span.preset Прайм
+                                    .lg-1.md-4.td.js-showhide-cost 2985.75
+                                    .lg-1.md-4.td.js-showhide-cpt 254.61
+                                    .lg-1.md-4.td.js-showhide-cover 0.72
+                                    .lg-1.md-4.td.js-showhide-time 0.72
+                                    .lg-auto.td.js-showhide-count Прайм
+                                    .lg-3.text_right.td
+                                        a.btn(href="javascript:;") Разместить
+                                    span.arrow
+                                .row
+                                    .lg-2.md-4.td Радио Рокс
+                                    .lg-2.md-4.td.js-showhide-preset
+                                        span.preset Прайм
+                                    .lg-1.md-4.td.js-showhide-cost 2985.75
+                                    .lg-1.md-4.td.js-showhide-cpt 254.61
+                                    .lg-1.md-4.td.js-showhide-cover 0.72
+                                    .lg-1.md-4.td.js-showhide-time 0.72
+                                    .lg-auto.td.js-showhide-count Прайм
+                                    .lg-3.text_right.td
+                                        a.btn(href="javascript:;") Разместить
+                                    span.arrow
+                                .row
+                                    .lg-2.md-4.td Радио Рокс
+                                    .lg-2.md-4.td.js-showhide-preset
+                                        span.preset Прайм
+                                    .lg-1.md-4.td.js-showhide-cost 2985.75
+                                    .lg-1.md-4.td.js-showhide-cpt 254.61
+                                    .lg-1.md-4.td.js-showhide-cover 0.72
+                                    .lg-1.md-4.td.js-showhide-time 0.72
+                                    .lg-auto.td.js-showhide-count Прайм
+                                    .lg-3.text_right.td
+                                        a.btn(href="javascript:;") Разместить
+                                    span.arrow
+                                .row
+                                    .lg-2.md-4.td Радио Рокс
+                                    .lg-2.md-4.td.js-showhide-preset
+                                        span.preset Прайм
+                                    .lg-1.md-4.td.js-showhide-cost 2985.75
+                                    .lg-1.md-4.td.js-showhide-cpt 254.61
+                                    .lg-1.md-4.td.js-showhide-cover 0.72
+                                    .lg-1.md-4.td.js-showhide-time 0.72
+                                    .lg-auto.td.js-showhide-count Прайм
+                                    .lg-3.text_right.td
+                                        a.btn(href="javascript:;") Разместить
+                                    span.arrow
+                                .row
+                                    .lg-2.md-4.td Радио Рокс
+                                    .lg-2.md-4.td.js-showhide-preset
+                                        span.preset Прайм
+                                    .lg-1.md-4.td.js-showhide-cost 2985.75
+                                    .lg-1.md-4.td.js-showhide-cpt 254.61
+                                    .lg-1.md-4.td.js-showhide-cover 0.72
+                                    .lg-1.md-4.td.js-showhide-time 0.72
+                                    .lg-auto.td.js-showhide-count Прайм
+                                    .lg-3.text_right.td
+                                        a.btn(href="javascript:;") Разместить
+                                    span.arrow
+                                .row
+                                    .lg-2.md-4.td Радио Рокс
+                                    .lg-2.md-4.td.js-showhide-preset
+                                        span.preset Прайм
+                                    .lg-1.md-4.td.js-showhide-cost 2985.75
+                                    .lg-1.md-4.td.js-showhide-cpt 254.61
+                                    .lg-1.md-4.td.js-showhide-cover 0.72
+                                    .lg-1.md-4.td.js-showhide-time 0.72
+                                    .lg-auto.td.js-showhide-count Прайм
+                                    .lg-3.text_right.td
+                                        a.btn(href="javascript:;") Разместить
+                                    span.arrow
+                                .row
+                                    .lg-2.md-4.td Радио Рокс
+                                    .lg-2.md-4.td.js-showhide-preset
+                                        span.preset Прайм
+                                    .lg-1.md-4.td.js-showhide-cost 2985.75
+                                    .lg-1.md-4.td.js-showhide-cpt 254.61
+                                    .lg-1.md-4.td.js-showhide-cover 0.72
+                                    .lg-1.md-4.td.js-showhide-time 0.72
+                                    .lg-auto.td.js-showhide-count Прайм
+                                    .lg-3.text_right.td
+                                        a.btn(href="javascript:;") Разместить
+                                    span.arrow
+                                .row
+                                    .lg-2.md-4.td Радио Рокс
+                                    .lg-2.md-4.td.js-showhide-preset
+                                        span.preset Прайм
+                                    .lg-1.md-4.td.js-showhide-cost 2985.75
+                                    .lg-1.md-4.td.js-showhide-cpt 254.61
+                                    .lg-1.md-4.td.js-showhide-cover 0.72
+                                    .lg-1.md-4.td.js-showhide-time 0.72
+                                    .lg-auto.td.js-showhide-count Прайм
+                                    .lg-3.text_right.td
+                                        a.btn(href="javascript:;") Разместить
+                                    span.arrow
 
         footer#contact
             .container
@@ -96,4 +402,8 @@ html(lang='UTF-8')
 
 
         script(src='./js/libs.min.js')
+        script(src='https://www.amcharts.com/lib/4/core.js')
+        script(src='https://www.amcharts.com/lib/4/charts.js')
+        script(src='https://www.amcharts.com/lib/4/themes/animated.js')
+        script(src='./js/charts.min.js')
         script(src='./js/main.min.js')
