@@ -16,13 +16,14 @@ html(lang='UTF-8')
                     .row
                         .md-4.burger: span
                         .logo.lg-auto.md-4
-                            img(src='./img/LOGO.svg')
+                            a(href='/')
+                                img(src='./img/LOGO.svg')
                         .lg-9.navbar__wrapper
                             .navbar__left
                                 a(href='#is-about') О сервисе
                                 a(href='#is-partners') Партнеры
                                 a(href='#is-radio') Радио
-                                a(href='#') Статистика
+                                a(href='/statistics.html') Статистика
                             .navbar__right
                                 a(href='#is-faq') FAQ
                                 a(href='#contact') Контакты
@@ -115,7 +116,7 @@ html(lang='UTF-8')
                             .tags__toggle
                                 label.tag-label Все регионы
                                     input(type="checkbox" class="tag-input check_all")
-                            .tags.tags__input
+                            .tags.tags__checkbox
                                 input(type="checkbox" name="k[]" value="minsk" class="tag-input" id="rMinsk" checked)
                                 label(for="rMinsk" class="tag-label") Минск
                                 input(type="checkbox" name="k[]" value="obl" class="tag-input" id="rObl" checked)
@@ -125,7 +126,7 @@ html(lang='UTF-8')
                             .tags__toggle
                                 label.tag-label Все полы
                                     input(type="checkbox" class="tag-input check_all")
-                            .tags.tags__input
+                            .tags.tags__checkbox
                                 input(type="checkbox" name="k[]" value="male" class="tag-input" id="sM" checked)
                                 label(for="sM" class="tag-label") Мужской
                                 input(type="checkbox" name="k[]" value="female" class="tag-input" id="sF" checked)
@@ -136,7 +137,7 @@ html(lang='UTF-8')
                             .tags__toggle
                                 label.tag-label Все возраста
                                     input(type="checkbox" class="tag-input check_all")
-                            .tags.tags__input
+                            .tags.tags__checkbox
                                 input(type="checkbox" name="k[]" value="age18-24" class="tag-input" id="a1" checked)
                                 label(for="a1" class="tag-label") 18-24
 
@@ -167,23 +168,23 @@ html(lang='UTF-8')
                         .lg-12.form__box
                             .h2__title Радиостанции
                             .tags.tags__radio
-                                input(type="radio" name="radio" value="" class="tag-input" id="r1" checked)
-                                label(for="r1" class="tag-label") Все
+                                label.tag-label Все
+                                    input(type="checkbox" class="tag-input check_all")
 
-                                input(type="radio" name="radio" value="" class="tag-input" id="r2")
-                                label(for="r2" class="tag-label") Радио Рокс
+                                input(type="checkbox" name="radio" value="" class="tag-input" id="r1" checked)
+                                label(for="r1" class="tag-label") Радио Рокс
 
-                                input(type="radio" name="radio" value="" class="tag-input" id="r3")
-                                label(for="r3" class="tag-label") Русское радио
+                                input(type="checkbox" name="radio" value="" class="tag-input" id="r2" checked)
+                                label(for="r2" class="tag-label") Русское радио
 
-                                input(type="radio" name="radio" value="" class="tag-input" id="r4")
-                                label(for="r4" class="tag-label") Радио Рокс
+                                input(type="checkbox" name="radio" value="" class="tag-input" id="r3" checked)
+                                label(for="r3" class="tag-label") Радио Рокс
 
-                                input(type="radio" name="radio" value="" class="tag-input" id="r5")
-                                label(for="r5" class="tag-label") Русское радио
+                                input(type="checkbox" name="radio" value="" class="tag-input" id="r4" checked)
+                                label(for="r4" class="tag-label") Русское радио
 
-                                input(type="radio" name="radio" value="" class="tag-input" id="r6")
-                                label(for="r6" class="tag-label") Радио Рокс
+                                input(type="checkbox" name="radio" value="" class="tag-input" id="r5" checked)
+                                label(for="r5" class="tag-label") Радио Рокс
 
                     .stock__title Акционные предложения
                         .row.stock__wrapper

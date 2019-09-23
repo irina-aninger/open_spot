@@ -1,0 +1,89 @@
+doctype html
+html(lang='UTF-8')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title Test
+        link(href='./css/normalize.min.css', rel='stylesheet')
+        link(href='./css/libs.min.css', rel='stylesheet')
+        link(href='./css/style.min.css', rel='stylesheet')
+
+    body
+
+        header
+            .header__navbar
+                .container
+                    .row
+                        .md-4.burger: span
+                        .logo.lg-auto.md-4
+                            a(href='/')
+                                img(src='./img/LOGO.svg')
+                        .lg-9.navbar__wrapper
+                            .navbar__left
+                                a(href='#is-about') О сервисе
+                                a(href='#is-partners') Партнеры
+                                a(href='#is-radio') Радио
+                                a(href='#') Статистика
+                            .navbar__right
+                                a(href='#is-faq') FAQ
+                                a(href='#contact') Контакты
+                        .lg-auto.text_right.header__feedback
+                            a#feedback.btn(href='#' style='box-shadow: 0 6px 15px #C27E3E') Связаться
+                        .md-4.header__phone
+                            a(href="tel:+375291234567")
+
+        #statistics.section
+            .container
+                .row
+                    .lg-6.sm-12
+                        .stat__item
+                            .stat__title Аудиторные доли радиостанций (все 12-65 лет)
+                    .lg-6.sm-12
+                        .stat__item
+                            .stat__title Аудиторные доли радиостанций (все 12-65 лет)
+                    .lg-12
+                        .stat__item
+                            .stat__title Аудиторные доли радиостанций (все 12-65 лет)
+                    .lg-12
+                        .stat__item
+                            .stat__title Аудиторные доли радиостанций (все 12-65 лет)
+
+        footer#contact
+            .container
+                .row
+                    .lg-3.md-6
+                        .logo
+                            img(src='./img/LOGO.svg')
+                            p © OPENSPOT.BY <br>+375(29)6332756 ИП Маринич М.М. <br>УНП 690731091
+                    .lg-3.md-7.footer__navbar
+                        a(href="#") О сервисе
+                        a(href="#") Наши партнеры
+                        a(href="#") Реклама на радио
+                        a(href="#") FAQ
+                    .lg-3.md-6.footer__contact
+                        a(href="tel:+375291234567") +375 29 123 45 67
+                        a(href="tel:+375331234567") +375 33 123 45 67
+                        a(href="mailto:mailbox@mail.com") mailbox@mail.com
+                    .lg-3.md-5.footer__adress
+                        p Минск, пр-т Дзержинского, 104
+                        ul.soc_link
+                            li: a(href=""): img(src="./img/fb.svg")
+                            li: a(href=""): img(src="./img/tw.svg")
+                            li: a(href=""): img(src="./img/vk.svg")
+
+            ul.elipse__wrapper.elipse__footer(data-relative-input="true" )
+                li(data-depth="0.1"): img(src='./img/elipse_big_1.svg')
+                li(data-depth="0.3"): img(src='./img/elipse_big_2.svg')
+
+            #tags_pop-up.pop-up
+                .overlay
+                    .pop-up__body
+                        .bg.tags__wrapper
+                        .bg.btn__control
+                            button.cancel Отмена
+                            button.ok Ок
+
+
+
+        script(src='./js/libs.min.js')
+        script(src='./js/main.min.js')

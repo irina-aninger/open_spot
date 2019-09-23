@@ -32,6 +32,48 @@ for (let i = 0; i < acc.length; i++) {
 }
 
 
+let tagsRadio = $('.tags__radio >input:checkbox'),
+    tagAll = $('.tag-label');
+
+const statusCheck = () => {
+    if (tagsRadio.length === tagsRadio.filter(':checked').length ) {
+        $(tagAll).addClass('checked')
+    } else {
+        $(tagAll).removeClass('checked')
+    }
+};
+
+statusCheck();
+
+$('.tags__radio').change(statusCheck);
+
+$('.tags__radio .check_all').click(function(){
+    $(tagsRadio).not(this).prop('checked', 'checked');
+});
+
+
+let btn = $('#is-radio .btn');
+
+btn.hover(function () {
+    console.log(btn.html())
+    if ($(this).html() === 'Разместить') {
+        $(this).html('Начать')
+    } else {
+        $(this).html('Разместить')
+    }
+});
+
+// if ($(btn).html() == "Разместить") {
+//     $(btn).mouseover(function() {
+//         $(btn).html("Начать");
+//     });
+//     $(btn).mouseout(function() {
+//         $(btn).html("Разместить");
+//     });
+// }
+
+
+
 // tags pop-up
 let toggle    = $('.tags__toggle'),
     popUpTags = $('#tags_pop-up'),
@@ -43,11 +85,11 @@ toggle.click(function (el) {
     $(popUpTags).show();
     $('body').addClass('open__modal');
 
-    let newInput = $(this).next('.tags__input'),
+    let newInput = $(this).next('.tags__checkbox'),
         checkAll = $(this).clone();
 
     tagsWrap.append(newInput);
-    $(checkAll).prependTo('#tags_pop-up .tags__input');
+    $(checkAll).prependTo('#tags_pop-up .tags__checkbox');
 
     setChecked();
 
@@ -61,7 +103,7 @@ toggle.click(function (el) {
     $('.cancel').click(function () {
         $(popUpTags).hide();
         $('body').removeClass('open__modal');
-        $('#tags_pop-up .tags__input > input:checkbox').prop('checked', 'checked');
+        $('#tags_pop-up .tags__checkbox > input:checkbox').prop('checked', 'checked');
         $(el.target).parents('.form__box').append(newInput);
         checkAll.remove();
     });
@@ -69,7 +111,7 @@ toggle.click(function (el) {
 });
 
 function setChecked() {
-    let tagsInput = $('#tags_pop-up .tags__input > input:checkbox'),
+    let tagsInput = $('#tags_pop-up .tags__checkbox > input:checkbox'),
         newToggle = $('#tags_pop-up .tags__toggle');
 
     const statusCheck = () => {

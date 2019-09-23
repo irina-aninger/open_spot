@@ -77,6 +77,10 @@ h2, h3
 a
   text-decoration: none
   cursor: pointer
+  transition: .2s
+
+  &:hover
+    color: #493F7B
 
 ul,
 li
@@ -155,7 +159,7 @@ header
     top: 0
     width: 100%
     padding: 30px 0
-    font-size: 16px
+    font: 16px 'Roboto', sans-serif
     z-index: 10
     transition: .2s
 
@@ -173,6 +177,10 @@ header
 
     a
       color: #FFFFFF
+      transition: .2s
+
+      &:hover
+        color: #493F7B
 
       &.btn
         color: #493f7b
@@ -644,7 +652,7 @@ header
       margin-right: 58px
       cursor: pointer
 
-    &.tags__input
+    &.tags__checkbox
       @include medium
         display: none
       .tag-input
@@ -687,22 +695,41 @@ header
       @include medium
         flex-wrap: nowrap
         overflow: scroll
+        white-space: nowrap
 
       label
         font: 14px 'Roboto', sans-serif
-        margin-right: 0
+        padding: 10px 13px 10px 19px
+        margin-right: 9px
+        position: relative
+        &:last-child
+          margin-right: 0
+        &:first-child
+          padding: 10px 13px
+          &.checked
+            background: #E9E5FF
+            border-radius: 7px
+            color: #493F7B
 
       .tag-input
         width: 0
         display: none
 
-        & + [for]
-          padding: 10px 18px
-
         &:checked + [for]
           background: #E9E5FF
           border-radius: 7px
           color: #493F7B
+
+          &::before
+            content: ''
+            position: absolute
+            left: 3px
+            top: 0
+            bottom: 0
+            margin: auto
+            width: 15px
+            height: 15px
+            background-image: url("data:image/svg+xml,%3Csvg width='15' height='14' viewBox='0 0 15 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='11.1741' y1='3.30775' x2='4.26477' y2='10.2171' stroke='%23493F7B'/%3E%3Cline x1='4.26609' y1='3.6003' x2='11.1754' y2='10.5096' stroke='%23493F7B'/%3E%3C/svg%3E%0A")
 
   .tags__toggle
     display: none
@@ -738,6 +765,7 @@ header
   align-items: flex-end
   border-bottom: 1px solid #CBCBCB
   padding-bottom: 5px
+  position: relative
 
   @include medium
     align-items: flex-start
@@ -746,6 +774,23 @@ header
     font-size: 12px
     line-height: 22px
     color: #828589
+
+    &:first-child
+      &::after
+        content: none
+
+    &:last-child
+      &::after
+        content: none
+
+    &::after
+      content: ''
+      position: absolute
+      bottom: 5px
+      margin-left: 6px
+      width: 8px
+      height: 11px
+      background-image: url("data:image/svg+xml,%3Csvg width='8' height='11' viewBox='0 0 8 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 0L7.4641 3.75H0.535898L4 0Z' fill='%23FF8B7C'/%3E%3Cpath d='M4 11L0.535899 7.25L7.4641 7.25L4 11Z' fill='%23FF8B7C'/%3E%3C/svg%3E%0A")
 
     @include medium
       &:nth-child(n+4)
@@ -865,6 +910,7 @@ header
     align-items: center
     justify-content: center
     margin: 0 auto
+    transition: 0s
 
 .jc-cpt-inner
   font: 14px 'Roboto', sans-serif
@@ -899,6 +945,7 @@ header
 
   a
     &.btn
+      width: 150px
       font: 16px 'Roboto Light', sans-serif
       line-height: 24px
       color: #493F7B
@@ -906,8 +953,8 @@ header
       border-radius: 100px
       background: transparent
       box-shadow: none
-      padding: 8px 31px
-      display: inline
+      display: inline-flex
+      transition: 0s
 
       @include large
         margin-right: 12px
@@ -1128,6 +1175,25 @@ header
       @include medium
         padding-bottom: 40px
 
+.stat__item
+  background: #F8F8F8
+  border-radius: 15px
+  .stat__title
+    font: 600 18px 'Roboto', sans-serif
+    line-height: 50px
+    color: #313639
+    padding: 14px 6px
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      height: 1px
+      width: 100%
+      background: #EAEAEA
+
 footer
   background: #15262D
   padding: 40px 0
@@ -1162,6 +1228,10 @@ footer
       font: 14px 'Roboto', sans-serif
       line-height: 22px
       padding-bottom: 10px
+      transition: .2s
+
+      &:hover
+        color: #493F7B
 
   .footer__contact
     display: flex
@@ -1273,7 +1343,7 @@ footer
             left: 30px
             background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3889 0.91127C12.7571 0.571096 12.0525 1.22715 11.6394 1.61592C10.6918 2.53924 9.88999 3.60836 8.99092 4.58028C7.9947 5.6494 7.07137 6.71852 6.05085 7.76338C5.46769 8.34653 4.83594 8.97828 4.44717 9.70723C3.57244 8.85675 2.8192 7.93342 1.84727 7.18022C1.14263 6.64566 -0.0236803 6.25689 0.000617825 7.54469C0.049214 9.2213 1.5314 11.0194 2.62481 12.1613C3.08648 12.6473 3.69393 13.1576 4.39858 13.1819C5.24901 13.2305 6.12374 12.2099 6.634 11.6511C7.53307 10.6792 8.26201 9.5857 9.08811 8.58951C10.1572 7.27742 11.2506 5.98958 12.2955 4.65318C12.9515 3.82704 15.0169 1.78596 13.3889 0.91127ZM1.06969 7.4475C1.0454 7.4475 1.0211 7.4475 0.972503 7.47176C0.87531 7.4475 0.802416 7.42316 0.705223 7.37457C0.778118 7.32597 0.899608 7.35027 1.06969 7.4475Z' fill='%23DF6598'/%3E%3C/svg%3E%0A")
             background-repeat: no-repeat
-    .tags__input
+    .tags__checkbox
       display: flex
       flex-direction: column
       input
