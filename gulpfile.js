@@ -59,7 +59,7 @@ gulp.task('criticalCss', function () {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src('app/js/main.js')
+    return gulp.src(['app/js/main.js', 'app/js/charts.js'])
         .pipe(jsmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(changed('app/js'))
@@ -158,7 +158,13 @@ gulp.task('prebuild', async function () {
         let buildFonts = gulp.src('app/fonts/**/*')
             .pipe(gulp.dest('dist/fonts'));
 
-        let buildJs = gulp.src('app/js/*')
+        let buildJs = gulp.src([
+            'app/js/charts.js',
+            'app/js/charts.min.js',
+            'app/js/libs.min.js',
+            'app/js/main.js',
+            'app/js/main.min.js'
+        ])
             .pipe(gulp.dest('dist/js'));
 
         let buildHtml = gulp.src('app/*.html')
@@ -177,7 +183,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('deploy', function() {
-    return gulp.src(['dist/**/*', '!dist/*.html'])
+    return gulp.src(['dist/**/*', '!dist/index.html'])
         .pipe(sftp({
             host: '178.172.173.58',
             user: 'dev',

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test</title>
+    <link href="./css/normalize.min.css" rel="stylesheet">
+    <link href="./css/libs.min.css" rel="stylesheet">
+    <link href="./css/style.min.css" rel="stylesheet">
+  </head>
+  <body class="stat__page">
+    <header>
+      <div class="header__navbar">
+        <div class="container">
+          <div class="row">
+            <div class="md-4 burger"><span></span></div>
+            <div class="logo lg-auto md-4"><a href="/"><img src="./img/LOGO_Page.svg"></a></div>
+            <div class="lg-9 navbar__wrapper">
+              <div class="navbar__left"><a href="#is-about">О сервисе</a><a href="#is-partners">Партнеры</a><a href="#is-radio">Радио</a><a href="#">Статистика</a></div>
+              <div class="navbar__right"><a href="#is-faq">FAQ</a><a href="#contact">Контакты</a></div>
+            </div>
+            <div class="lg-auto text_right header__feedback"><a class="btn" id="feedback" href="#" style="box-shadow: 0 6px 15px #C27E3E">Связаться</a></div>
+            <div class="md-4 header__phone"><a href="tel:+375291234567"></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="section" id="statistics">
+      <div class="container">
+        <div class="text_left title wow fadeInUp" data-wow-duration="1s"><span class="sub__title">Кто мы такие?</span>Радио РОКС</div>
+        <div class="desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+          <p>«Радио РОКС» — старейший бренд в истории FM-вещания Беларуси и первая коммерческая FM-станция на территории Беларуси. Сегодня «Радио РОКС» вещает в Минске и во всех областных центрах страны.</p>
+          <p>«Радио РОКС» — это радио для тех, кто ценит и любит качественную русскую музыку. В своем эфире «Радио РОКС» объединяет все лучшее, что было создано в таких музыкальных стилях как современный шансон, постшансон, неошансон, популярный эстрадный рок. При этом мы не забываем уделять внимание всему новому, что происходит в мире музыки.</p>
+          <p>«Радио РОКС» — музыка для души!</p>
+          <p>«Радио РОКС» на протяжении последних лет уверенно занимает первое место в рейтингах по всей Беларуси, и входит в «золотую» тройку лидеров FM-вещания в Минске. «Радио РОКС» по всей стране ежедневно слушают более 190 000 слушателей — таковы данные независимых социологических исследований.</p>
+        </div>
+        <div class="row">
+          <div class="lg-6 sm-12">
+            <div class="stat__item">
+              <div class="stat__title">Аудиторные доли радиостанций (все 12-65 лет)</div>
+              <div class="chart__wrapper">
+                <div class="select__box"><span class="date">Январь - Декабрь 2018</span><span>по
+                    <select name="location">
+                      <option value="chartShare1" selected>Минску</option>
+                      <option value="chartShare2">Областным центрам</option>
+                    </select></span><span>по
+                    <select name="day">
+                      <option value="chartShare3" selected>Минску</option>
+                      <option value="chartShare4">Областным центрам</option>
+                    </select></span></div>
+                <div id="chartShare1" data-chart="chartShare1"></div>
+                <div id="chartShare2" data-chart="chartShare2"></div>
+                <div id="chartShare3" data-chart="chartShare3"></div>
+                <div id="chartShare4" data-chart="chartShare4"></div>
+              </div>
+            </div>
+          </div>
+          <div class="lg-6 sm-12">
+            <div class="stat__item">
+              <div class="stat__title">Средние охваты радиостанций, тыс. чел</div>
+              <div class="chart__wrapper">
+                <div class="select__box"><span class="date">Январь - Декабрь 2018</span><span>по
+                    <select name="location">
+                      <option value="loc1" selected>Минску</option>
+                      <option value="loc2">Областным центрам</option>
+                    </select></span></div>
+                <div class="row">
+                  <div class="lg-6 md-12" id="chartDayReach">
+                    <div class="reach__item"><img src="./img/stat_ico_1.svg"><span class="cout">141</span>
+                      <p>Общий среднесуточный охват</p>
+                    </div>
+                  </div>
+                  <div class="lg-6 md-12" id="chartWeekReach">
+                    <div class="reach__item"><img src="./img/stat_ico_2.svg"><span class="cout">500</span>
+                      <p>Общий средненедельный охват</p>
+                    </div>
+                  </div>
+                  <div class="lg-12 md-12" id="chartMinkReach">
+                    <div class="reach__item"><span class="cout">26 тыс. чел</span>
+                      <p>Общий средненедельный охват</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg-12">
+            <div class="stat__item">
+              <div class="stat__title">Почасовое слушание радио, пн-вс</div>
+              <div id="chartTime"></div>
+            </div>
+          </div>
+          <div class="lg-12">
+            <div class="stat__item">
+              <div class="stat__title">Профиль радиостанции <span>Радио РОКС<span> среди жителей Минска и областных центров</div>
+              <div class="chart__items">
+                <div class="chart__item" id="chartSex"></div>
+                <div class="chart__item" id="chartAge"></div>
+                <div class="chart__item" id="chartPlace"></div>
+              </div>
+            </div>
+          </div>
+          <div class="lg-12">
+            <div class="stat__item">
+              <div class="stat__title">Стоимость за 1 000 контактов (CPT OTS)</div>
+              <div class="chart__wrapper">
+                <div class="select__box"><span class="date">Для 15 секунд ролика (Gross $ c  НДС)</span>
+                  <ul class="tags__r">
+                    <li class="r__1">Радио РОКС</li>
+                    <li class="r__2">Русское радио</li>
+                    <li class="r__3">Радио 3</li>
+                    <li class="r__4">Радио 4</li>
+                    <li class="r__5">Радио 5</li>
+                    <li class="r__6">Радио 5</li>
+                  </ul>
+                </div>
+                <div id="chartPrice"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="elipse__wrapper elipse__stat" data-relative-input="true">
+        <li data-depth="0.1"><img src="./img/elipse_big_7.svg"></li>
+        <li data-depth="0.2"><img src="./img/elipse_big_8.svg"></li>
+        <li data-depth="0.1"><img src="./img/elipse_big_4.svg"></li>
+        <li data-depth="0.1"><img src="./img/elipse_big_5.svg"></li>
+      </ul>
+    </div>
+    <div class="section" id="is-radio">
+      <div class="container">
+        <div class="form__wrapper">
+          <div class="form__title text_left">Реклама на радио</div>
+          <form class="calculator row ajax-form js-cpt-calculator" method="get" action="http://178.172.173.58/cpt" data-noreload data-response=".js-cpt-inner">
+            <input type="hidden" name="_token" value="Ng2x5rCQH887LZke6E8C7SdqeUT8fYem8Szt2r7q">
+            <div class="lg-6 md-6 form__box">
+              <div class="h2__title">Интересующий регион</div>
+              <div class="tags__toggle">Все регионы</div>
+              <div class="tags tags__checkbox">
+                <input class="tag-input" type="checkbox" name="k[]" value="minsk" id="rMinsk" checked>
+                <label class="tag-label" for="rMinsk">Минск</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="obl" id="rObl" checked>
+                <label class="tag-label" for="rObl">Областные центры</label>
+              </div>
+            </div>
+            <div class="lg-6 md-6 form__box">
+              <div class="h2__title">Пол аудитории</div>
+              <div class="tags__toggle">Все полы</div>
+              <div class="tags tags__checkbox">
+                <input class="tag-input" type="checkbox" name="k[]" value="male" id="sM" checked>
+                <label class="tag-label" for="sM">Мужской</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="female" id="sF" checked>
+                <label class="tag-label" for="sF">Женский</label>
+              </div>
+            </div>
+            <div class="lg-12 form__box">
+              <div class="h2__title">Возраст аудитории</div>
+              <div class="tags__toggle">Все возраста</div>
+              <div class="tags tags__checkbox">
+                <input class="tag-input" type="checkbox" name="k[]" value="age18-24" id="a1" checked>
+                <label class="tag-label" for="a1">18-24</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age25-29" id="a2" checked>
+                <label class="tag-label" for="a2">25-29</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age30-34" id="a3" checked>
+                <label class="tag-label" for="a3">30-34</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age35-39" id="a4" checked>
+                <label class="tag-label" for="a4">35-39</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age40-44" id="a5" checked>
+                <label class="tag-label" for="a5">40-44</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age45-49" id="a6" checked>
+                <label class="tag-label" for="a6">45-49</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age50-54" id="a7" checked>
+                <label class="tag-label" for="a7">50-54</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age55-59" id="a8" checked>
+                <label class="tag-label" for="a8">55-59</label>
+                <input class="tag-input" type="checkbox" name="k[]" value="age60-65" id="a9" checked>
+                <label class="tag-label" for="a9">60-65</label>
+              </div>
+            </div>
+            <input class="select-sort" type="text" name="sort" value="sort-cpt" id="sort">
+          </form>
+          <div class="stock__title">Акционные предложения
+            <div class="row stock__wrapper">
+              <div class="lg-3 md-10 stock__item">
+                <div>
+                  <div class="stock__head">
+                    <div class="logo"><img src="./img/logo_stock.svg"></div>
+                    <div class="sale">Прайм<span>-15%</span></div>
+                  </div>
+                  <ul class="property">
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                  </ul><a class="btn" href="javascript:;">Разместить</a>
+                </div>
+              </div>
+              <div class="lg-3 md-10 stock__item">
+                <div>
+                  <div class="stock__head">
+                    <div class="logo"><img src="./img/logo_stock.svg"></div>
+                    <div class="sale">Прайм<span>-15%</span></div>
+                  </div>
+                  <ul class="property">
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                  </ul><a class="btn" href="javascript:;">Разместить</a>
+                </div>
+              </div>
+              <div class="lg-3 md-10 stock__item">
+                <div>
+                  <div class="stock__head">
+                    <div class="logo"><img src="./img/logo_stock.svg"></div>
+                    <div class="sale">Прайм<span>-15%</span></div>
+                  </div>
+                  <ul class="property">
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                  </ul><a class="btn" href="javascript:;">Разместить</a>
+                </div>
+              </div>
+              <div class="lg-3 md-10 stock__item">
+                <div>
+                  <div class="stock__head">
+                    <div class="logo"><img src="./img/logo_stock.svg"></div>
+                    <div class="sale">Прайм<span>-15%</span></div>
+                  </div>
+                  <ul class="property">
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                    <li>Стоимость МП, руб<span>254,61</span></li>
+                  </ul><a class="btn" href="javascript:;">Разместить</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="calculator__table">
+            <div class="mobile__sort">Сортировать по
+              <select name="sort">
+                <option value="sort-cost">Стоимость МП</option>
+                <option value="sort-cpt" selected>СРТ</option>
+                <option value="sort-cover">Охват</option>
+                <option value="sort-time">Время</option>
+                <option value="sort-count">Количество выходов</option>
+              </select>
+            </div>
+            <div class="row calculator__table__header">
+              <div class="lg-2 md-4 th">Станция</div>
+              <div class="lg-2 md-4 th js-sort-selector" data-sort="sort-preset">Пресет<span class="th__filter"></span></div>
+              <div class="lg-1 md-4 th js-sort-selector" data-sort="sort-cost">Стоимость МП, руб<span class="th__filter"></span></div>
+              <div class="lg-1 md-4 th js-sort-selector is-active" data-sort="sort-cpt">CPT, руб<span class="th__filter"></span></div>
+              <div class="lg-1 md-4 th js-sort-selector" data-sort="sort-cover">Охват, тыс<span class="th__filter"></span></div>
+              <div class="lg-1 md-4 th js-sort-selector" data-sort="sort-time">Время, сек<span class="th__filter"></span></div>
+              <div class="lg-auto th js-sort-selector" data-sort="sort-count">Количество выходов<span class="th__filter"></span></div>
+              <div class="lg-2 md-4 th"></div>
+            </div>
+            <div class="result__table">
+              <div class="js-cpt-inner">
+                <div class="row">
+                  <div class="lg-2 md-4 td">Радио Рокс</div>
+                  <div class="lg-2 md-4 td js-showhide-preset"><span class="preset">Прайм</span></div>
+                  <div class="lg-1 md-4 td js-showhide-cost">2985.75</div>
+                  <div class="lg-1 md-4 td js-showhide-cpt">254.61</div>
+                  <div class="lg-1 md-4 td js-showhide-cover">0.72</div>
+                  <div class="lg-1 md-4 td js-showhide-time">0.72</div>
+                  <div class="lg-auto td js-showhide-count">Прайм</div>
+                  <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div>
+                  <div class="dropdown__property">
+                    <div class="md-8 th">
+                      <div class="th">CPT, руб</div>
+                      <div class="th">Охват, тыс</div>
+                      <div class="th">Время, сек</div>
+                      <div class="th">Количество выходов</div>
+                    </div>
+                    <div class="md-4 td">
+                      <div class="td">254.61</div>
+                      <div class="td">0.72</div>
+                      <div class="td">0.72</div>
+                      <div class="td">Прайм</div>
+                    </div><a class="btn" href="javascript:;">Разместить</a>
+                  </div><span class="arrow"></span>
+                </div>
+                <div class="row">
+                  <div class="lg-2 md-4 td">Радио Рокс</div>
+                  <div class="lg-2 md-4 td js-showhide-preset"><span class="preset">Прайм</span></div>
+                  <div class="lg-1 md-4 td js-showhide-cost">2985.75</div>
+                  <div class="lg-1 md-4 td js-showhide-cpt">254.61</div>
+                  <div class="lg-1 md-4 td js-showhide-cover">0.72</div>
+                  <div class="lg-1 md-4 td js-showhide-time">0.72</div>
+                  <div class="lg-auto td js-showhide-count">Прайм</div>
+                  <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+                </div>
+                <div class="row">
+                  <div class="lg-2 md-4 td">Радио Рокс</div>
+                  <div class="lg-2 md-4 td js-showhide-preset"><span class="preset">Прайм</span></div>
+                  <div class="lg-1 md-4 td js-showhide-cost">2985.75</div>
+                  <div class="lg-1 md-4 td js-showhide-cpt">254.61</div>
+                  <div class="lg-1 md-4 td js-showhide-cover">0.72</div>
+                  <div class="lg-1 md-4 td js-showhide-time">0.72</div>
+                  <div class="lg-auto td js-showhide-count">Прайм</div>
+                  <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+                </div>
+                <div class="row">
+                  <div class="lg-2 md-4 td">Радио Рокс</div>
+                  <div class="lg-2 md-4 td js-showhide-preset"><span class="preset">Прайм</span></div>
+                  <div class="lg-1 md-4 td js-showhide-cost">2985.75</div>
+                  <div class="lg-1 md-4 td js-showhide-cpt">254.61</div>
+                  <div class="lg-1 md-4 td js-showhide-cover">0.72</div>
+                  <div class="lg-1 md-4 td js-showhide-time">0.72</div>
+                  <div class="lg-auto td js-showhide-count">Прайм</div>
+                  <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+                </div>
+                <div class="row">
+                  <div class="lg-2 md-4 td">Радио Рокс</div>
+                  <div class="lg-2 md-4 td js-showhide-preset"><span class="preset">Прайм</span></div>
+                  <div class="lg-1 md-4 td js-showhide-cost">2985.75</div>
+                  <div class="lg-1 md-4 td js-showhide-cpt">254.61</div>
+                  <div class="lg-1 md-4 td js-showhide-cover">0.72</div>
+                  <div class="lg-1 md-4 td js-showhide-time">0.72</div>
+                  <div class="lg-auto td js-showhide-count">Прайм</div>
+                  <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+                </div>
+                <div class="row">
+                  <div class="lg-2 md-4 td">Радио Рокс</div>
+                  <div class="lg-2 md-4 td js-showhide-preset"><span class="preset">Прайм</span></div>
+                  <div class="lg-1 md-4 td js-showhide-cost">2985.75</div>
+                  <div class="lg-1 md-4 td js-showhide-cpt">254.61</div>
+                  <div class="lg-1 md-4 td js-showhide-cover">0.72</div>
+                  <div class="lg-1 md-4 td js-showhide-time">0.72</div>
+                  <div class="lg-auto td js-showhide-count">Прайм</div>
+                  <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+                </div>
+                <div class="row">
+                  <div class="lg-2 md-4 td">Радио Рокс</div>
+                  <div class="lg-2 md-4 td js-showhide-preset"><span class="preset">Прайм</span></div>
+                  <div class="lg-1 md-4 td js-showhide-cost">2985.75</div>
+                  <div class="lg-1 md-4 td js-showhide-cpt">254.61</div>
+                  <div class="lg-1 md-4 td js-showhide-cover">0.72</div>
+                  <div class="lg-1 md-4 td js-showhide-time">0.72</div>
+                  <div class="lg-auto td js-showhide-count">Прайм</div>
+                  <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+                </div>
+                <div class="row">
+                  <div class="lg-2 md-4 td">Радио Рокс</div>
+                  <div class="lg-2 md-4 td js-showhide-preset"><span class="preset">Прайм</span></div>
+                  <div class="lg-1 md-4 td js-showhide-cost">2985.75</div>
+                  <div class="lg-1 md-4 td js-showhide-cpt">254.61</div>
+                  <div class="lg-1 md-4 td js-showhide-cover">0.72</div>
+                  <div class="lg-1 md-4 td js-showhide-time">0.72</div>
+                  <div class="lg-auto td js-showhide-count">Прайм</div>
+                  <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+                </div>
+                <div class="row">
+                  <div class="lg-2 md-4 td">Радио Рокс</div>
+                  <div class="lg-2 md-4 td js-showhide-preset"><span class="preset">Прайм</span></div>
+                  <div class="lg-1 md-4 td js-showhide-cost">2985.75</div>
+                  <div class="lg-1 md-4 td js-showhide-cpt">254.61</div>
+                  <div class="lg-1 md-4 td js-showhide-cover">0.72</div>
+                  <div class="lg-1 md-4 td js-showhide-time">0.72</div>
+                  <div class="lg-auto td js-showhide-count">Прайм</div>
+                  <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+                </div>
+                <div class="row">
+                  <div class="lg-2 md-4 td">Радио Рокс</div>
+                  <div class="lg-2 md-4 td js-showhide-preset"><span class="preset">Прайм</span></div>
+                  <div class="lg-1 md-4 td js-showhide-cost">2985.75</div>
+                  <div class="lg-1 md-4 td js-showhide-cpt">254.61</div>
+                  <div class="lg-1 md-4 td js-showhide-cover">0.72</div>
+                  <div class="lg-1 md-4 td js-showhide-time">0.72</div>
+                  <div class="lg-auto td js-showhide-count">Прайм</div>
+                  <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+                </div>
+                <div class="row">
+                  <div class="lg-2 md-4 td">Радио Рокс</div>
+                  <div class="lg-2 md-4 td js-showhide-preset"><span class="preset">Прайм</span></div>
+                  <div class="lg-1 md-4 td js-showhide-cost">2985.75</div>
+                  <div class="lg-1 md-4 td js-showhide-cpt">254.61</div>
+                  <div class="lg-1 md-4 td js-showhide-cover">0.72</div>
+                  <div class="lg-1 md-4 td js-showhide-time">0.72</div>
+                  <div class="lg-auto td js-showhide-count">Прайм</div>
+                  <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+                </div>
+                <div class="row">
+                  <div class="lg-2 md-4 td">Радио Рокс</div>
+                  <div class="lg-2 md-4 td js-showhide-preset"><span class="preset">Прайм</span></div>
+                  <div class="lg-1 md-4 td js-showhide-cost">2985.75</div>
+                  <div class="lg-1 md-4 td js-showhide-cpt">254.61</div>
+                  <div class="lg-1 md-4 td js-showhide-cover">0.72</div>
+                  <div class="lg-1 md-4 td js-showhide-time">0.72</div>
+                  <div class="lg-auto td js-showhide-count">Прайм</div>
+                  <div class="lg-3 text_right td"><a class="btn" href="javascript:;">Разместить</a></div><span class="arrow"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="lg-3 md-6">
+            <div class="logo"><img src="./img/LOGO.svg">
+              <p>© OPENSPOT.BY <br>+375(29)6332756 ИП Маринич М.М. <br>УНП 690731091</p>
+            </div>
+          </div>
+          <div class="lg-3 md-7 footer__navbar"><a href="#">О сервисе</a><a href="#">Наши партнеры</a><a href="#">Реклама на радио</a><a href="#">FAQ</a></div>
+          <div class="lg-3 md-6 footer__contact"><a href="tel:+375291234567">+375 29 123 45 67</a><a href="tel:+375331234567">+375 33 123 45 67</a><a href="mailto:mailbox@mail.com">mailbox@mail.com</a></div>
+          <div class="lg-3 md-5 footer__adress">
+            <p>Минск, пр-т Дзержинского, 104</p>
+            <ul class="soc_link">
+              <li><a href=""><img src="./img/fb.svg"></a></li>
+              <li><a href=""><img src="./img/tw.svg"></a></li>
+              <li><a href=""><img src="./img/vk.svg"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <ul class="elipse__wrapper elipse__footer" data-relative-input="true">
+        <li data-depth="0.1"><img src="./img/elipse_big_1.svg"></li>
+        <li data-depth="0.3"><img src="./img/elipse_big_2.svg"></li>
+      </ul>
+      <div class="pop-up" id="tags_pop-up">
+        <div class="overlay">
+          <div class="pop-up__body">
+            <div class="bg tags__wrapper"></div>
+            <div class="bg btn__control">
+              <button class="cancel">Отмена</button>
+              <button class="ok">Ок</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/libs.min.js"></script>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="./js/charts.js"></script>
+    <script src="./js/main.min.js"></script>
+    <script>
+      chart1.data = [{
+          "radio": "Радио РОКС",
+          "percent": 13.8
+      }, {
+          "radio": "Юмор FM",
+          "percent": 12.1
+      }, {
+          "radio": "UNISTAR",
+          "percent": 11.8
+      }, {
+          "radio": "Новое радио",
+          "percent": 10.7
+      }, {
+          "radio": "Русское Радио Минск",
+          "percent": 5.5
+      }, {
+          "radio": "Пилот FM",
+          "percent": 5.5
+      }, {
+          "radio": "Другие",
+          "percent": 40.6
+      }];
+      chart2.data = [{
+          "radio": "Женский пол",
+          "percent": 50.6
+      }, {
+          "radio": "Мужской пол",
+          "percent": 49.4
+      }];
+      chart3.data = [{
+          "radio": "12-17 лет",
+          "percent": 0.2
+      }, {
+          "radio": "18-24 года",
+          "percent": 7.2
+      }, {
+          "radio": "25-29 лет",
+          "percent": 4.3
+      }, {
+          "radio": "30-34 года",
+          "percent": 6.8
+      }, {
+          "radio": "45-39 лет",
+          "percent": 10.1
+      }, {
+          "radio": "40-44 года",
+          "percent": 8.8
+      }, {
+          "radio": "45-49 лет",
+          "percent": 15.1
+      }, {
+          "radio": "50-54 года",
+          "percent": 18.9
+      }, {
+          "radio": "55-59 лет",
+          "percent": 16.6
+      }, {
+          "radio": "60-65 лет",
+          "percent": 12.0
+      }];
+      chart4.data = [{
+          "radio": "На работе, учебе",
+          "percent": 43.7
+      }, {
+          "radio": "Дома",
+          "percent": 26.9
+      }, {
+          "radio": "В машине",
+          "percent": 26.2
+      }, {
+          "radio": "В общественном транспорте",
+          "percent": 0.4
+      }, {
+          "radio": "Вне помещения (по дороге, на велосипеед)",
+          "percent": 10.1
+      }, {
+          "radio": "Другое",
+          "percent": 8.8
+      }];
+      chart5.data = [{
+          "time": "7:00",
+          "visits": 11
+      }, {
+          "time": "8:00",
+          "visits": 28
+      }, {
+          "time": "9:00",
+          "visits": 43
+      }, {
+          "time": "10:00",
+          "visits": 44
+      }, {
+          "time": "11:00",
+          "visits": 52
+      }, {
+          "time": "12:00",
+          "visits": 53
+      }, {
+          "time": "13:00",
+          "visits": 55
+      }, {
+          "time": "14:00",
+          "visits": 53
+      }, {
+          "time": "15:00",
+          "visits": 46
+      }, {
+          "time": "16:00",
+          "visits": 43
+      }, {
+          "time": "17:00",
+          "visits": 39
+      }, {
+          "time": "18:00",
+          "visits": 29
+      }, {
+          "time": "19:00",
+          "visits": 26
+      }, {
+          "time": "20:00",
+          "visits": 24
+      }, {
+          "time": "21:00",
+          "visits": 16
+      }, {
+          "time": "22:00",
+          "visits": 11
+      }];
+      chart6.data = [{
+          "age": "25-29 лет",
+          "value_1": 2.5,
+          "value_2": 2.5,
+          "value_3": 2.1,
+          "value_4": 1.2,
+          "value_5": 0.2,
+          "value_6": 0.1
+      }, {
+          "age": "30-34 лет",
+          "value_1": 2.5,
+          "value_2": 2.5,
+          "value_3": 2.1,
+          "value_4": 1.2,
+          "value_5": 0.2,
+          "value_6": 0.1
+      }, {
+          "age": "39-45 лет",
+          "value_1": 2.5,
+          "value_2": 2.5,
+          "value_3": 2.1,
+          "value_4": 1.2,
+          "value_5": 0.2,
+          "value_6": 0.1
+      }, {
+          "age": "40-44 лет",
+          "value_1": 2.5,
+          "value_2": 2.5,
+          "value_3": 2.1,
+          "value_4": 1.2,
+          "value_5": 0.2,
+          "value_6": 0.1
+      }, {
+          "age": "45-49 лет",
+          "value_1": 2.5,
+          "value_2": 2.5,
+          "value_3": 2.1,
+          "value_4": 1.2,
+          "value_5": 0.2,
+          "value_6": 0.1
+      }];
+    </script>
+  </body>
+</html>

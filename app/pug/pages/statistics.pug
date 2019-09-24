@@ -8,7 +8,7 @@ html(lang='UTF-8')
         link(href='./css/libs.min.css', rel='stylesheet')
         link(href='./css/style.min.css', rel='stylesheet')
 
-    body
+    body.stat__page
 
         header
             .header__navbar
@@ -17,7 +17,7 @@ html(lang='UTF-8')
                         .md-4.burger: span
                         .logo.lg-auto.md-4
                             a(href='/')
-                                img(src='./img/LOGO.svg')
+                                img(src='./img/LOGO_Page.svg')
                         .lg-9.navbar__wrapper
                             .navbar__left
                                 a(href='#is-about') О сервисе
@@ -47,23 +47,82 @@ html(lang='UTF-8')
                     .lg-6.sm-12
                         .stat__item
                             .stat__title Аудиторные доли радиостанций (все 12-65 лет)
-                            #chartdiv(style='height="600px"')
+                            .chart__wrapper
+                                .select__box
+                                    span.date Январь - Декабрь 2018
+                                    span по
+                                        select(name='location')
+                                            option(value="chartShare1" selected) Минску
+                                            option(value="chartShare2") Областным центрам
+                                    span по
+                                        select(name='day')
+                                            option(value="chartShare3" selected) Минску
+                                            option(value="chartShare4") Областным центрам
+                                #chartShare1(data-chart='chartShare1')
+                                #chartShare2(data-chart='chartShare2')
+                                #chartShare3(data-chart='chartShare3')
+                                #chartShare4(data-chart='chartShare4')
                     .lg-6.sm-12
                         .stat__item
                             .stat__title Средние охваты радиостанций, тыс. чел
+                            .chart__wrapper
+                                .select__box
+                                    span.date Январь - Декабрь 2018
+                                    span по
+                                        select(name='location')
+                                            option(value="loc1" selected) Минску
+                                            option(value="loc2") Областным центрам
+                                .row
+                                    #chartDayReach.lg-6.md-12
+                                        .reach__item
+                                            img(src='./img/stat_ico_1.svg')
+                                            span.cout 141
+                                            p Общий среднесуточный охват
+                                    #chartWeekReach.lg-6.md-12
+                                        .reach__item
+                                            img(src='./img/stat_ico_2.svg')
+                                            span.cout 500
+                                            p Общий средненедельный охват
+                                    #chartMinkReach.lg-12.md-12
+                                        .reach__item
+                                            span.cout 26 тыс. чел
+                                            p Общий средненедельный охват
                     .lg-12
                         .stat__item
                             .stat__title Почасовое слушание радио, пн-вс
+                            #chartTime
                     .lg-12
                         .stat__item
                             .stat__title Профиль радиостанции <span>Радио РОКС<span> среди жителей Минска и областных центров
+                            .chart__items
+                                #chartSex.chart__item
+                                #chartAge.chart__item
+                                #chartPlace.chart__item
                     .lg-12
                         .stat__item
                             .stat__title Стоимость за 1 000 контактов (CPT OTS)
+                            .chart__wrapper
+                                .select__box
+                                    span.date Для 15 секунд ролика (Gross $ c  НДС)
+                                    ul.tags__r
+                                        li.r__1 Радио РОКС
+                                        li.r__2 Русское радио
+                                        li.r__3 Радио 3
+                                        li.r__4 Радио 4
+                                        li.r__5 Радио 5
+                                        li.r__6 Радио 5
+
+                                #chartPrice
+
+            ul.elipse__wrapper.elipse__stat(data-relative-input="true" )
+                li(data-depth="0.1"): img(src='./img/elipse_big_7.svg')
+                li(data-depth="0.2"): img(src='./img/elipse_big_8.svg')
+                li(data-depth="0.1"): img(src='./img/elipse_big_4.svg')
+                li(data-depth="0.1"): img(src='./img/elipse_big_5.svg')
 
         #is-radio.section
             .container
-                .form__wrapper.page__stat
+                .form__wrapper
                     .form__title.text_left Реклама на радио
                     form(method="get" action="http://178.172.173.58/cpt" class="calculator row ajax-form js-cpt-calculator" data-noreload data-response=".js-cpt-inner")
                         input(type="hidden" name="_token" value="Ng2x5rCQH887LZke6E8C7SdqeUT8fYem8Szt2r7q")
@@ -405,5 +464,176 @@ html(lang='UTF-8')
         script(src='https://www.amcharts.com/lib/4/core.js')
         script(src='https://www.amcharts.com/lib/4/charts.js')
         script(src='https://www.amcharts.com/lib/4/themes/animated.js')
-        script(src='./js/charts.min.js')
+        script(src='./js/charts.js')
         script(src='./js/main.min.js')
+
+        script.
+            chart1.data = [{
+                "radio": "Радио РОКС",
+                "percent": 13.8
+            }, {
+                "radio": "Юмор FM",
+                "percent": 12.1
+            }, {
+                "radio": "UNISTAR",
+                "percent": 11.8
+            }, {
+                "radio": "Новое радио",
+                "percent": 10.7
+            }, {
+                "radio": "Русское Радио Минск",
+                "percent": 5.5
+            }, {
+                "radio": "Пилот FM",
+                "percent": 5.5
+            }, {
+                "radio": "Другие",
+                "percent": 40.6
+            }];
+            chart2.data = [{
+                "radio": "Женский пол",
+                "percent": 50.6
+            }, {
+                "radio": "Мужской пол",
+                "percent": 49.4
+            }];
+            chart3.data = [{
+                "radio": "12-17 лет",
+                "percent": 0.2
+            }, {
+                "radio": "18-24 года",
+                "percent": 7.2
+            }, {
+                "radio": "25-29 лет",
+                "percent": 4.3
+            }, {
+                "radio": "30-34 года",
+                "percent": 6.8
+            }, {
+                "radio": "45-39 лет",
+                "percent": 10.1
+            }, {
+                "radio": "40-44 года",
+                "percent": 8.8
+            }, {
+                "radio": "45-49 лет",
+                "percent": 15.1
+            }, {
+                "radio": "50-54 года",
+                "percent": 18.9
+            }, {
+                "radio": "55-59 лет",
+                "percent": 16.6
+            }, {
+                "radio": "60-65 лет",
+                "percent": 12.0
+            }];
+            chart4.data = [{
+                "radio": "На работе, учебе",
+                "percent": 43.7
+            }, {
+                "radio": "Дома",
+                "percent": 26.9
+            }, {
+                "radio": "В машине",
+                "percent": 26.2
+            }, {
+                "radio": "В общественном транспорте",
+                "percent": 0.4
+            }, {
+                "radio": "Вне помещения (по дороге, на велосипеед)",
+                "percent": 10.1
+            }, {
+                "radio": "Другое",
+                "percent": 8.8
+            }];
+            chart5.data = [{
+                "time": "7:00",
+                "visits": 11
+            }, {
+                "time": "8:00",
+                "visits": 28
+            }, {
+                "time": "9:00",
+                "visits": 43
+            }, {
+                "time": "10:00",
+                "visits": 44
+            }, {
+                "time": "11:00",
+                "visits": 52
+            }, {
+                "time": "12:00",
+                "visits": 53
+            }, {
+                "time": "13:00",
+                "visits": 55
+            }, {
+                "time": "14:00",
+                "visits": 53
+            }, {
+                "time": "15:00",
+                "visits": 46
+            }, {
+                "time": "16:00",
+                "visits": 43
+            }, {
+                "time": "17:00",
+                "visits": 39
+            }, {
+                "time": "18:00",
+                "visits": 29
+            }, {
+                "time": "19:00",
+                "visits": 26
+            }, {
+                "time": "20:00",
+                "visits": 24
+            }, {
+                "time": "21:00",
+                "visits": 16
+            }, {
+                "time": "22:00",
+                "visits": 11
+            }];
+            chart6.data = [{
+                "age": "25-29 лет",
+                "value_1": 2.5,
+                "value_2": 2.5,
+                "value_3": 2.1,
+                "value_4": 1.2,
+                "value_5": 0.2,
+                "value_6": 0.1
+            }, {
+                "age": "30-34 лет",
+                "value_1": 2.5,
+                "value_2": 2.5,
+                "value_3": 2.1,
+                "value_4": 1.2,
+                "value_5": 0.2,
+                "value_6": 0.1
+            }, {
+                "age": "39-45 лет",
+                "value_1": 2.5,
+                "value_2": 2.5,
+                "value_3": 2.1,
+                "value_4": 1.2,
+                "value_5": 0.2,
+                "value_6": 0.1
+            }, {
+                "age": "40-44 лет",
+                "value_1": 2.5,
+                "value_2": 2.5,
+                "value_3": 2.1,
+                "value_4": 1.2,
+                "value_5": 0.2,
+                "value_6": 0.1
+            }, {
+                "age": "45-49 лет",
+                "value_1": 2.5,
+                "value_2": 2.5,
+                "value_3": 2.1,
+                "value_4": 1.2,
+                "value_5": 0.2,
+                "value_6": 0.1
+            }];

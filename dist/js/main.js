@@ -9,9 +9,9 @@ function getTable() {
             type: $form.attr('method'),
             data: $form.serialize(),
             //contentType: $contentType,
-            success: function (response) {
+            success: function (response, _class, optionVal) {
                 $('.js-cpt-inner').html(response.table);
-                showhide();
+                showhide(_class, optionVal)
             },
             error: function (response) {
                 let result;
@@ -39,11 +39,10 @@ new WOW().init();
 
 
 // fix banner
-let banner = document.querySelector('.header__banner'),
-    header = document.querySelector('.header__navbar');
+let header = document.querySelector('.header__navbar');
 
 window.addEventListener('scroll', function () {
-    if (window.pageYOffset >= (banner.offsetHeight / 2)) {
+    if (window.pageYOffset >= 300) {
         header.classList.add('fixed')
     }
     if (window.pageYOffset === 0) {
