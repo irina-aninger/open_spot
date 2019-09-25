@@ -8,6 +8,17 @@
     <link href="./css/style.min.css" rel="stylesheet">
   </head>
   <body>
+    <div class="top__line">
+      <div class="container">
+        <div>Тех. поддержка: <a href="tel:+375296332756">+375 (29) 6332756</a>
+        </div>
+        <div class="btn__group">
+          <div class="dropdown__wrapper"><span class="dropdown__toggle">Личный кабинет</span>
+            <div class="dropdown__menu"><a class="dropdown__item" href="/client/login">Клиент</a><a class="dropdown__item" href="/outdoor/login">ОНР</a><a class="dropdown__item" href="/radio/login">Радиостанция</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <header>
       <div class="header__navbar">
         <div class="container">
@@ -15,10 +26,14 @@
             <div class="md-4 burger"><span></span></div>
             <div class="logo lg-auto md-4"><a href="/"><img src="./img/LOGO.svg"></a></div>
             <div class="lg-9 navbar__wrapper">
-              <div class="navbar__left"><a href="#is-about">О сервисе</a><a href="#is-partners">Партнеры</a><a href="#is-radio">Радио</a><a href="/statistics.html">Статистика</a></div>
+              <div class="navbar__left"><a href="#is-about">О сервисе</a><a href="#is-partners">Партнеры</a><a href="#is-radio">Радио</a>
+                <div class="dropdown__wrapper"><span class="dropdown__toggle">Статистика</span>
+                  <div class="dropdown__menu"><a class="dropdown__item" href="#">Радио РОКС</a><a class="dropdown__item" href="#">Радио РОКС</a><a class="dropdown__item" href="#">Радио 3</a><a class="dropdown__item" href="#">Радио 4</a><a class="dropdown__item" href="#">Радио 5</a></div>
+                </div>
+              </div>
               <div class="navbar__right"><a href="#is-faq">FAQ</a><a href="#contact">Контакты</a></div>
             </div>
-            <div class="lg-auto text_right header__feedback"><a class="btn" id="feedback" href="#" style="box-shadow: 0 6px 15px #C27E3E">Связаться</a></div>
+            <div class="lg-auto text_right header__feedback"><a class="btn btn_head" href="#feedback">Связаться</a></div>
             <div class="md-4 header__phone"><a href="tel:+375291234567"></a></div>
           </div>
         </div>
@@ -37,7 +52,7 @@
             <div class="lg-6 md-12 banner__desc">
               <h1 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">OpenSpot - размещение рекламы по справедливой цене</h1>
               <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения.</p>
-              <div class="banner__btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="3s"><a class="btn" href="#" style="box-shadow: 0 6px 15px rgba(210, 84, 146, 0.89)">Начать</a><a class="btn btn_transp" href="#">Узнать больше</a></div>
+              <div class="banner__btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="3s"><a class="btn btn_start" href="#is-radio">Начать</a><a class="btn btn_transp" href="#is-faq">Узнать больше</a></div>
             </div>
           </div>
         </div>
@@ -466,6 +481,22 @@
             <div class="bg tags__wrapper"></div>
             <div class="bg btn__control">
               <button class="ok">Ок</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="feedback">
+        <div class="overlay">
+          <div class="modal__body"><span class="close"></span>
+            <div class="left__side"></div>
+            <div class="right__side">
+              <form class="feedback form" action="">
+                <div class="title__form">У вас есть вопросы?<span class="sub__title">Заполните форму обратной связи и наши специалисты свяжутся с вами!</span></div>
+                <input type="text" placeholder="Имя*">
+                <input type="tel" placeholder="Номер телефона:*">
+                <input type="email" placeholder="E-mail*">
+                <input class="btn submit" type="submit" value="Отправить">
+              </form>
             </div>
           </div>
         </div>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Test</title>
-    <link href="./css/normalize.min.css" rel="stylesheet">
     <link href="./css/libs.min.css" rel="stylesheet">
     <link href="./css/style.min.css" rel="stylesheet">
   </head>
@@ -16,10 +15,14 @@
             <div class="md-4 burger"><span></span></div>
             <div class="logo lg-auto md-4"><a href="/"><img src="./img/LOGO_Page.svg"></a></div>
             <div class="lg-9 navbar__wrapper">
-              <div class="navbar__left"><a href="#is-about">О сервисе</a><a href="#is-partners">Партнеры</a><a href="#is-radio">Радио</a><a href="#">Статистика</a></div>
+              <div class="navbar__left"><a href="#is-about">О сервисе</a><a href="#is-partners">Партнеры</a><a href="#is-radio">Радио</a>
+                <div class="dropdown__wrapper"><span class="dropdown__toggle">Статистика</span>
+                  <div class="dropdown__menu"><a class="dropdown__item" href="#">Радио РОКС</a><a class="dropdown__item" href="#">Радио РОКС</a><a class="dropdown__item" href="#">Радио 3</a><a class="dropdown__item" href="#">Радио 4</a><a class="dropdown__item" href="#">Радио 5</a></div>
+                </div>
+              </div>
               <div class="navbar__right"><a href="#is-faq">FAQ</a><a href="#contact">Контакты</a></div>
             </div>
-            <div class="lg-auto text_right header__feedback"><a class="btn" id="feedback" href="#" style="box-shadow: 0 6px 15px #C27E3E">Связаться</a></div>
+            <div class="lg-auto text_right header__feedback"><a class="btn" id="feedback" href="#">Связаться</a></div>
             <div class="md-4 header__phone"><a href="tel:+375291234567"></a></div>
           </div>
         </div>
@@ -45,8 +48,8 @@
                       <option value="chartShare2">Областным центрам</option>
                     </select></span><span>по
                     <select name="day">
-                      <option value="chartShare3" selected>Минску</option>
-                      <option value="chartShare4">Областным центрам</option>
+                      <option value="chartShare3" selected>Будням</option>
+                      <option value="chartShare4">Выходным</option>
                     </select></span></div>
                 <div id="chartShare1" data-chart="chartShare1"></div>
                 <div id="chartShare2" data-chart="chartShare2"></div>

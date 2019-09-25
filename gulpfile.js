@@ -183,7 +183,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('deploy', function() {
-    return gulp.src(['dist/**/*', '!dist/index.html'])
+    return gulp.src(['dist/**/*'])
         .pipe(sftp({
             host: '178.172.173.58',
             user: 'dev',

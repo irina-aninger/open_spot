@@ -40,6 +40,7 @@ body
   font: 100 14px/1em 'Roboto Light', sans-serif
   line-height: 1.5
   color: #828589
+
   &.open__modal
     overflow: hidden
 
@@ -145,12 +146,89 @@ div
       background: transparent
       box-shadow: 0 6px 15px rgba(210, 84, 146, 0.89)
 
+  &.btn_head
+    box-shadow: 0 6px 15px #C27E3E
+
+  &.btn_start
+    box-shadow: 0 6px 15px rgba(210, 84, 146, 0.89)
+
   &:hover
     background: #493F7B
     color: #FFFFFF
 
+.top__line
+  background: #15262D
+  color: #fff
+  font: 14px 'Roboto Light', sans-serif
+  padding: 10px 0
+  @include medium
+    display: none
+
+  .container
+    display: flex
+    justify-content: flex-end
+
+    a
+      color: #fff
+      font: 14px 'Roboto Light', sans-serif
+
+    .btn__group
+      margin-left: 50px
+      padding-left: 27px
+      position: relative
+
+      &::before
+        content: url(../img/man_user.svg)
+        position: absolute
+        left: 0
+        top: 1px
+
+.dropdown__wrapper
+  display: inline
+  position: relative
+
+  &:hover
+    .dropdown__menu
+      display: flex
+
+.dropdown__toggle
+  padding-right: 30px !important
+  padding-left: 0 !important
+  padding-bottom: 10px
+  position: relative
+  color: #ffffff
+
+  &::after
+    content: url("data:image/svg+xml,%3Csvg width='6' height='3' viewBox='0 0 6 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 3L0.401924 4.89399e-07L5.59808 3.51373e-08L3 3Z' fill='white'/%3E%3C/svg%3E")
+    position: absolute
+    right: 20px
+    top: -2px
+
+.dropdown__menu
+  display: none
+  flex-direction: column
+  position: absolute
+  top: 27px
+  right: 13px
+  width: 135px
+  padding: 6px 0
+  background: rgba(69, 69, 69, 0.46)
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1)
+  backdrop-filter: blur(10px)
+  border-radius: 5px
+  z-index: 20
+
+  .dropdown__item
+    padding: 6px 16px !important
+    font: 14px 'Roboto Light', sans-serif
+
+    &:hover
+      background: #493F7B
+      color: #ffffff
+
 header
   overflow: hidden
+  position: relative
   @include medium
     padding-bottom: 95px
     .logo
@@ -158,6 +236,9 @@ header
 
       img
         width: 65px
+
+  .dropdown__menu
+    left: 0
 
   .header__navbar
     position: absolute
@@ -179,9 +260,20 @@ header
 
       .btn
         box-shadow: 0 6px 15px rgba(137, 123, 226, 0.4) !important
+
       a
         color: #FFFFFF
         transition: .2s
+
+      .dropdown__toggle
+        padding-bottom: 24px
+        color: #FFFFFF
+
+        &::after
+          content: url("data:image/svg+xml,%3Csvg width='6' height='3' viewBox='0 0 6 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 3L0.401924 4.89399e-07L5.59808 3.51373e-08L3 3Z' fill='white'/%3E%3C/svg%3E%0A")
+
+      .dropdown__menu
+        top: 42px
 
     a
       color: #FFFFFF
@@ -219,6 +311,7 @@ header
     background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.5738 15.0156L15.6395 12.081C15.0551 11.4989 14.0872 11.5166 13.4824 12.1216L12.0041 13.5996C11.9107 13.5481 11.8141 13.4943 11.7124 13.4373C10.7789 12.92 9.50122 12.2111 8.15672 10.8656C6.80824 9.51728 6.09863 8.23763 5.57979 7.3035C5.52504 7.20454 5.47258 7.10912 5.42078 7.01851L6.41293 6.02783L6.90071 5.53946C7.50644 4.93356 7.52315 3.96597 6.94006 3.38218L4.00581 0.447275C3.42273 -0.1357 2.45444 -0.118014 1.8487 0.487886L1.02173 1.31961L1.04433 1.34204C0.76703 1.69587 0.535314 2.10395 0.362878 2.54402C0.203925 2.96291 0.104961 3.36264 0.0597099 3.76319C-0.327739 6.97522 1.14007 9.91078 5.12351 13.8943C10.6298 19.4002 15.0672 18.9843 15.2586 18.964C15.6756 18.9141 16.0751 18.8145 16.4812 18.6568C16.9174 18.4864 17.3253 18.255 17.6789 17.9783L17.6969 17.9944L18.5347 17.174C19.1392 16.5682 19.1566 15.6003 18.5738 15.0156Z' fill='white' fill-opacity='0.8'/%3E%3C/svg%3E%0A")
     background-repeat: no-repeat
     background-position: 85%
+
     a
       width: 100%
       height: 100%
@@ -246,10 +339,105 @@ header
   .header__feedback
     @include large
       .btn
-        width: 105px
+        width: 100px
     @include medium
       display: none
 
+  .mob__menu
+    transform: translateX(-100%)
+    position: fixed
+    top: 0
+    left: 0
+    flex-direction: column
+    width: 100%
+    height: 100vh
+    background: rgba(0, 0, 0, 0.66)
+    opacity: 0
+    transition: .2s
+
+    .mob__menu__wrapper
+      width: 80%
+      background-image: url('.././img/mobile_bg.svg')
+      background-size: cover
+      height: 100vh
+      padding: 23px 20px
+      overflow: scroll
+
+    .logo
+      text-align: left
+
+    .mob__menu__items
+      display: flex
+      flex-direction: column
+      margin: 44px 0
+      padding-left: 5px
+
+      a
+        font-size: 24px
+        line-height: 24px
+        color: #ffffff
+        padding: 15px 0
+
+      .dropdown__wrapper
+        display: flex
+        flex-direction: column
+        span
+          font-size: 24px
+          line-height: 24px
+          color: #ffffff
+          padding: 15px 0
+          &::after
+            content: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5.59155L0.669872 0.098596L9.33013 0.0985952L5 5.59155Z' fill='white'/%3E%3C/svg%3E%0A")
+            top: 11px
+        .dropdown__menu
+          position: inherit
+          width: 100%
+          top: 0
+          background: none
+          backdrop-filter: none
+          box-shadow: none
+        .dropdown__item
+          font: 24px 'Roboto', sans-serif
+
+    p
+      color: #ffffff
+
+    .mob__log
+      font: 14px 'Roboto Light', sans-serif
+      margin-bottom: 30px
+      display: flex
+      flex-direction: column
+      a
+        margin-left: 25px
+        text-decoration: underline
+        padding-bottom: 12px
+        position: relative
+        &::before
+          content: url(".././img/man_user.svg")
+          position: absolute
+          left: -25px
+          top: 2px
+
+    .tech__info
+      font: 14px 'Roboto Light', sans-serif
+
+    .dropdown__toggle
+      &::after
+        right: 10px
+
+    .close
+      position: absolute
+      top: 20px
+      width: 35px
+      height: 35px
+      left: 68%
+
+      &::before
+        content: url("data:image/svg+xml,%3Csvg width='21' height='22' viewBox='0 0 21 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.353553' y1='0.646447' x2='20.3536' y2='20.6464' stroke='white'/%3E%3Cline y1='-0.5' x2='28.2843' y2='-0.5' transform='matrix(0.707107 -0.707107 -0.707107 -0.707107 0 21)' stroke='white'/%3E%3C/svg%3E%0A")
+
+    &.open
+      opacity: 1
+      transform: translateX(0)
 
 .header__banner
   background-image: url("../img/background.svg")
@@ -330,18 +518,56 @@ header
     height: 100%
     z-index: -10
 
+    @include medium
+      display: none
+
 .stat__page
+  header
+    position: inherit
+
+  .top__line
+    .dropdown__toggle
+      color: #ffffff
+
   .navbar__wrapper
     a
       color: #828589
+
   .header__navbar
+    margin-top: 37px
+    transition: margin-top 0s
+    @include medium
+      margin-top: 0
+
+    .dropdown__toggle
+      color: #828589
+      &::after
+        content: url("data:image/svg+xml,%3Csvg width='6' height='3' viewBox='0 0 6 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 3L0.401924 4.89399e-07L5.59808 3.51373e-08L3 3Z' fill='%23828589'/%3E%3C/svg%3E%0A")
+
+    &.fixed
+      margin-top: 0
+
     a
       &.btn
         color: #493F7B
         border: 1px solid #493F7B
         box-shadow: 0 6px 15px rgba(137, 123, 226, 0.4) !important
+
+  .header__phone
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.5738 15.0156L15.6395 12.081C15.0551 11.4989 14.0872 11.5166 13.4824 12.1216L12.0041 13.5996C11.9107 13.5481 11.8141 13.4943 11.7124 13.4373C10.7789 12.92 9.50122 12.2111 8.15672 10.8656C6.80824 9.51728 6.09863 8.23763 5.57979 7.3035C5.52504 7.20454 5.47258 7.10912 5.42078 7.01851L6.41293 6.02783L6.90071 5.53946C7.50644 4.93356 7.52315 3.96597 6.94006 3.38218L4.00581 0.447275C3.42273 -0.1357 2.45444 -0.118014 1.8487 0.487886L1.02173 1.31961L1.04433 1.34204C0.76703 1.69587 0.535314 2.10395 0.362878 2.54402C0.203925 2.96291 0.104961 3.36264 0.0597099 3.76319C-0.327739 6.97522 1.14007 9.91078 5.12351 13.8943C10.6298 19.4002 15.0672 18.9843 15.2586 18.964C15.6756 18.9141 16.0751 18.8145 16.4812 18.6568C16.9174 18.4864 17.3253 18.255 17.6789 17.9783L17.6969 17.9944L18.5347 17.174C19.1392 16.5682 19.1566 15.6003 18.5738 15.0156Z' fill='#828589' fill-opacity='0.8'/%3E%3C/svg%3E%0A")
+
+  .burger
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='19' viewBox='0 0 30 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='0.7' x2='30' y2='0.7' stroke='#828589' stroke-width='0.6'/%3E%3Cline y1='9.7' x2='30' y2='9.7' stroke='#828589' stroke-width='0.6'/%3E%3Cline y1='18.7' x2='30' y2='18.7' stroke='#828589' stroke-width='0.6'/%3E%3C/svg%3E%0A")
+    background-size: 28px
+    background-repeat: no-repeat
+    background-position: 20% 1px
+
   .form__wrapper
     margin-top: 0
+
+
+  .dropdown__item
+    color: #ffffff !important
 
 .banner__btn
   padding-top: 20px
@@ -673,6 +899,7 @@ header
     &.tags__checkbox
       @include medium
         display: none
+
       .tag-input
         width: 0
         display: none
@@ -721,10 +948,13 @@ header
         padding: 10px 13px 10px 19px
         margin-right: 9px
         position: relative
+
         &:last-child
           margin-right: 0
+
         &:first-child
           padding: 10px 13px
+
           &.checked
             background: #E9E5FF
             border-radius: 7px
@@ -761,6 +991,7 @@ header
     padding: 8px 17px
     cursor: pointer
     position: relative
+
     &::after
       content: ''
       position: absolute
@@ -770,6 +1001,7 @@ header
       height: 10px
       background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.19935 5.55972L9.9167 0.84237C10.0278 0.7313 10.0278 0.553168 9.9167 0.442098C9.80563 0.331028 9.6275 0.331028 9.51642 0.442098L5.00026 4.95826L0.4841 0.442098C0.37303 0.331027 0.194899 0.331027 0.083828 0.442097C0.0293407 0.496585 1.89812e-06 0.569933 1.895e-06 0.641186C1.89189e-06 0.712439 0.0272455 0.785787 0.083828 0.840274L4.80117 5.55762C4.91015 5.66869 5.09038 5.66869 5.19935 5.55972Z' fill='%23BCBCBC'/%3E%3C/svg%3E%0A")
       background-repeat: no-repeat
+
     input
       width: 0
       display: none
@@ -805,6 +1037,7 @@ header
       background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.19935 5.55975L9.9167 0.842401C10.0278 0.73133 10.0278 0.553199 9.9167 0.442128C9.80563 0.331058 9.6275 0.331058 9.51642 0.442128L5.00026 4.95829L0.4841 0.442128C0.37303 0.331058 0.194899 0.331058 0.083828 0.442128C0.0293407 0.496615 1.89812e-06 0.569964 1.895e-06 0.641216C1.89189e-06 0.712469 0.0272455 0.785818 0.083828 0.840305L4.80117 5.55765C4.91015 5.66872 5.09038 5.66872 5.19935 5.55975Z' fill='%23BCBCBC'/%3E%3C/svg%3E%0A")
       background-repeat: no-repeat
       background-position: right 13px top 13px
+
       &::before
         content: ''
         position: absolute
@@ -847,6 +1080,7 @@ header
     cursor: pointer
     @include medium
       max-width: 33.333333%
+
     &.is-active
       cursor: default
 
@@ -936,6 +1170,11 @@ header
       display: flex
       align-items: center
       justify-content: center
+      width: 90px
+      height: 57px
+
+      img
+        max-height: 41px
 
     .sale
       font-size: 24px
@@ -976,7 +1215,7 @@ header
     margin: 0 auto
     transition: 0s
 
-.js-cpt-inner
+.result__table
   font: 14px 'Roboto', sans-serif
   line-height: 50px
   color: #313639
@@ -993,6 +1232,7 @@ header
     &.active
       .dropdown__property
         display: flex
+
       .arrow
         transform: rotate(-90deg)
         top: 27px
@@ -1049,6 +1289,7 @@ header
     flex-wrap: wrap
     align-items: baseline
     width: 100%
+
     .th
       font: 12px 'Roboto Light', sans-serif
       line-height: 22px
@@ -1164,9 +1405,11 @@ header
 
     &.active
       background: #F6EFF9
+
       span
         &::after
           content: none
+
       .faq__item__desc
         display: block
 
@@ -1236,7 +1479,7 @@ header
 
   span
     &.sub__title
-      font: 14px 'Roboto Thin', sans-serif
+      font: 14px 'Roboto Light', sans-serif
       line-height: 22px
       padding-top: 10px
       padding-bottom: 30px
@@ -1247,12 +1490,15 @@ header
 #statistics
   padding-bottom: 100px
   margin-bottom: 0
+
   .desc
     font-size: 14px
     line-height: 22px
     color: #828589
+
     p
       padding-bottom: 10px
+
   .elipse__stat
     z-index: -10
 
@@ -1299,12 +1545,14 @@ header
   border-radius: 15px
   margin: 10px 0
   box-shadow: 0 40px 50px 0 #e9e9e9
+
   .stat__title
     font: 600 18px 'Roboto', sans-serif
     line-height: 50px
     color: #313639
     padding: 14px 6px
     position: relative
+
     &::before
       content: ''
       position: absolute
@@ -1329,6 +1577,7 @@ header
   display: flex
   flex-direction: column
   padding: 15px
+
   .select__box
     display: flex
     font: 14px 'Roboto Light', sans-serif
@@ -1338,12 +1587,14 @@ header
     padding-bottom: 20px
     @include medium
       flex-direction: column
+
     .date
       padding-right: 50px
       @include large
         padding-right: 20px
       @include medium
         padding-right: 0
+
     select
       font-weight: 600
       border: none
@@ -1364,11 +1615,13 @@ header
   flex-direction: column
   align-items: center
   padding: 25px 0
+
   .cout
     font-size: 28px
     font-weight: 600
     line-height: 50px
     color: #000000
+
   p
     font: 14px 'Roboto', sans-serif
     text-align: center
@@ -1380,6 +1633,7 @@ header
 .tags__r
   display: flex
   flex-wrap: wrap
+
   li
     margin-right: 20px
     font: 14px 'Roboto', sans-serif
@@ -1388,16 +1642,22 @@ header
     padding: 15px
     margin-top: 10px
     margin-bottom: 10px
+
     &.r__1
       background: #DC669B
+
     &.r__2
       background: #FF9458
+
     &.r__3
       background: #493F7B
+
     &.r__4
       background: #EF5A5A
+
     &.r__5
       background: #6FA8B3
+
     &.r__6
       background: #C452EC
 
@@ -1405,14 +1665,18 @@ header
   display: flex
   @include medium
     flex-direction: column
+
   .chart__item
-    width: calc(100%/3)
+    width: calc(100% / 3)
     @include medium
       width: 100%
+
     &#chartSex
       height: 440px
+
     &#chartAge
       height: 610px
+
     &#chartPlace
       height: 650px
 
@@ -1526,6 +1790,7 @@ footer
   width: 100%
   height: 100%
   background: rgba(0, 0, 0, 0.5)
+
 .pop-up
   display: none
   position: fixed
@@ -1533,27 +1798,33 @@ footer
   width: 100%
   top: 0
   z-index: 20
+
   .bg
     background: rgba(255, 255, 255, 0.9)
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15)
     backdrop-filter: blur(5px)
     border-radius: 10px
     overflow: hidden
+
   .pop-up__body
     width: 100%
     margin: 0 10px
+
     .tags__toggle
       font: 20px 'Roboto', sans-serif
       text-align: center
       color: #DF6598
       border-bottom: 1px solid #E4E4E4
       position: relative
+
       label
         display: block
         width: 100%
+
       &.checked
         label
           background: #F3E6EC
+
           &::before
             content: ''
             position: absolute
@@ -1565,16 +1836,20 @@ footer
             left: 30px
             background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3889 0.91127C12.7571 0.571096 12.0525 1.22715 11.6394 1.61592C10.6918 2.53924 9.88999 3.60836 8.99092 4.58028C7.9947 5.6494 7.07137 6.71852 6.05085 7.76338C5.46769 8.34653 4.83594 8.97828 4.44717 9.70723C3.57244 8.85675 2.8192 7.93342 1.84727 7.18022C1.14263 6.64566 -0.0236803 6.25689 0.000617825 7.54469C0.049214 9.2213 1.5314 11.0194 2.62481 12.1613C3.08648 12.6473 3.69393 13.1576 4.39858 13.1819C5.24901 13.2305 6.12374 12.2099 6.634 11.6511C7.53307 10.6792 8.26201 9.5857 9.08811 8.58951C10.1572 7.27742 11.2506 5.98958 12.2955 4.65318C12.9515 3.82704 15.0169 1.78596 13.3889 0.91127ZM1.06969 7.4475C1.0454 7.4475 1.0211 7.4475 0.972503 7.47176C0.87531 7.4475 0.802416 7.42316 0.705223 7.37457C0.778118 7.32597 0.899608 7.35027 1.06969 7.4475Z' fill='%23DF6598'/%3E%3C/svg%3E%0A")
             background-repeat: no-repeat
+
     .tags__checkbox
       display: flex
       flex-direction: column
       max-height: calc(100vh - 110px)
       overflow-x: scroll
+
       input
         width: 0
         display: none
+
         &:checked + [for]
           background: #F3E6EC
+
           &::before
             content: ''
             position: absolute
@@ -1586,6 +1861,7 @@ footer
             left: 30px
             background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3889 0.91127C12.7571 0.571096 12.0525 1.22715 11.6394 1.61592C10.6918 2.53924 9.88999 3.60836 8.99092 4.58028C7.9947 5.6494 7.07137 6.71852 6.05085 7.76338C5.46769 8.34653 4.83594 8.97828 4.44717 9.70723C3.57244 8.85675 2.8192 7.93342 1.84727 7.18022C1.14263 6.64566 -0.0236803 6.25689 0.000617825 7.54469C0.049214 9.2213 1.5314 11.0194 2.62481 12.1613C3.08648 12.6473 3.69393 13.1576 4.39858 13.1819C5.24901 13.2305 6.12374 12.2099 6.634 11.6511C7.53307 10.6792 8.26201 9.5857 9.08811 8.58951C10.1572 7.27742 11.2506 5.98958 12.2955 4.65318C12.9515 3.82704 15.0169 1.78596 13.3889 0.91127ZM1.06969 7.4475C1.0454 7.4475 1.0211 7.4475 0.972503 7.47176C0.87531 7.4475 0.802416 7.42316 0.705223 7.37457C0.778118 7.32597 0.899608 7.35027 1.06969 7.4475Z' fill='%23DF6598'/%3E%3C/svg%3E%0A")
             background-repeat: no-repeat
+
       label
         font: 20px 'Roboto', sans-serif
         text-align: center
@@ -1593,11 +1869,14 @@ footer
         padding: 18px 0
         border-bottom: 1px solid #E4E4E4
         position: relative
+
         &:last-child
           border-bottom: none
+
   .btn__control
     display: flex
     margin-top: 13px
+
     button
       width: 100%
       background: none
@@ -1607,3 +1886,88 @@ footer
       color: #DF6598
       padding: 17px 0
 
+.modal
+  display: none
+  position: fixed
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: 20
+
+  .modal__body
+    display: flex
+    flex-wrap: wrap
+    background: #FFFFFF
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.45)
+    width: 1000px
+    max-width: 90%
+    max-height: 90%
+    overflow: hidden
+    position: relative
+
+    .close
+      position: absolute
+      top: 34px
+      right: 49px
+      cursor: pointer
+      z-index: 30
+      &::before
+        content: url("data:image/svg+xml,%3Csvg width='21' height='22' viewBox='0 0 21 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.353553' y1='0.646447' x2='20.3536' y2='20.6464' stroke='%236C6C6C'/%3E%3Cline y1='-0.5' x2='28.2843' y2='-0.5' transform='matrix(0.707107 -0.707107 -0.707107 -0.707107 0 21)' stroke='%236C6C6C'/%3E%3C/svg%3E%0A")
+
+    .right__side
+      width: 50%
+      position: relative
+      @include medium
+        width: 80%
+
+      &::before
+        content: url("data:image/svg+xml,%3Csvg width='195' height='495' viewBox='0 0 195 495' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse opacity='0.3' cx='247.5' cy='247.5' rx='247.5' ry='247.5' transform='rotate(-90 247.5 247.5)' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='247.5' y1='-1.52588e-05' x2='247.5' y2='495' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
+        position: absolute
+        right: -20%
+        top: 10%
+
+      &::after
+        content: url("data:image/svg+xml,%3Csvg width='360' height='164' viewBox='0 0 360 164' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse opacity='0.3' cx='206' cy='206' rx='206' ry='206' transform='rotate(-90 206 206)' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='206' y1='-1.52588e-05' x2='206' y2='412' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9E5FF'/%3E%3Cstop offset='1' stop-color='%23E9E5FF' stop-opacity='0.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
+        position: absolute
+        right: 20%
+        bottom: -15%
+
+    .left__side
+      width: 50%
+      position: relative
+      background-image: url("data:image/svg+xml,%3Csvg width='589' height='590' viewBox='0 0 589 590' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='500' height='590' fill='url(%23paint0_linear)'/%3E%3Ccircle cx='135' cy='118' r='57' fill='white' fill-opacity='0.11'/%3E%3Ccircle cx='223.5' cy='406.5' r='44.5' fill='white' fill-opacity='0.11'/%3E%3Ccircle cx='25' cy='532' r='40' fill='white' fill-opacity='0.11'/%3E%3Ccircle cx='494' cy='74' r='20' fill='white' fill-opacity='0.11'/%3E%3Ccircle cx='177' cy='280' r='15' fill='white' fill-opacity='0.11'/%3E%3Cg opacity='0.8' filter='url(%23filter0_f)'%3E%3Ccircle cx='474' cy='367' r='65' fill='%238A7AE0'/%3E%3C/g%3E%3Ccircle cx='474' cy='351' r='65' fill='url(%23paint1_linear)'/%3E%3Cdefs%3E%3Cfilter id='filter0_f' x='359' y='252' width='230' height='230' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='25' result='effect1_foregroundBlur'/%3E%3C/filter%3E%3ClinearGradient id='paint0_linear' x1='-1.97474e-06' y1='60.8685' x2='835.959' y2='180.087' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23DF6598'/%3E%3Cstop offset='1' stop-color='%23857BE4'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='409' y1='299.412' x2='515.849' y2='317.636' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23DD6599'/%3E%3Cstop offset='1' stop-color='%23867BE4'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
+
+      &::after
+        content: url("data:image/svg+xml,%3Csvg width='230' height='230' viewBox='0 0 230 230' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.8' filter='url(%23filter0_f)'%3E%3Ccircle cx='115' cy='115' r='65' fill='%238A7AE0'/%3E%3C/g%3E%3Ccircle cx='115' cy='99' r='65' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3Cfilter id='filter0_f' x='0' y='0' width='230' height='230' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='25' result='effect1_foregroundBlur'/%3E%3C/filter%3E%3ClinearGradient id='paint0_linear' x1='50' y1='47.4117' x2='156.849' y2='65.6359' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23DD6599'/%3E%3Cstop offset='1' stop-color='%23867BE4'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
+        position: absolute
+        right: -85px
+        top: 42%
+
+      @include medium
+        width: 20%
+
+    .right__side
+
+      .feedback.form
+        width: 100%
+        background: none
+        padding: 100px 70px
+        height: auto
+        margin-left: 0
+        color: #3C3C3C
+
+        input
+          color: #7A7A7A
+          border-bottom: 1px solid #BABABA
+          &::placeholder
+            color: #7A7A7A
+          &[type=submit]
+            margin: 13px 0 0
+            background: linear-gradient(122.6deg, #DF6598 1.5%, #857BE4 73.76%)
+            color: #FFFFFF
+            box-shadow: none
+          &.error
+            border-bottom: 1px solid #700
+
+        .sub__title
+          padding-bottom: 46px

@@ -9,6 +9,19 @@ html(lang='UTF-8')
 
     body
 
+        .top__line
+            .container
+                div Тех. поддержка:
+                    =' '
+                    a(href='tel:+375296332756') +375 (29) 6332756
+                .btn__group
+                    .dropdown__wrapper
+                        span.dropdown__toggle Личный кабинет
+                        .dropdown__menu
+                            a.dropdown__item(href='/client/login') Клиент
+                            a.dropdown__item(href='/outdoor/login') ОНР
+                            a.dropdown__item(href='/radio/login') Радиостанция
+
         header
             .header__navbar
                 .container
@@ -22,12 +35,19 @@ html(lang='UTF-8')
                                 a(href='#is-about') О сервисе
                                 a(href='#is-partners') Партнеры
                                 a(href='#is-radio') Радио
-                                a(href='/statistics.html') Статистика
+                                .dropdown__wrapper
+                                    span.dropdown__toggle Статистика
+                                    .dropdown__menu
+                                        a.dropdown__item(href='#') Радио РОКС
+                                        a.dropdown__item(href='#') Радио РОКС
+                                        a.dropdown__item(href='#') Радио 3
+                                        a.dropdown__item(href='#') Радио 4
+                                        a.dropdown__item(href='#') Радио 5
                             .navbar__right
                                 a(href='#is-faq') FAQ
                                 a(href='#contact') Контакты
                         .lg-auto.text_right.header__feedback
-                            a#feedback.btn(href='#' style='box-shadow: 0 6px 15px #C27E3E') Связаться
+                            a.btn.btn_head(href='#feedback') Связаться
                         .md-4.header__phone
                             a(href="tel:+375291234567")
             .header__banner
@@ -44,8 +64,8 @@ html(lang='UTF-8')
                             h1.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s") OpenSpot - размещение рекламы по справедливой цене
                             p.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="2s") Платформа OpenSpot позволяет рекламодателям выбирать наиболее подходящие и выгодные каналы продвижения.
                             .banner__btn.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="3s")
-                                a.btn(href='#' style='box-shadow: 0 6px 15px rgba(210, 84, 146, 0.89)') Начать
-                                a.btn.btn_transp(href='#') Узнать больше
+                                a.btn.btn_start(href='#is-radio') Начать
+                                a.btn.btn_transp(href='#is-faq') Узнать больше
                 .banner__img
                     img(src='./img/banner.png')
 
@@ -506,6 +526,21 @@ html(lang='UTF-8')
                         .bg.tags__wrapper
                         .bg.btn__control
                             button.ok Ок
+
+            #feedback.modal
+                .overlay
+                    .modal__body
+                        span.close
+                        .left__side
+                        .right__side
+                            form.feedback.form(action="")
+                                .title__form У вас есть вопросы?
+                                    span.sub__title Заполните форму обратной связи и наши специалисты свяжутся с вами!
+                                input(type="text" placeholder="Имя*")
+                                input(type="tel" placeholder="Номер телефона:*")
+                                input(type="email" placeholder="E-mail*")
+                                input.btn.submit(type="submit" value="Отправить")
+
 
 
 

@@ -4,7 +4,6 @@ html(lang='UTF-8')
         meta(charset='UTF-8')
         meta(name='viewport' content='width=device-width, initial-scale=1')
         title Test
-        link(href='./css/normalize.min.css', rel='stylesheet')
         link(href='./css/libs.min.css', rel='stylesheet')
         link(href='./css/style.min.css', rel='stylesheet')
 
@@ -23,12 +22,19 @@ html(lang='UTF-8')
                                 a(href='#is-about') О сервисе
                                 a(href='#is-partners') Партнеры
                                 a(href='#is-radio') Радио
-                                a(href='#') Статистика
+                                .dropdown__wrapper
+                                    span.dropdown__toggle Статистика
+                                    .dropdown__menu
+                                        a.dropdown__item(href='#') Радио РОКС
+                                        a.dropdown__item(href='#') Радио РОКС
+                                        a.dropdown__item(href='#') Радио 3
+                                        a.dropdown__item(href='#') Радио 4
+                                        a.dropdown__item(href='#') Радио 5
                             .navbar__right
                                 a(href='#is-faq') FAQ
                                 a(href='#contact') Контакты
                         .lg-auto.text_right.header__feedback
-                            a#feedback.btn(href='#' style='box-shadow: 0 6px 15px #C27E3E') Связаться
+                            a#feedback.btn(href='#') Связаться
                         .md-4.header__phone
                             a(href="tel:+375291234567")
 
@@ -56,8 +62,8 @@ html(lang='UTF-8')
                                             option(value="chartShare2") Областным центрам
                                     span по
                                         select(name='day')
-                                            option(value="chartShare3" selected) Минску
-                                            option(value="chartShare4") Областным центрам
+                                            option(value="chartShare3" selected) Будням
+                                            option(value="chartShare4") Выходным
                                 #chartShare1(data-chart='chartShare1')
                                 #chartShare2(data-chart='chartShare2')
                                 #chartShare3(data-chart='chartShare3')

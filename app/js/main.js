@@ -11,7 +11,8 @@ function getTable() {
             //contentType: $contentType,
             success: function (response, _class, optionVal) {
                 $('.js-cpt-inner').html(response.table);
-                showhide(_class, optionVal)
+                $('.stock__wrapper').html(response.promotional);
+                showhide(optionVal);
             },
             error: function (response) {
                 let result;
@@ -59,6 +60,37 @@ for (let i = 0; i < elipse.length; i++) {
 }
 
 
+// mobile menu
+if ($(window).width() < 992) {
+    let mobMenu = `<div class="mob__menu">
+                        <div class="mob__menu__wrapper">
+                            <span class="close"></span>
+                            <div class="logo"></div>
+                            <div class="mob__menu__items"></div>
+                            <div class="mob__log">
+                                <p>Личный кабинет:</p>
+                            </div>
+                            <div class="tech__info">
+                                <p>Тех. поддержка:</p>
+                            </div>
+                        </div>
+               </div>`;
+    $('.header__navbar .row').append(mobMenu);
+    $('.header__navbar .logo img').clone().appendTo('.mob__menu .logo');
+    $('.navbar__wrapper > div').children().clone().appendTo('.mob__menu .mob__menu__items');
+    $('.btn__group .dropdown__item').clone().appendTo('.mob__menu .mob__log');
+    $('.top__line .container > div > a').clone().appendTo('.mob__menu .tech__info');
+
+    let mobMenuNew = $('.mob__menu');
+    $('.burger').click(function () {
+        $(mobMenuNew).addClass('open')
+    });
+    $('.close').click(function () {
+        $(mobMenuNew).removeClass('open')
+    });
+}
+
+
 // accordion
 let acc = document.getElementsByClassName('accordion');
 
@@ -87,8 +119,8 @@ selectSort.click(function (e) {
 
 let mobileSort = $('.mobile__sort select');
 
-if ($(window).width() < 992) {
-    function showhide() {
+function showhide() {
+    if ($(window).width() < 992) {
         let _class;
         let optionVal = $('.mobile__sort option:selected').val();
 
@@ -115,9 +147,13 @@ if ($(window).width() < 992) {
 
         $(_class).show();
         $('.result__table .row > .td:not(:nth-child(1)):not(:nth-child(2))').not(_class).hide()
+    } else {
+        return false
     }
+}
 
-    selectSort.each(function () {
+selectSort.each(function () {
+    if ($(window).width() < 992) {
         let el = $(this);
 
         setSelect();
@@ -136,8 +172,10 @@ if ($(window).width() < 992) {
                 $(el).not(':nth-child(2)').hide()
             }
         }
-    });
-}
+    } else {
+        return false
+    }
+});
 
 
 let tagsRadio = $('.tags__radio >input:checkbox'),
@@ -198,9 +236,6 @@ toggle.click(function (el) {
 
 // dropdown calculator
 if ($(window).width() < 992) {
-    // $('.js-cpt-inner .row').click(function () {
-    //     $(this).toggleClass('active');
-    // });
     $(document).on('click', '.result__table .row', function (e) {
         $(this).toggleClass('active');
     })
@@ -209,22 +244,51 @@ if ($(window).width() < 992) {
 
 // form validation
 let formInput = document.querySelectorAll('.feedback input'),
-    btnSubmit = document.querySelector('.feedback input.submit');
+    btnSubmit = $('.feedback input.submit');
 
-
-btnSubmit.addEventListener('click', function (e) {
+btnSubmit.click(function (e) {
     e.preventDefault();
     for (let i = 0; i < formInput.length; i++) {
         if (formInput[i].value === '') {
-            formInput[i].classList.add('error')
+            formInput[i].classList.add('error');
         } else {
-            formInput[i].classList.remove('error')
+            formInput[i].classList.remove('error');
         }
     }
 });
 
-for (let i = 0; i < formInput.length; i++) {
-    formInput[i].addEventListener('focus', function () {
-        this.classList.remove('error');
-    })
+delError();
+
+function delError() {
+    for (let i = 0; i < formInput.length; i++) {
+        formInput[i].addEventListener('focus', function () {
+            this.classList.remove('error');
+        })
+    }
 }
+
+
+// modal
+$('.header__feedback a').click(function () {
+    $('.modal').show();
+    $('body').addClass('open__modal');
+});
+
+$('.modal .close').click(function () {
+    $('.modal').hide();
+    $('body').removeClass('open__modal');
+    for (let i = 0; i < formInput.length; i++) {
+        formInput[i].classList.remove('error');
+    }
+});
+
+$(document).mouseup(function (e) {
+    let modalBody = $('.modal__body');
+    if (modalBody.has(e.target).length === 0){
+        $('.modal').hide();
+        $('body').removeClass('open__modal');
+        for (let i = 0; i < formInput.length; i++) {
+            formInput[i].classList.remove('error');
+        }
+    }
+});
